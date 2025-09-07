@@ -94,8 +94,15 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex-shrink-0">
-              <a href="#" className="text-2xl font-bold text-gray-800 dark:text-white tracking-wider">Logo</a>
+              <a href="#">
+                <img 
+                 src="/Logo.png" 
+                 alt="Hooman Pets Logo" 
+                 className="h-14 w-auto" 
+                />
+              </a>
             </div>
+
 
             <div className="hidden md:flex md:items-center md:space-x-8">
               {navLinks.map((link) => (
