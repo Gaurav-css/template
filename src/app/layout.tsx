@@ -4,6 +4,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
+import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,10 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}><ThemeProvider>
+      <body className={inter.className}>
+        <ThemeProvider>
           <Navbar />
           <main className="pt-20">{children}</main>
-        </ThemeProvider></body>
+          <ScrollToTop />
+          <Footer />   {/* ✅ Add Footer here */}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

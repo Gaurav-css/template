@@ -10,7 +10,13 @@ import Pricing from '@/components/Pricing'
 import FAQSection from '@/components/FAQSection'
 import Community from '@/components/Community'
 import Footer from '@/components/Footer'
-import OurStory from '@/components/pages/OurStory'
+// import OurStory from '@/app/ourstory/page'
+import blog from '@/app/blog/page'
+import TermsOfService from "./terms&services/page"
+import ScrollToTop from "@/components/ScrollToTop";
+import EzraAiPage from "./EzraAiPage/page"
+
+
 
 
 
@@ -28,7 +34,7 @@ export default function HomePage() {
       <Pricing />
       <FAQSection />
       <Community />
-      <Footer />
+      
       
       
       

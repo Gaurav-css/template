@@ -1,7 +1,11 @@
 'use client'
 
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
 import { Lightbulb, Heart, Users, Stethoscope } from 'lucide-react';
+
+
+
 
 // Define the type for the component's props
 type FeatureCardProps = {
@@ -93,12 +97,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
 
 // Data for the feature cards, making it easier to manage
 const allFeatures = [
-    { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
-    { id: 'tracking', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
-    { id: 'community', icon: <Users className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
-    { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
-    { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
-    { id: 'activity', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
+  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
+  { id: 'tracking', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
+  { id: 'community', icon: <Users className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
+  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
+  { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
+  { id: 'activity', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
 ];
 
 
@@ -126,7 +130,7 @@ export default function App() {
     if (!isSmallScreen || visibleCardCount >= allFeatures.length) {
       return;
     }
-    
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -153,34 +157,47 @@ export default function App() {
     <div className="bg-gray-50 dark:bg-[#1A1A1A] font-sans text-gray-800 dark:text-gray-200">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-          
+
           {/* --- Left Column (Sticky on large screens) --- */}
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center py-16 lg:py-24">
             <div className="space-y-6">
-                <span className="text-sm font-bold lowercase text-orange-600 dark:text-orange-400">Features</span>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  Why Choose Hooman for Your Pet's Health?
-                </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                  At Hooman, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
-                </p>
-                <div className="flex items-center space-x-4 pt-4">
-                  <button className="px-6 py-3 bg-white border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-800/50 text-gray-800 dark:text-white font-semibold rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900">
-                    Learn More
-                  </button>
-                  <button className="px-6 py-3 text-orange-600 dark:text-orange-400 font-semibold rounded-md hover:text-orange-700 dark:hover:text-orange-300 transition-colors duration-300 group">
-                    Join <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
-                  </button>
-                </div>
+              <span className="text-sm font-bold lowercase text-orange-600 dark:text-orange-400">Features</span>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Why Choose Hooman for Your Pet's Health?
+              </h1>
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                At Hooman, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
+              </p>
+
+              <div className="flex items-center space-x-4 pt-4">
+                {/* Learn More */}
+                <Link
+                  href="/blog"
+                  className="px-6 py-3 bg-white border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-800/50 text-gray-800 dark:text-white font-semibold rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900"
+                >
+                  Learn More
+                </Link>
+
+                {/* Join */}
+                <Link
+                  href="#"
+                  className="px-6 py-3 text-orange-600 dark:text-orange-400 font-semibold rounded-md hover:text-orange-700 dark:hover:text-orange-300 transition-colors duration-300 group"
+                >
+                  Join{" "}
+                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                    &rarr;
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* --- Right Column (Scrollable) --- */}
           <div className="pt-0 lg:pt-32 pb-32">
             {allFeatures.slice(0, visibleCardCount).map((feature, index) => (
-              <FeatureCard 
-                key={feature.id} 
-                icon={feature.icon} 
+              <FeatureCard
+                key={feature.id}
+                icon={feature.icon}
                 title={feature.title}
                 isSmallScreen={isSmallScreen}
                 index={index}
@@ -188,7 +205,7 @@ export default function App() {
                 {feature.children}
               </FeatureCard>
             ))}
-            
+
             {isSmallScreen && visibleCardCount < allFeatures.length && (
               <div ref={loadMoreRef} />
             )}

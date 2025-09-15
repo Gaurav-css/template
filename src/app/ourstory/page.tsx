@@ -41,14 +41,14 @@ const HorizontalParallaxGallery = () => {
       imageUrl: 'https://images.unsplash.com/photo-1560240359-1a0670356e89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     },
     {
-        id: 5,
-        title: 'Street Artist',
-        imageUrl: 'https://images.unsplash.com/photo-1520175480921-4edfa6957a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
+      id: 5,
+      title: 'Street Artist',
+      imageUrl: 'https://images.unsplash.com/photo-1520175480921-4edfa6957a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
     },
     {
-        id: 6,
-        title: 'Love Lock Bridge',
-        imageUrl: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      id: 6,
+      title: 'Love Lock Bridge',
+      imageUrl: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     }
   ];
 
@@ -81,10 +81,10 @@ const HorizontalParallaxGallery = () => {
                 {/* This div creates the white "polaroid" border and shadow. */}
                 <div className="bg-white p-2 md:p-3 rounded-md shadow-2xl h-full w-full transform-gpu transition-transform hover:scale-105">
                   <img
-                      src={card.imageUrl}
-                      alt={card.title}
-                      // Image is set to cover the frame, with sepia and grayscale filters applied.
-                      className="w-full h-full object-cover grayscale sepia-[.20]"
+                    src={card.imageUrl}
+                    alt={card.title}
+                    // Image is set to cover the frame, with sepia and grayscale filters applied.
+                    className="w-full h-full object-cover grayscale sepia-[.20]"
                   />
                 </div>
               </div>

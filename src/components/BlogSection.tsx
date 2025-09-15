@@ -1,6 +1,9 @@
 'use client'; // Required for components that use state and effects in Next.js App Router
 
-import React, { useState, useEffect, useRef, SVGProps } from 'react';
+
+import Link from "next/link";
+import React, { useState, useEffect, useRef, SVGProps } from "react";
+
 
 // Define the shape of a blog post for TypeScript
 interface BlogPost {
@@ -18,7 +21,7 @@ interface BlogPost {
 
 // Define a props interface for icons that can take a size prop
 interface IconProps extends SVGProps<SVGSVGElement> {
-    size?: number;
+  size?: number;
 }
 
 // Icon for closing the modal
@@ -87,12 +90,12 @@ const blogPosts: BlogPost[] = [
     description: 'Explore the best diets for your furry friends and how to ensure they live a long, healthy life.',
     imageUrl: 'Dog.png',
     icon: (
-        <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
     details: [
-        { heading: "24/7 Nurse Helpline", content: "Talk with a registered nurse who can provide advice and referrals to appropriate medical care." },
-        { heading: "Emergency Medical Evacuation", content: "If serious illness, infection, or injury occurs, get guidance and support with coordinating medical transportation from a hospital or medical facility to another that can provide the appropriate care." },
-        { heading: "Medical, Dental, Pharmacy Referral", content: "Get referrals to nearby doctors, dentists, and pharmacies to get the care you need." }
+      { heading: "24/7 Nurse Helpline", content: "Talk with a registered nurse who can provide advice and referrals to appropriate medical care." },
+      { heading: "Emergency Medical Evacuation", content: "If serious illness, infection, or injury occurs, get guidance and support with coordinating medical transportation from a hospital or medical facility to another that can provide the appropriate care." },
+      { heading: "Medical, Dental, Pharmacy Referral", content: "Get referrals to nearby doctors, dentists, and pharmacies to get the care you need." }
     ]
   },
   {
@@ -102,11 +105,11 @@ const blogPosts: BlogPost[] = [
     description: 'Learn effective, positive reinforcement strategies for successful and stress-free potty training.',
     imageUrl: 'Dog.png',
     icon: (
-        <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
     details: [
-        { heading: "Positive Reinforcement", content: "Understand the power of rewarding good behavior to build strong, positive habits in your pet." },
-        { heading: "Creating a Schedule", content: "Consistency is key. We'll show you how to create a potty schedule that works for you and your furry friend." },
+      { heading: "Positive Reinforcement", content: "Understand the power of rewarding good behavior to build strong, positive habits in your pet." },
+      { heading: "Creating a Schedule", content: "Consistency is key. We'll show you how to create a potty schedule that works for you and your furry friend." },
     ]
   },
   {
@@ -116,11 +119,11 @@ const blogPosts: BlogPost[] = [
     description: 'Recognize the subtle but crucial warning signs for your pet’s health to get them timely care.',
     imageUrl: 'Dog.png',
     icon: (
-        <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+      <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
     ),
     details: [
-        { heading: "Behavioral Changes", content: "Sudden changes in appetite, sleep, or activity levels can be a sign of underlying issues." },
-        { heading: "Physical Symptoms", content: "Learn to spot warning signs like changes in weight, coat health, or unusual lumps and bumps." },
+      { heading: "Behavioral Changes", content: "Sudden changes in appetite, sleep, or activity levels can be a sign of underlying issues." },
+      { heading: "Physical Symptoms", content: "Learn to spot warning signs like changes in weight, coat health, or unusual lumps and bumps." },
     ]
   },
 ];
@@ -149,9 +152,9 @@ export default function App() {
 
   const checkArrows = () => {
     if (scrollContainerRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-        setShowLeftArrow(scrollLeft > 0);
-        setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1);
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1);
     }
   };
 
@@ -162,12 +165,12 @@ export default function App() {
       container.addEventListener('scroll', checkArrows);
     }
     window.addEventListener('resize', checkArrows);
-    
+
     return () => {
-        if (container) {
-          container.removeEventListener('scroll', checkArrows);
-        }
-        window.removeEventListener('resize', checkArrows);
+      if (container) {
+        container.removeEventListener('scroll', checkArrows);
+      }
+      window.removeEventListener('resize', checkArrows);
     };
   }, []);
 
@@ -190,7 +193,7 @@ export default function App() {
     <div className="bg-gray-50 dark:bg-[#1A1A1A] min-h-screen font-sans antialiased text-gray-800 dark:text-gray-200">
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header Section */}
           <div className="text-center mb-12 lg:mb-16">
             <p className="text-sm font-semibold uppercase tracking-wider text-orange-500 dark:text-orange-400 mb-2">
@@ -206,8 +209,8 @@ export default function App() {
 
           {/* --- Scrollable Card Container for Mobile/Tablet --- */}
           <div className="lg:hidden relative">
-             {showLeftArrow && (
-              <button 
+            {showLeftArrow && (
+              <button
                 onClick={() => scroll('left')}
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-[#1A1A1A] p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-gray-800 transition-all"
                 aria-label="Scroll left"
@@ -217,22 +220,21 @@ export default function App() {
             )}
             <div ref={scrollContainerRef} className="flex overflow-x-auto space-x-6 pb-8 pl-4 -mx-4 scrollbar-hide">
               {blogPosts.map((post, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   onClick={() => handleCardClick(post)}
                   className="flex flex-col flex-shrink-0 w-[85%] sm:w-2/3 md:w-1/2 bg-white dark:bg-[#1A1A1A] rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 active:scale-95 transition-transform duration-200 cursor-pointer"
                 >
-                  <img 
+                  <img
                     src={post.imageUrl}
-                    alt={`Image for ${post.title}`} 
+                    alt={`Image for ${post.title}`}
                     className="w-full h-48 object-cover flex-shrink-0"
                   />
                   <div className="p-5 flex flex-col flex-grow">
                     <div>
-                      <span className={`text-sm font-semibold ${
-                        post.category === 'Health' ? 'text-green-500' : 
-                        post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
-                      }`}>
+                      <span className={`text-sm font-semibold ${post.category === 'Health' ? 'text-green-500' :
+                          post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
+                        }`}>
                         {post.category}
                       </span>
                       <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-2">
@@ -243,10 +245,10 @@ export default function App() {
                       </p>
                     </div>
                     <div className="mt-auto pt-4">
-                        <div className="inline-flex items-center font-semibold text-orange-600 dark:text-orange-400">
-                            Read more
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                        </div>
+                      <div className="inline-flex items-center font-semibold text-orange-600 dark:text-orange-400">
+                        Read more
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -255,37 +257,36 @@ export default function App() {
               <div className="flex-shrink-0 w-1"></div>
             </div>
             {showRightArrow && (
-               <button 
+              <button
                 onClick={() => scroll('right')}
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-[#1A1A1A] p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-gray-800 transition-all"
                 aria-label="Scroll right"
-               >
-                 <ArrowRight className="h-6 w-6 text-gray-700 dark:text-gray-200" />
-               </button>
+              >
+                <ArrowRight className="h-6 w-6 text-gray-700 dark:text-gray-200" />
+              </button>
             )}
           </div>
 
           {/* --- Grid for Desktop --- */}
           <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {blogPosts.map((post, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group flex flex-col bg-white dark:bg-[#1A1A1A] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
               >
                 <div className="relative">
-                  <img 
+                  <img
                     src={post.imageUrl}
-                    alt={`Image for ${post.title}`} 
+                    alt={`Image for ${post.title}`}
                     className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    <span className={`font-semibold ${
-                      post.category === 'Health' ? 'text-green-500' : 
-                      post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
-                    }`}>{post.category}</span>
+                    <span className={`font-semibold ${post.category === 'Health' ? 'text-green-500' :
+                        post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
+                      }`}>{post.category}</span>
                     <span className="mx-2">·</span>
                     <span>{post.readTime}</span>
                   </div>
@@ -293,8 +294,8 @@ export default function App() {
                     <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">{post.title}</a>
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4 text-base">{post.description}</p>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="mt-auto inline-flex items-center font-semibold text-orange-600 dark:text-orange-400 group-hover:text-orange-800 dark:group-hover:text-orange-300 transition-colors duration-200"
                   >
                     Read more
@@ -307,48 +308,50 @@ export default function App() {
 
           {/* View All Button */}
           <div className="text-center mt-16">
-            <button className="inline-block bg-gray-800 dark:bg-gray-700 text-white dark:text-gray-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-black dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:focus:ring-offset-gray-900 dark:focus:ring-gray-400 transition-all duration-300 transform hover:scale-105">
+            <Link
+              href="/blog"
+              className="inline-block bg-gray-800 dark:bg-gray-700 text-white dark:text-gray-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-black dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:focus:ring-offset-gray-900 dark:focus:ring-gray-400 transition-all duration-300 transform hover:scale-105"
+            >
               View All Articles
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* --- Detailed Content Modal --- */}
       {selectedPost && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end justify-center"
           onClick={handleCloseModal}
           role="dialog"
           aria-modal="true"
         >
-          <div 
+          <div
             className="bg-white dark:bg-[#1A1A1A] w-full max-h-[90vh] rounded-t-2xl p-6 overflow-y-auto transition-transform duration-300 transform translate-y-full animate-slide-up"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
           >
             <div className="flex justify-between items-start mb-4">
-               <h2 className="text-2xl font-bold text-gray-900 dark:text-white pr-4">{selectedPost.title}</h2>
-              <button 
-                onClick={handleCloseModal} 
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white pr-4">{selectedPost.title}</h2>
+              <button
+                onClick={handleCloseModal}
                 className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 flex-shrink-0"
                 aria-label="Close modal"
               >
                 <XIcon size={28} />
               </button>
             </div>
-            
+
             <div className="flex justify-center my-6">
-                <div className={`${
-                    selectedPost.category === 'Health' ? 'bg-green-100 dark:bg-green-900/50' : 
-                    selectedPost.category === 'Training' ? 'bg-blue-100 dark:bg-blue-900/50' : 
+              <div className={`${selectedPost.category === 'Health' ? 'bg-green-100 dark:bg-green-900/50' :
+                  selectedPost.category === 'Training' ? 'bg-blue-100 dark:bg-blue-900/50' :
                     'bg-red-100 dark:bg-red-900/50'
-                  } p-4 rounded-full`}>
-                   {selectedPost.icon}
-                </div>
+                } p-4 rounded-full`}>
+                {selectedPost.icon}
+              </div>
             </div>
 
             <p className="text-gray-600 dark:text-gray-400 mb-8 text-center text-lg">{selectedPost.description}</p>
-            
+
             <div className="space-y-6">
               {selectedPost.details.map((detail, index) => (
                 <div key={index}>
@@ -361,7 +364,7 @@ export default function App() {
           </div>
         </div>
       )}
-       <style jsx global>{`
+      <style jsx global>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }

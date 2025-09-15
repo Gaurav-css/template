@@ -1,108 +1,105 @@
-import React from 'react';
-// import Link from 'next/link'; // Removed for standalone component compatibility
-import { 
-  Twitter, 
-  Instagram, 
-  Facebook, 
-  Youtube, 
-  Mail, 
-  MapPin, 
+"use client";
+
+import React from "react";
+import {
+  Instagram,
+  Facebook,
+  Linkedin,
+  Mail,
+  MapPin,
   Heart,
-  ChevronRight 
-} from 'lucide-react';
+  ChevronRight,
+} from "lucide-react";
+
+// ✅ Custom X (Twitter) Icon
+const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 1227"
+    fill="currentColor"
+    className="w-4 h-4"
+    {...props}
+  >
+    <path d="M714.163 519.284L1160.89 0H1057.3L667.137 450.887 356.581 0H0l468.492 681.821L0 1226.27h103.592l410.021-482.588 329.525 482.588H1200L714.163 519.284zm-145.77 171.5l-47.568-68.034-378.985-542.27h162.977l305.799 437.96 47.568 68.033 400.733 573.136h-162.977l-327.547-469.825z" />
+  </svg>
+);
 
 const Footer = () => {
   const footerSections = [
     {
       title: "Product",
       links: [
-        { name: "Features", href: "/features" },
-        { name: "Pricing", href: "/pricing" },
-        { name: "AI Assistant", href: "/ai-assistant" },
-        { name: "Vet Integration", href: "/vet-integration" },
-        { name: "Mobile App", href: "/mobile-app" },
-      ]
+        { name: "Ezra AI", href: "#" },
+        { name: "Hooman Care", href: "#" },
+        { name: "Hooman Connect", href: "#" },
+        { name: "Hooman Veterinary", href: "#" },
+        { name: "Pricing", href: "#" },
+        { name: "Download Application", href: "#" },
+      ],
     },
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "/about" },
-        { name: "Blog", href: "/blog" },
-        { name: "Careers", href: "/careers" },
-        { name: "Our Story", href: "/story" },
-        { name: "Contact", href: "/contact" },
-      ]
-    },
-    {
-      title: "Support",
-      links: [
-        { name: "Help Center", href: "/help" },
-        { name: "Community", href: "/community" },
-        { name: "Waitlist", href: "/waitlist" },
-        { name: "Security", href: "/security" },
-        { name: "FAQ", href: "/faq" },
-      ]
+        { name: "About Us", href: "#" },
+        { name: "Blogs", href: "#" },
+        { name: "Careers", href: "#" },
+        { name: "Contact Us", href: "#" },
+        { name: "FAQ", href: "#" },
+      ],
     },
     {
       title: "Legal",
       links: [
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" },
-        { name: "Cookie Policy", href: "/cookies" },
-        { name: "Data Security", href: "/data-security" },
-      ]
-    }
+        { name: "Privacy Policy", href: "#" },
+        { name: "Terms of Use", href: "#" },
+        { name: "Cookie Policy", href: "#" },
+      ],
+    },
   ];
 
   const socialLinks = [
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+    { name: "X", icon: XIcon, href: "https://x.com" },
     { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
     { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
-    { name: "Youtube", icon: Youtube, href: "https://youtube.com" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
   ];
 
   return (
     <footer className="bg-white dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-zinc-800 transition-colors duration-300">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center mb-6 gap-3">
-              {/* SVG Logo */}
-              <svg
-                  className="w-10 h-10 text-gray-900 dark:text-white"
-                  viewBox="0 0 100 100"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-              >
-                  {/* Paw pads */}
-                  <circle cx="25" cy="28" r="12" />
-                  <circle cx="50" cy="18" r="12" />
-                  <circle cx="75" cy="28" r="12" />
-                  {/* Heart-shaped main pad */}
-                  <path d="M50 45 C 20 45, 15 80, 50 98 C 85 80, 80 45, 50 45 Z" />
-              </svg>
-              {/* Text */}
-              <div className="flex flex-col">
-                  <span className="text-3xl font-serif font-extrabold text-gray-900 dark:text-white">
-                      Hooman
-                  </span>
-                  <span className="text-xs font-sans tracking-[0.2em] text-gray-500 dark:text-gray-400">
-                      SMARTER PET PARENTING
-                  </span>
-              </div>
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="flex items-center mb-6">
+              {/* === YOUR LOGO IS HERE === */}
+              <img
+                src="/Logo.png"
+                alt="Hooman Logo"
+                className="h-12 mr-3"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src =
+                    "https://placehold.co/200x50/f97316/ffffff?text=Hooman";
+                }}
+              />
             </div>
-            
+
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 max-w-sm leading-relaxed">
-              Smarter pet parenting with AI-powered insights, health tracking, and personalized care recommendations for your furry family members.
+              Smarter pet parenting with AI-powered insights, health tracking,
+              and personalized care recommendations for your furry family
+              members.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-3 mb-6 text-sm">
               <div className="flex items-center text-gray-600 dark:text-gray-300">
                 <Mail className="w-4 h-4 mr-3 text-orange-500" />
-                <a href="mailto:hello@hoomanpets.com" className="hover:text-orange-500 transition-colors duration-200">
+                <a
+                  href="mailto:hello@hoomanpets.com"
+                  className="hover:text-orange-500 transition-colors duration-200"
+                >
                   hello@hoomanpets.com
                 </a>
               </div>
@@ -132,7 +129,7 @@ const Footer = () => {
 
           {/* Footer Links */}
           {footerSections.map((section, index) => (
-            <div key={index} className="lg:col-span-1">
+            <div key={index}>
               <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-6">
                 {section.title}
               </h3>
@@ -158,10 +155,11 @@ const Footer = () => {
       <div className="border-t border-gray-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="text-gray-600 dark:text-gray-300 text-sm">
-              © 2025 Hooman Group. All rights reserved.
+            <div className="text-gray-600 dark:text-gray-300 text-sm text-center sm:text-left">
+              © {new Date().getFullYear()} Hooman Group. All rights reserved.
             </div>
-            
+
+
             <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
               <span>Made with</span>
               <Heart className="w-4 h-4 mx-1 text-red-500 fill-current animate-pulse" />
@@ -175,4 +173,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
