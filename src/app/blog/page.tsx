@@ -15,6 +15,7 @@ type Post = {
     author: string;
     publishDate: string;
     featured?: boolean;
+    image?: string;
 };
 
 const blogPosts: Post[] = [
@@ -27,6 +28,7 @@ const blogPosts: Post[] = [
     author: 'Dr. Jane Doe',
     publishDate: '23 January 2025',
     featured: true,
+    image: '/img25.jpeg',
   },
   {
     id: 2,
@@ -36,6 +38,7 @@ const blogPosts: Post[] = [
     description: 'Discover the best diets for your furry friend, from puppies to seniors.',
     author: 'John Smith',
     publishDate: '15 January 2025',
+    image: '/img/pets/dog-eating.jpeg',
   },
   {
     id: 3,
@@ -45,6 +48,7 @@ const blogPosts: Post[] = [
     description: 'Learn to interpret your cat\'s signals and moods for a stronger bond.',
     author: 'Dr. Jane Doe',
     publishDate: '10 January 2025',
+    image: '/img/pets/curious-cat.jpeg',
   },
   {
     id: 4,
@@ -54,6 +58,7 @@ const blogPosts: Post[] = [
     description: 'Make puppy training fun and effective with these expert tips.',
     author: 'Mark Evans',
     publishDate: '5 January 2025',
+    image: '/img/pets/puppy-training.jpeg',
   },
   {
     id: 5,
@@ -63,6 +68,7 @@ const blogPosts: Post[] = [
     description: 'Stay alert to your pet\'s health with these signs and know when to see a vet.',
     author: 'Dr. Jane Doe',
     publishDate: '28 December 2024',
+    image: '/img/pets/sick-pet-at-vet.jpeg',
   },
   {
     id: 6,
@@ -72,6 +78,7 @@ const blogPosts: Post[] = [
     description: 'Ensure your pet\'s well-being with routine veterinary visits.',
     author: 'John Smith',
     publishDate: '20 December 2024',
+    image: '/img/pets/vet-checkup.jpeg',
   },
   {
     id: 7,
@@ -81,6 +88,7 @@ const blogPosts: Post[] = [
     description: 'Whip up a treat with these nutritious and delicious homemade recipes.',
     author: 'Sarah Lee',
     publishDate: '12 December 2024',
+    image: '/img/pets/homemade-dog-treats.jpeg',
   },
   {
     id: 8,
@@ -90,6 +98,7 @@ const blogPosts: Post[] = [
     description: 'Everything you need to know about keeping your dog\'s teeth clean and healthy.',
     author: 'Dr. Emily Carter',
     publishDate: '10 December 2024',
+    image: '/img/pets/dog-dental-health.jpeg',
   },
   {
     id: 9,
@@ -99,6 +108,7 @@ const blogPosts: Post[] = [
     description: 'Tips and tricks to keep your feline friend\'s coat mat-free and beautiful.',
     author: 'Sarah Lee',
     publishDate: '8 December 2024',
+    image: '/img/pets/long-haired-cat.jpeg',
   },
   {
     id: 10,
@@ -108,6 +118,7 @@ const blogPosts: Post[] = [
     description: 'Turn chaotic walks into peaceful strolls with these effective leash training methods.',
     author: 'Mark Evans',
     publishDate: '5 December 2024',
+    image: '/img/pets/puppy-on-leash.jpeg',
   },
   {
     id: 11,
@@ -117,6 +128,7 @@ const blogPosts: Post[] = [
     description: 'How to make the transition smooth for you and your new companion.',
     author: 'John Smith',
     publishDate: '2 December 2024',
+    image: '/img/pets/rescue-dog.jpeg',
   },
   {
     id: 12,
@@ -126,6 +138,7 @@ const blogPosts: Post[] = [
     description: 'Understand the reasons behind your cat\'s litter box avoidance and how to fix it.',
     author: 'Dr. Jane Doe',
     publishDate: '30 November 2024',
+    image: '/img/pets/cat-litter-box.jpeg',
   },
   {
     id: 13,
@@ -135,6 +148,7 @@ const blogPosts: Post[] = [
     description: 'Learn how to protect your pets from overheating during the hot summer months.',
     author: 'Sarah Lee',
     publishDate: '28 November 2024',
+    image: '/img/pets/dog-in-summer.jpeg',
   },
   {
     id: 14,
@@ -144,6 +158,7 @@ const blogPosts: Post[] = [
     description: 'Is your pet scratching non-stop? Learn to spot the signs of common allergies.',
     author: 'Dr. Emily Carter',
     publishDate: '25 November 2024',
+    image: '/img/pets/scratching-dog.jpeg',
   },
   {
     id: 15,
@@ -153,6 +168,7 @@ const blogPosts: Post[] = [
     description: 'A step-by-step guide to making the crate a safe and happy place for your dog.',
     author: 'Mark Evans',
     publishDate: '22 November 2024',
+    image: '/img/pets/dog-in-crate.jpeg',
   },
   {
     id: 16,
@@ -162,6 +178,7 @@ const blogPosts: Post[] = [
     description: 'A checklist of everything you need before bringing your new kitten home.',
     author: 'John Smith',
     publishDate: '20 November 2024',
+    image: '/img/pets/new-kitten-supplies.jpeg',
   },
   {
     id: 17,
@@ -171,6 +188,7 @@ const blogPosts: Post[] = [
     description: 'Understand why dogs bark and learn effective techniques to manage it.',
     author: 'Dr. Jane Doe',
     publishDate: '18 November 2024',
+    image: '/img/pets/barking-dog.jpeg',
   },
   {
     id: 18,
@@ -180,6 +198,7 @@ const blogPosts: Post[] = [
     description: 'Simple adjustments to make your home safer and more enjoyable for your pets.',
     author: 'Sarah Lee',
     publishDate: '15 November 2024',
+    image: '/img/pets/pet-friendly-home.jpeg',
   },
   {
     id: 19,
@@ -189,6 +208,7 @@ const blogPosts: Post[] = [
     description: 'Challenge your brilliant pup with these fun and impressive advanced tricks.',
     author: 'Mark Evans',
     publishDate: '12 November 2024',
+    image: '/img/pets/dog-doing-tricks.jpeg',
   },
 ];
 
@@ -209,9 +229,13 @@ const ArrowRightIcon = () => (
 
 // --- BLOG LIST VIEW COMPONENTS ---
 const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post: Post) => void }) => (
-  <div onClick={() => onSelectPost(post)} className="bg-white dark:bg-[#2b2b2b] rounded-lg overflow-hidden flex flex-col group cursor-pointer">
-    <div className="w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] flex items-center justify-center">
-      <ImageIcon className="h-12 w-12" />
+  <div onClick={() => onSelectPost(post)} className="bg-white dark:bg-[#2b2b2b] rounded-lg overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
+    <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] flex items-center justify-center overflow-hidden">
+        {post.image ? (
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        ) : (
+            <ImageIcon className="h-12 w-12" />
+        )}
     </div>
     <div className="p-6 flex-grow flex flex-col">
       <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-x-4 mb-2">
@@ -230,8 +254,12 @@ const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post:
 
 const FeaturedBlogPost = ({ post, onSelectPost }: { post: Post, onSelectPost: (post: Post) => void }) => (
   <div onClick={() => onSelectPost(post)} className="flex flex-col lg:flex-row gap-8 items-center group cursor-pointer">
-    <div className="w-full lg:w-1/2 aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center">
-        <ImageIcon className="h-16 w-16" />
+    <div className="relative w-full lg:w-1/2 aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
+        {post.image ? (
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        ) : (
+            <ImageIcon className="h-16 w-16" />
+        )}
     </div>
     <div className="w-full lg:w-1/2">
       <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-x-4 mb-3">
@@ -316,8 +344,12 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
           </div>
       </header>
 
-      <div className="w-full aspect-[16/9] bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center mb-12">
-          <ImageIcon className="h-24 w-24"/>
+      <div className="relative w-full aspect-[16/9] bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center mb-12 overflow-hidden">
+          {post.image ? (
+              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+          ) : (
+              <ImageIcon className="h-24 w-24"/>
+          )}
       </div>
       
       <div className="flex flex-col lg:flex-row gap-12">
@@ -343,10 +375,15 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
               
               <figure className="!my-12">
-                 <div className="w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center">
-                    <ImageIcon className="h-16 w-16" />
-                 </div>
-                 <figcaption className="text-center text-sm italic text-gray-500 dark:text-gray-400 mt-2">Image caption goes here</figcaption>
+                   <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
+                      {post.image ? (
+                          // Re-using the main post image for this example
+                          <img src={post.image} alt="Article illustration" className="w-full h-full object-cover" />
+                      ) : (
+                          <ImageIcon className="h-16 w-16" />
+                      )}
+                  </div>
+                  <figcaption className="text-center text-sm italic text-gray-500 dark:text-gray-400 mt-2">Image caption goes here</figcaption>
               </figure>
 
               <h5>Heading 5</h5>
@@ -388,5 +425,3 @@ export default function BlogPage() {
     </div>
   );
 }
-
-

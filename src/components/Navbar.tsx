@@ -70,7 +70,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Pricing', href: '#Pricing' },
+    { name: 'Pricing', href: '/' },
   ];
 
   const featuresLinks: DropdownLink[] = [
@@ -144,7 +144,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#1A1A1A] font-sans border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-300">
+      {/* --- MODIFIED NAVBAR WITH GLASSY EFFECT --- */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-lg font-sans border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex-shrink-0">
@@ -163,7 +164,7 @@ const Navbar = () => {
 
               <div className="relative" onMouseEnter={() => handleDropdownEnter(setIsFeaturesDropdownOpen, featuresTimeout)} onMouseLeave={() => handleDropdownLeave(setIsFeaturesDropdownOpen, featuresTimeout)}>
                 <button className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium flex items-center group focus:outline-none transition-colors">
-                  <span>Features</span>
+                  <span>Products</span>
                   <ChevronDown className={`ml-1 h-5 w-5 text-gray-400 group-hover:text-orange-600 dark:group-hover:text-white transition-all duration-300 ${isFeaturesDropdownOpen ? 'transform rotate-180' : ''}`} />
                 </button>
                 <div className={`absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 w-screen max-w-sm rounded-xl shadow-2xl bg-white dark:bg-[#2B2B2B] ring-1 ring-black ring-opacity-5 dark:ring-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${isFeaturesDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
@@ -182,12 +183,14 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-4">
               <button onClick={toggleTheme} className="p-2 w-[36px] h-[36px] rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] transition-colors">
                 {mounted && (theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
               </button>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-4 py-2 rounded-lg text-base font-medium transition-colors duration-300">Join</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-4 py-2 rounded-lg text-base font-medium transition-colors duration-300">Sign In</a>
+              <a href="/login" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">
+                <User className="h-5 w-5" />
+                <span>Login / Signup</span>
+              </a>
             </div>
 
             <div className="lg:hidden flex items-center">
@@ -234,16 +237,16 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <button onClick={() => toggleMobileAccordion('resources')} className="w-full flex justify-between items-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] px-4 py-2 rounded-md font-medium group transition-all duration-200">
                   <span>More Resources</span>
                   <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${openMobileAccordion === 'resources' ? 'rotate-180' : ''}`} />
                 </button>
                 <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openMobileAccordion === 'resources' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <div className="pt-2 pl-4">
-                      <DropdownContent items={resourcesLinks} />
-                    </div>
+                  <div className="pt-2 pl-4">
+                    <DropdownContent items={resourcesLinks} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,9 +266,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex-shrink-0 p-4 bg-white dark:bg-[#1A1A1A] border-t border-gray-200 dark:border-gray-700 space-y-2">
-            <a href="#" className="block w-full text-center py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#2B2B2B]">Sign In</a>
-            <a href="#" className="block w-full text-center py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#2B2B2B]">Join</a>
+          <div className="flex-shrink-0 p-4 bg-white dark:bg-[#1A1A1A] border-t border-gray-200 dark:border-gray-700">
+            <a href="/login" className="block w-full text-center py-2.5 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors duration-300">
+              Login / Signup
+            </a>
           </div>
         </div>
       </div>
@@ -274,4 +278,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

@@ -2,162 +2,109 @@
 
 import React, { useState } from 'react';
 
-// You can replace these with your preferred icon library, like lucide-react or heroicons
-const PawPrintIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    {...props}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="11" cy="11" r="4" />
-    <path d="M15.52 12.52a3 3 0 1 0 4.24-4.24" />
-    <path d="M8.48 12.52a3 3 0 1 1-4.24-4.24" />
-    <path d="M12.52 15.52a3 3 0 1 0 4.24 4.24" />
-    <path d="M12.52 8.48a3 3 0 1 1 4.24-4.24" />
-  </svg>
-);
+const CommunityWaitlist = () => {
+  const [email, setEmail] = useState('');
+  // Status can be: 'idle', 'loading', 'success', 'error'
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
 
-const CheckCircleIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg 
-        {...props}
-        xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-    >
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-    </svg>
-);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('loading');
+    setMessage('');
 
+    // A simple regex for email validation
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setStatus('error');
+      setMessage('Whoops! Please enter a valid email address.');
+      return;
+    }
 
-const Community = () => {
-    const [email, setEmail] = useState('');
-    const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
-    const [message, setMessage] = useState('');
+    try {
+      // Simulate an API call (e.g., to Mailchimp, ConvertKit, or your own backend)
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setStatus('loading');
-        setMessage('');
-
-        if (!email) {
-            setStatus('error');
-            setMessage('Please enter a valid email address.');
-            return;
-        }
-
-        try {
-            const response = await fetch('/api/join-waitlist', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email }),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || 'Something went wrong.');
-            }
-            
-            setStatus('success');
-            setMessage("You're on the list! We'll notify you at launch.");
-            setEmail('');
-
-        } catch (error) {
-            setStatus('error');
-            if (error instanceof Error) {
-                setMessage(error.message);
-            } else {
-                setMessage('An unknown error occurred.');
-            }
-        }
-    };
-
+      // On successful submission
+      setStatus('success');
+      setMessage("Welcome to the pack! 🐾 You're on the list for early access.");
+      setEmail('');
+    } catch (error) {
+      // On failed submission
+      setStatus('error');
+      if (error instanceof Error) {
+        setMessage(error.message);
+      } else {
+        setMessage('Something went wrong. Please try again later.');
+      }
+    }
+  };
 
   return (
-    <section className="bg-white dark:bg-[#1A1A1A] w-full py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-8 text-center">
-          <div className="space-y-4 flex flex-col items-center">
-            <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 text-gray-700 dark:text-gray-300">
-              Our Community
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter text-gray-900 dark:text-gray-50 sm:text-4xl md:text-5xl">
-              Join Our Pet Care Community
-            </h2>
-            <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Stay updated with the latest tips, tricks, and insights for your
-              beloved furry friends. Our community is the perfect place to learn and share.
-            </p>
-          </div>
-          <div className="w-full max-w-md space-y-4">
-            <div className="flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
-              {status === 'success' ? (
-                <div className="text-center">
-                    <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-50 mb-2">Thank You!</h3>
-                    <p className="text-gray-600 dark:text-gray-300">{message}</p>
-                </div>
-              ) : (
-                <>
-                    <div className="p-4 bg-blue-100 dark:bg-blue-900/50 rounded-full mb-4">
-                        <PawPrintIcon className="w-8 h-8 text-blue-500 dark:text-blue-400" />
-                    </div>
-                    <h3 className="text-xl font-bold text-center text-gray-900 dark:text-gray-50 mb-2">
-                        Join Our Waitlist
-                    </h3>
-                    <p className="text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
-                        Get the latest pet care news straight to your inbox.
-                    </p>
-                    <form className="w-full flex flex-col sm:flex-row gap-2" onSubmit={handleSubmit}>
-                        <input
-                            className="flex-1 h-10 w-full rounded-md border border-gray-200 bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:border-gray-800 dark:focus:ring-gray-600"
-                            placeholder="Your Email Address"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            disabled={status === 'loading'}
-                        />
-                        <button
-                            className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                            type="submit"
-                            disabled={status === 'loading'}
-                        >
-                            {status === 'loading' ? 'Joining...' : 'Join Now'}
-                        </button>
-                    </form>
-                    {status === 'error' && <p className="mt-2 text-sm text-red-500">{message}</p>}
-                    <p className="mt-4 text-xs text-center text-gray-500 dark:text-gray-400">
-                        By clicking Join Now, you agree to our{' '}
-                        <a className="underline underline-offset-2" href="#">
-                        Terms & Conditions
-                        </a>
-                        .
-                    </p>
-                </>
-              )}
-            </div>
-          </div>
+    <section className="relative flex items-center justify-center min-h-screen text-white overflow-hidden">
+      {/* Background Image & Overlay */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1548681528-6a5c45b66b42?q=80&w=2070&auto=format&fit=crop')" }}
+      ></div>
+      <div className="absolute inset-0 z-10 bg-black/60 backdrop-blur-sm"></div>
+
+      {/* Content */}
+      <div className="relative z-20 flex flex-col items-center justify-center space-y-8 text-center px-4 py-16">
+        
+        {/* Tagline */}
+        <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
+          🐾 Paws & Friends
         </div>
+
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight max-w-4xl text-shadow-lg">
+          The Ultimate Hub for <br className="hidden sm:inline" /> 
+          <span className="bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent">Happy Paws</span> is Coming Soon.
+        </h1>
+
+        {/* Description */}
+        <p className="max-w-2xl text-lg md:text-xl text-gray-300">
+          Be the first to know! Join our waitlist for exclusive updates, early access to our platform, 
+          and special content crafted for you and your beloved pets.
+        </p>
+
+        {/* Waitlist Form */}
+        <div className="w-full max-w-md">
+          {status === 'success' ? (
+            <div className="text-center p-6 bg-green-500/10 rounded-lg border border-green-500/30 backdrop-blur-md">
+              <p className="text-green-300 text-lg font-semibold">{message}</p>
+            </div>
+          ) : (
+            <form
+              className="flex flex-col sm:flex-row gap-3 w-full"
+              onSubmit={handleSubmit}
+            >
+              <input
+                className="flex-1 h-14 w-full rounded-md border border-white/30 bg-white/10 px-4 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all backdrop-blur-md"
+                placeholder="your-best-friend@email.com"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === 'loading'}
+                aria-label="Email Address"
+              />
+              <button
+                className="inline-flex items-center justify-center h-14 rounded-md bg-amber-400 px-8 text-base font-semibold text-gray-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 disabled:opacity-60 disabled:pointer-events-none"
+                type="submit"
+                disabled={status === 'loading'}
+              >
+                {status === 'loading' ? 'Joining...' : 'Get Early Access'}
+              </button>
+            </form>
+          )}
+          {status === 'error' && (
+            <p className="mt-3 text-sm text-red-400">{message}</p>
+          )}
+        </div>
+        
       </div>
     </section>
   );
 };
 
-export default Community;
-
+export default CommunityWaitlist;

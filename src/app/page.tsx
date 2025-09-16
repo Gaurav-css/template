@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection"
 import Navbar from "@/components/Navbar"
-import Layout from "@/components/Layout"
+// import Layout from "@/components/Layout"
 import Testimonials from "@/components/Testimonials"
 import { ThemeProvider } from "@/components/ThemeProvider"
 import ServicesSection from "@/components/ServicesSection"
@@ -25,7 +25,7 @@ export default function HomePage() {
     <div>
       <Navbar />
       <HeroSection />
-      < Layout/>
+      {/* < Layout/> */}
       
       <ServicesSection />
       <FeaturesSection />

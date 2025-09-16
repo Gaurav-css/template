@@ -128,12 +128,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden transform-gpu">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-400 dark:bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-pink-400 dark:bg-pink-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-400 dark:bg-blue-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
+    <div className="min-h-screen w-full bg-gray-50 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black font-sans text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-12">
@@ -147,16 +142,6 @@ export default function App() {
       </div>
 
       <style>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob { animation: blob 7s infinite; }
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-4000 { animation-delay: 4s; }
-
         @keyframes scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }

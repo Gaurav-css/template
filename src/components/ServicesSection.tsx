@@ -415,7 +415,7 @@ export default function PetCarePage() {
             <main className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 sm:py-16">
                 <div className="max-w-4xl mx-auto text-center">
                     {/* Header Section */}
-                    <p className="text-sm font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">
+                    <p className="text-sm font-semibold  tracking-wider text-orange-600 dark:text-orange-400">
                         Empower
                     </p>
                     <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">

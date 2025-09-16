@@ -196,7 +196,7 @@ export default function App() {
 
           {/* Header Section */}
           <div className="text-center mb-12 lg:mb-16">
-            <p className="text-sm font-semibold uppercase tracking-wider text-orange-500 dark:text-orange-400 mb-2">
+            <p className="text-sm font-semibold  tracking-wider text-orange-500 dark:text-orange-400 mb-2">
               Our Blog
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
@@ -310,7 +310,7 @@ export default function App() {
           <div className="text-center mt-16">
             <Link
               href="/blog"
-              className="inline-block bg-gray-800 dark:bg-gray-700 text-white dark:text-gray-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-black dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:focus:ring-offset-gray-900 dark:focus:ring-gray-400 transition-all duration-300 transform hover:scale-105"
+              className="inline-block bg-orange-800 dark:bg-orange-700 text-white dark:text-orange-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-orange dark:hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-orange-900 dark:focus:ring-grorangeay-400 transition-all duration-300 transform hover:scale-105"
             >
               View All Articles
             </Link>
