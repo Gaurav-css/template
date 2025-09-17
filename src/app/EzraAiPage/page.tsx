@@ -4,7 +4,7 @@ import { Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck, User, Mail,
 // Main Page Component for Ezra AI
 const EzraAiPage = () => {
   return (
-    <div className="bg-white dark:bg-[#1a1a1a] font-sans text-slate-700 dark:text-zinc-300 antialiased">
+    <div className="bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-zinc-300 antialiased">
       {/* Hero Section */}
       <header className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
