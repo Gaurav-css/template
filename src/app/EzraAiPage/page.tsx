@@ -155,7 +155,7 @@ const EzraAiPage = () => {
         </section>
 
         {/* Trusted By Section */}
-        <section>
+        {/* <section>
           <div className="mx-auto max-w-5xl text-center">
             <h2 className="text-lg font-semibold leading-8 text-slate-800 dark:text-zinc-100">
               Trusted by leading veterinary clinics and pet tech innovators
@@ -166,7 +166,7 @@ const EzraAiPage = () => {
               <img className="col-span-1 max-h-10 w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300" src="https://tailwindui.com/img/logos/158x48/savvycal-light.svg" alt="SavvyCal" width="158" height="48" />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Section */}
         <section>

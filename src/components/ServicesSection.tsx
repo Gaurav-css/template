@@ -71,7 +71,7 @@ const TrackingChatbotInterface = () => {
             <div className="text-center mt-6 md:mt-0">
                 <p className="text-gray-500 dark:text-gray-400">Health & Activity</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
-                    How can I help you <span className="text-[#ED6C35] dark:text-[#ED6C35]">track their care?</span>
+                    How can I assist you with tracking <span className="text-[#ED6C35] dark:text-[#ED6C35]">your pet’s healthcare?</span>
                 </h2>
             </div>
             

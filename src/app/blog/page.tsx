@@ -3,24 +3,6 @@
 import React, { useState, useEffect } from 'react';
 
 // --- PLACEHOLDER COMPONENTS ---
-// In your actual app, you would import your own Navbar and Footer components.
-const Navbar = () => (
-    <nav className="bg-white dark:bg-[#2b2b2b] shadow-sm sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-                <div className="flex-shrink-0 font-bold text-xl text-[#ED6C35]">
-                    Hooman Pets Blog
-                </div>
-                <div>
-                    <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-[#ED6C35] transition-colors">
-                        Home
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-);
-
 const Footer = () => (
     <footer className="bg-white dark:bg-[#2b2b2b] border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500 dark:text-gray-400">
@@ -270,7 +252,7 @@ const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post:
       </div>
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{post.title}</h3>
       <p className="text-gray-600 dark:text-gray-300 text-sm flex-grow mb-4">{post.description}</p>
-      <div className="font-semibold text-[#ED6C35] flex items-center mt-auto">
+      <div className="font-semibold text-[#ED6C35] flex items-center mt-auto hover:opacity-80 transition-opacity">
         Read more <ArrowRightIcon />
       </div>
     </div>
@@ -294,7 +276,7 @@ const FeaturedBlogPost = ({ post, onSelectPost }: { post: Post, onSelectPost: (p
       </div>
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{post.title}</h2>
       <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">{post.description}</p>
-      <div className="font-semibold text-lg text-[#ED6C35] flex items-center">
+      <div className="font-semibold text-lg text-[#ED6C35] flex items-center hover:opacity-80 transition-opacity">
         Read more <ArrowRightIcon />
       </div>
     </div>
@@ -382,7 +364,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Table of Contents</h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   {['Section Two', 'Section Three', 'Section Four', 'Section Five', 'Section Six'].map(item => (
-                      <li key={item}><a href="#" className="hover:text-[#ED6C35]">{item}</a></li>
+                      <li key={item}><a href="#" className="hover:text-[#ED6C35] transition-colors">{item}</a></li>
                   ))}
               </ul>
           </aside>
@@ -402,7 +384,6 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <figure className="!my-12">
                   <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
                       {post.image ? (
-                          // Re-using the main post image for this example
                           <img src={post.image} alt="Article illustration" className="w-full h-full object-cover" />
                       ) : (
                           <ImageIcon className="h-16 w-16" />
@@ -440,8 +421,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <Navbar/>
-      <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200">
+      <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200 font-sans">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           {selectedPost ? (
             <BlogPostPage post={selectedPost} onGoBack={handleGoBack} />
