@@ -1,13 +1,36 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Footer from '@/components/Footer';
 
-import Navbar from '@/components/Navbar';
+// --- PLACEHOLDER COMPONENTS ---
+// In your actual app, you would import your own Navbar and Footer components.
+const Navbar = () => (
+    <nav className="bg-white dark:bg-[#2b2b2b] shadow-sm sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+                <div className="flex-shrink-0 font-bold text-xl text-[#ED6C35]">
+                    Hooman Pets Blog
+                </div>
+                <div>
+                    <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-[#ED6C35] transition-colors">
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+);
+
+const Footer = () => (
+    <footer className="bg-white dark:bg-[#2b2b2b] border-t border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500 dark:text-gray-400">
+            &copy; {new Date().getFullYear()} Hooman Pets. All Rights Reserved.
+        </div>
+    </footer>
+);
+
 
 // --- MOCK DATA ---
-// In a real Next.js app, you would fetch this from a CMS or API.
-
 type Post = {
     id: number;
     category: string;
@@ -247,7 +270,7 @@ const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post:
       </div>
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{post.title}</h3>
       <p className="text-gray-600 dark:text-gray-300 text-sm flex-grow mb-4">{post.description}</p>
-      <div className="font-semibold text-orange-500 dark:text-orange-400 flex items-center mt-auto">
+      <div className="font-semibold text-[#ED6C35] flex items-center mt-auto">
         Read more <ArrowRightIcon />
       </div>
     </div>
@@ -271,7 +294,7 @@ const FeaturedBlogPost = ({ post, onSelectPost }: { post: Post, onSelectPost: (p
       </div>
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{post.title}</h2>
       <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">{post.description}</p>
-      <div className="font-semibold text-lg text-orange-500 dark:text-orange-400 flex items-center">
+      <div className="font-semibold text-lg text-[#ED6C35] flex items-center">
         Read more <ArrowRightIcon />
       </div>
     </div>
@@ -290,15 +313,15 @@ const BlogList = ({ onSelectPost }: { onSelectPost: (post: Post) => void }) => {
   return (
     <>
       <header className="max-w-4xl mx-auto text-center mb-16">
-        <p className="text-orange-500 dark:text-orange-400 font-semibold mb-2">Blog</p>
+        <p className="text-[#ED6C35] font-semibold mb-2">Blog</p>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">Explore Our Latest Insights</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">Your go-to source for pet care advice</p>
       </header>
       {featuredPost && <section className="mb-20"><FeaturedBlogPost post={featuredPost} onSelectPost={onSelectPost} /></section>}
       <section className="mb-12">
-        <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-4 border-b border-gray-200 dark:border-gray-800 pb-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 border-b border-gray-200 dark:border-gray-800 pb-4">
           {categories.map(category => (
-            <button key={category} onClick={() => setActiveCategory(category)} className={`px-4 py-2 text-sm sm:text-base font-medium rounded-md transition-colors duration-200 ${activeCategory === category ? 'bg-orange-500 text-white shadow' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#3c3c3c]'}`}>
+            <button key={category} onClick={() => setActiveCategory(category)} className={`px-4 py-2 text-sm sm:text-base font-medium rounded-md transition-colors duration-200 ${activeCategory === category ? 'bg-[#ED6C35] text-white shadow' : 'text-gray-600 dark:text-gray-300 hover:bg-[#ED6C35]/20'}`}>
               {category}
             </button>
           ))}
@@ -322,7 +345,7 @@ const BlogList = ({ onSelectPost }: { onSelectPost: (post: Post) => void }) => {
 // --- BLOG POST DETAIL PAGE COMPONENT ---
 const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) => (
   <div className="max-w-7xl mx-auto">
-      <button onClick={onGoBack} className="mb-8 text-orange-500 dark:text-orange-400 hover:underline">
+      <button onClick={onGoBack} className="mb-8 text-[#ED6C35] hover:underline">
           &larr; Back to all articles
       </button>
       <header className="mb-12">
@@ -359,7 +382,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Table of Contents</h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   {['Section Two', 'Section Three', 'Section Four', 'Section Five', 'Section Six'].map(item => (
-                      <li key={item}><a href="#" className="hover:text-orange-500 dark:hover:text-orange-400">{item}</a></li>
+                      <li key={item}><a href="#" className="hover:text-[#ED6C35]">{item}</a></li>
                   ))}
               </ul>
           </aside>
@@ -391,7 +414,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <h5>Heading 5</h5>
               <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
               
-              <blockquote className="border-l-4 border-orange-500 pl-4 italic my-8">
+              <blockquote className="border-l-4 border-[#ED6C35] pl-4 italic my-8">
                   <p>"Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci. Tincidunt porttitor tempus."</p>
               </blockquote>
 
@@ -417,16 +440,17 @@ export default function BlogPage() {
 
   return (
     <>
-    <Navbar/>
-    <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200 font-sans">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        {selectedPost ? (
-          <BlogPostPage post={selectedPost} onGoBack={handleGoBack} />
-        ) : (
-          <BlogList onSelectPost={handleSelectPost} />
-        )}
+      <Navbar/>
+      <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200 font-sans">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          {selectedPost ? (
+            <BlogPostPage post={selectedPost} onGoBack={handleGoBack} />
+          ) : (
+            <BlogList onSelectPost={handleSelectPost} />
+          )}
+        </div>
       </div>
-    </div>
+      <Footer />
     </>
   );
 }
