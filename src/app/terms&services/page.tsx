@@ -1,9 +1,12 @@
 'use client';
 
+import Navbar from '@/components/Navbar';
 import React from 'react';
 
 const TermsOfService = () => {
   return (
+    <>
+    <Navbar />
     <div className="bg-gray-50 dark:bg-[#1a1a1a] font-sans text-gray-800 dark:text-zinc-300 antialiased">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="max-w-4xl mx-auto bg-white dark:bg-zinc-900 p-8 sm:p-10 rounded-2xl shadow-lg dark:border dark:border-zinc-800">
@@ -78,6 +81,7 @@ const TermsOfService = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

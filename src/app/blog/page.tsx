@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 
+import Navbar from '@/components/Navbar';
+
 // --- MOCK DATA ---
 // In a real Next.js app, you would fetch this from a CMS or API.
 
@@ -414,6 +416,8 @@ export default function BlogPage() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200 font-sans">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         {selectedPost ? (
@@ -423,5 +427,6 @@ export default function BlogPage() {
         )}
       </div>
     </div>
+    </>
   );
 }

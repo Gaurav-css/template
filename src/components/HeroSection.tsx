@@ -26,7 +26,7 @@ const HeroSection = () => {
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-<section className="bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 min-h-screen">
+<section className="bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 min-h-screen mt-20">
 
 
 

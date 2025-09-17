@@ -23,7 +23,7 @@ import EzraAiPage from "./EzraAiPage/page"
 export default function HomePage() {
   return (
     <div>
-      <Navbar />
+      
       <HeroSection />
       {/* < Layout/> */}
       
