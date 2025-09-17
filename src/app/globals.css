@@ -20,3 +20,7 @@ body {
 .animate-scroll {
   animation: scroll var(--scroll-duration, 30s) linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}

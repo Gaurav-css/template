@@ -45,6 +45,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
 
   return (
     <div
+      id="pricing"
       onMouseEnter={onMouseEnter}
       className={`relative bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 transition-all duration-300 ${
         isActive

@@ -70,7 +70,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Pricing', href: '/' },
+    { name: 'Pricing', href: '/#pricing' },
   ];
 
   const featuresLinks: DropdownLink[] = [
