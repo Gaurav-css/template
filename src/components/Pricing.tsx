@@ -2,7 +2,20 @@
 
 import React, { useState } from "react";
 import { Check } from "lucide-react";
-import Navbar from "./Navbar"; // import the Navbar
+
+// Dummy Navbar for demonstration purposes
+const Navbar = () => (
+  <nav className="bg-white dark:bg-[#1A1A1A] shadow-sm">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between h-16">
+        <div className="flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white">
+          Hooman Pets
+        </div>
+      </div>
+    </div>
+  </nav>
+);
+
 
 interface Price {
   monthly: number;
@@ -21,19 +34,22 @@ interface Plan {
 interface PricingCardProps {
   plan: Plan;
   isYearly: boolean;
-  isPopular: boolean;
+  isPopular: boolean; // For the text badge only
+  isActive: boolean; // For the ring/scale highlight
+  onMouseEnter: () => void; // Handler for hover
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular }) => {
+const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, isActive, onMouseEnter }) => {
   const price = isYearly ? plan.price.yearly : plan.price.monthly;
   const billingCycle = isYearly ? "/year" : "/month";
 
   return (
     <div
-      className={`relative bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 transition-all duration-300 hover:shadow-xl ${
-        isPopular
-          ? "ring-2 ring-orange-500 shadow-lg transform scale-105"
-          : "border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg"
+      onMouseEnter={onMouseEnter}
+      className={`relative bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 transition-all duration-300 ${
+        isActive
+          ? "ring-2 ring-orange-500 shadow-lg scale-105"
+          : "border border-gray-200 dark:border-gray-700 shadow-md"
       }`}
     >
       {isPopular && (
@@ -78,7 +94,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular }) 
 
       <button
         className={`w-full py-4 rounded-xl font-semibold text-sm transition-all duration-200 ${
-          isPopular
+          isActive
             ? "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105"
             : "bg-gray-100 hover:bg-gray-200 dark:bg-[#1A1A1A] dark:hover:bg-[#2B2B2B] text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600"
         }`}
@@ -91,6 +107,8 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular }) 
 
 const App: React.FC = () => {
   const [isYearly, setIsYearly] = useState<boolean>(false);
+  // State to track the currently active/hovered plan, defaults to "Pro"
+  const [activePlan, setActivePlan] = useState<string>("Pro");
 
   const plans: Plan[] = [
     {
@@ -136,6 +154,9 @@ const App: React.FC = () => {
       buttonText: "Contact Sales",
     },
   ];
+
+  // Find the default popular plan name
+  const defaultPopularPlan = plans.find(p => p.isPopular)?.name || plans[1].name;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300">
@@ -188,13 +209,18 @@ const App: React.FC = () => {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-center"
+          onMouseLeave={() => setActivePlan(defaultPopularPlan)} // Reset to default when mouse leaves the grid
+        >
           {plans.map((plan) => (
             <PricingCard
               key={plan.name}
               plan={plan}
               isYearly={isYearly}
-              isPopular={plan.isPopular || false}
+              isPopular={plan.isPopular || false} // For the badge
+              isActive={activePlan === plan.name} // For the highlight
+              onMouseEnter={() => setActivePlan(plan.name)} // Set active on hover
             />
           ))}
         </div>

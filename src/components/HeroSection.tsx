@@ -26,19 +26,16 @@ const HeroSection = () => {
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-<section className="bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 min-h-screen mt-20">
-
-
-
-
+      <section className="bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 min-h-screen mt-20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
 
             {/* Left Column: Text Content */}
             <div className="text-center lg:text-left px-2 sm:px-4 lg:px-0 order-2 lg:order-1">
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
+              {/* UPDATED H1 ELEMENT */}
+              <h1 className="text-[48px] font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
                 Revolutionising Pet Care with{' '}
-                <span className="text-orange-500 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+                <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
                   AI Technology
                 </span>
               </h1>
@@ -48,11 +45,10 @@ const HeroSection = () => {
                 needs.
               </p>
               <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
-                <button className="w-full sm:w-auto flex items-center justify-center px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-medium rounded-lg sm:rounded-xl text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                <button className="w-full sm:w-auto flex items-center justify-center px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-medium rounded-lg sm:rounded-xl text-white bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] hover:from-[#d95b2a] hover:to-[#c35025] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                   Join
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </button>
-                
               </div>
             </div>
 
@@ -70,7 +66,7 @@ const HeroSection = () => {
                 <div
                   className="absolute inset-0 z-10 pointer-events-none hidden dark:block"
                   style={{
-                    background: 'linear-gradient(to bottom, rgba(17,24,39,1) 0%, transparent 15%, transparent 85%, rgba(17,24,39,1) 100%)'
+                    background: 'linear-gradient(to bottom, rgba(26,26,26,1) 0%, transparent 15%, transparent 85%, rgba(26,26,26,1) 100%)'
                   }}
                 ></div>
 

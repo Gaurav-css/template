@@ -1,218 +1,3 @@
-// 'use client'
-
-// import Link from "next/link";
-// import React, { useState, useEffect, useRef } from 'react';
-// import { Lightbulb, Heart, Users, Stethoscope } from 'lucide-react';
-
-// // Define the type for the component's props
-// type FeatureCardProps = {
-//   icon: React.ReactNode;
-//   title: string;
-//   children: React.ReactNode;
-//   isSmallScreen: boolean;
-//   index: number;
-// };
-
-// /**
-//  * FeatureCard Component
-//  * This component uses Intersection Observer for an initial reveal animation.
-//  * On small screens, it uses sticky positioning to create a stacked card effect.
-//  */
-// const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmallScreen, index }) => {
-//   const [isVisible, setIsVisible] = useState(false);
-//   // Specify that the ref is for an HTMLDivElement
-//   const cardRef = useRef<HTMLDivElement>(null);
-
-//   // Intersection Observer for the initial reveal animation
-//   useEffect(() => {
-//     const options = {
-//       threshold: 0.1,
-//       rootMargin: "0px 0px -50px 0px" // Triggers animation a bit sooner
-//     };
-
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setIsVisible(true);
-//           observer.unobserve(entry.target);
-//         }
-//       },
-//       options
-//     );
-
-//     const currentCardRef = cardRef.current;
-//     if (currentCardRef) {
-//       observer.observe(currentCardRef);
-//     }
-
-//     return () => {
-//       if (currentCardRef) {
-//         observer.unobserve(currentCardRef);
-//       }
-//     };
-//   }, []);
-
-//   // Style for the card content itself (the animated part)
-//   // Explicitly type the style object as React.CSSProperties
-//   const cardContentStyle: React.CSSProperties = {
-//     transition: 'opacity 700ms ease-out, transform 700ms ease-out',
-//     opacity: isVisible ? 1 : 0,
-//     transform: `translateY(${isVisible ? 0 : 20}px)`,
-//   };
-
-//   // The wrapper div gets the sticky positioning on small screens
-//   // Explicitly type the style object as React.CSSProperties
-//   const wrapperStyle: React.CSSProperties = isSmallScreen ? {
-//     position: 'sticky', // This is now correctly typed as a valid 'Position' property
-//     top: `calc(8rem + ${index * 2}rem)`,
-//     zIndex: index,
-//     marginBottom: '1rem',
-//   } : {
-//     marginBottom: '2rem',
-//   };
-
-
-//   return (
-//     <div ref={cardRef} style={wrapperStyle}>
-//       <div
-//         style={cardContentStyle}
-//         className="bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 flex items-start space-x-6 hover:shadow-lg dark:hover:border-gray-600"
-//       >
-//         <div className="bg-gray-100 dark:bg-gray-800/50 p-3 rounded-full">
-//           {icon}
-//         </div>
-//         <div>
-//           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">{title}</h3>
-//           <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-//             {children}
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// // Data for the feature cards, making it easier to manage
-// const allFeatures = [
-//   { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
-//   { id: 'tracking', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
-//   { id: 'community', icon: <Users className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
-//   { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
-//   { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
-//   { id: 'activity', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
-// ];
-
-
-// export default function App() {
-//   const [isSmallScreen, setIsSmallScreen] = useState(false);
-//   const [visibleCardCount, setVisibleCardCount] = useState(allFeatures.length);
-//   // Specify that the ref is for an HTMLDivElement
-//   const loadMoreRef = useRef<HTMLDivElement>(null);
-
-//   // Effect to detect screen size and set initial card visibility
-//   useEffect(() => {
-//     const checkScreenSize = () => {
-//       const isSmall = window.innerWidth < 1024; // Tailwind's `lg` breakpoint
-//       setIsSmallScreen(isSmall);
-//       setVisibleCardCount(isSmall ? 2 : allFeatures.length);
-//     };
-
-//     checkScreenSize(); // Check on initial render
-//     window.addEventListener('resize', checkScreenSize);
-//     return () => window.removeEventListener('resize', checkScreenSize);
-//   }, []);
-
-//   // Effect to handle revealing more cards using Intersection Observer
-//   useEffect(() => {
-//     if (!isSmallScreen || visibleCardCount >= allFeatures.length) {
-//       return;
-//     }
-
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setVisibleCardCount(prevCount => prevCount + 1);
-//         }
-//       },
-//       { rootMargin: '0px 0px 200px 0px' }
-//     );
-
-//     const currentRef = loadMoreRef.current;
-//     if (currentRef) {
-//       observer.observe(currentRef);
-//     }
-
-//     return () => {
-//       if (currentRef) {
-//         observer.unobserve(currentRef);
-//       }
-//     };
-//   }, [isSmallScreen, visibleCardCount]);
-
-
-//   return (
-//     <div className="bg-gray-50 dark:bg-[#1A1A1A] font-sans text-gray-800 dark:text-gray-200">
-//       <div className="container mx-auto max-w-7xl px-4">
-//         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-
-//           {/* --- Left Column (Sticky on large screens) --- */}
-//           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center py-16 lg:py-24">
-//             <div className="space-y-6">
-//               <span className="text-sm font-bold  text-orange-600 dark:text-orange-400">Features</span>
-//               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-//                 Why Choose Hooman for Your Pet's Health?
-//               </h1>
-//               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-//                 At Hooman, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
-//               </p>
-
-//               <div className="flex items-center space-x-4 pt-4">
-//                 {/* --- UPDATED BUTTON --- */}
-//                 <Link
-//                   href="/blog"
-//                   className="inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-md shadow-sm hover:bg-orange-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-800"
-//                 >
-//                   Learn More
-//                 </Link>
-
-//                 {/* Join */}
-//                 <Link
-//                   href="#"
-//                   className="px-6 py-3 text-orange-600 dark:text-orange-400 font-semibold rounded-md hover:text-orange-700 dark:hover:text-orange-300 transition-colors duration-300 group"
-//                 >
-//                   Join{" "}
-//                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-//                     &rarr;
-//                   </span>
-//                 </Link>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* --- Right Column (Scrollable) --- */}
-//           <div className="pt-0 lg:pt-32 pb-32">
-//             {allFeatures.slice(0, visibleCardCount).map((feature, index) => (
-//               <FeatureCard
-//                 key={feature.id}
-//                 icon={feature.icon}
-//                 title={feature.title}
-//                 isSmallScreen={isSmallScreen}
-//                 index={index}
-//               >
-//                 {feature.children}
-//               </FeatureCard>
-//             ))}
-
-//             {isSmallScreen && visibleCardCount < allFeatures.length && (
-//               <div ref={loadMoreRef} />
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 'use client'
 
 import Link from "next/link";
@@ -309,12 +94,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
 
 // Data for the feature cards, making it easier to manage
 const allFeatures = [
-  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
-  { id: 'tracking', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
-  { id: 'community', icon: <Users className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
-  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
-  { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
-  { id: 'activity', icon: <Heart className="w-6 h-6 text-orange-600 dark:text-orange-400" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
+  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
+  { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
+  { id: 'community', icon: <Users className="w-6 h-6 text-[#ED6C35]" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
+  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-[#ED6C35]" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
+  { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
+  { id: 'activity', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
 ];
 
 
@@ -373,7 +158,7 @@ export default function App() {
           {/* --- Left Column (Sticky on large screens) --- */}
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center py-16 lg:py-24">
             <div className="space-y-6">
-              <span className="text-sm font-bold  text-orange-600 dark:text-orange-400">Features</span>
+              <span className="text-sm font-bold text-[#ED6C35]">Features</span>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Why Choose Hooman for Your Pet's Health?
               </h1>
@@ -385,7 +170,7 @@ export default function App() {
                 {/* --- UPDATED BUTTON --- */}
                 <Link
                   href="/blog"
-                  className="inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-md shadow-sm hover:bg-orange-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-800"
+                  className="inline-block px-6 py-3 bg-[#ED6C35] text-white font-semibold rounded-md shadow-sm hover:bg-[#d95b2a] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ED6C35] dark:focus:ring-offset-gray-800"
                 >
                   Learn More
                 </Link>
@@ -393,7 +178,7 @@ export default function App() {
                 {/* Join */}
                 <Link
                   href="#"
-                  className="px-6 py-3 text-orange-600 dark:text-orange-400 font-semibold rounded-md hover:text-orange-700 dark:hover:text-orange-300 transition-colors duration-300 group"
+                  className="px-6 py-3 text-[#ED6C35] font-semibold rounded-md hover:text-[#d95b2a] transition-colors duration-300 group"
                 >
                   Join{" "}
                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">

@@ -6,7 +6,7 @@ const EzraAiPage = () => {
   return (
     <div className="bg-white dark:bg-[#1a1a1a] font-sans text-slate-700 dark:text-zinc-300 antialiased">
       {/* Hero Section */}
-      <header className="relative py-24 sm:py-32 overflow-hidden">
+      <header className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-0 w-full h-full bg-slate-50 dark:bg-[#1a1a1a]"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-gradient-to-br from-orange-200 via-purple-200 to-transparent dark:from-orange-900/40 dark:via-purple-900/30 rounded-full blur-3xl opacity-50 animate-spin-slow"></div>
@@ -17,16 +17,17 @@ const EzraAiPage = () => {
               <Sparkles className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               <span>The Future of Pet Intelligence</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
+            {/* --- Responsive Typography Adjustments --- */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
               Meet Ezra AI: The Future of Proactive Pet Care.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
               Ezra AI is our advanced intelligence engine designed to analyze your pet's data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up [animation-delay:600ms]">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up [animation-delay:600ms]">
               <a
                 href="#download-app"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md bg-orange-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-orange-500/30"
+                className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-md bg-orange-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-orange-500/30"
               >
                 <span className="absolute h-0 w-0 rounded-full bg-orange-500 transition-all duration-300 ease-in-out group-hover:h-56 group-hover:w-56"></span>
                 <span className="relative">Get The App</span>
@@ -39,7 +40,8 @@ const EzraAiPage = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-28 sm:space-y-32">
+      {/* --- Adjusted Padding for Better Mobile View --- */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24 sm:space-y-32">
         {/* How It Works Section */}
         <section className="text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">How Ezra AI Works</h2>
@@ -125,7 +127,7 @@ const EzraAiPage = () => {
         </section>
 
         {/* The Science Section */}
-        <section className="bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl p-8 sm:p-12">
+        <section className="bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">The Science Behind Ezra AI</h2>
@@ -225,7 +227,7 @@ const EzraAiPage = () => {
 
         {/* Download App Section */}
         <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
-          <div className="container mx-auto px-8 py-16 sm:py-24">
+          <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
@@ -244,7 +246,8 @@ const EzraAiPage = () => {
                       <p className="text-lg font-semibold">App Store</p>
                     </div>
                   </a>
-                  {/* <a href="#" className="inline-flex items-center justify-center gap-x-3 rounded-lg bg-slate-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-slate-900 transition hover:opacity-90">
+                  {/* Uncomment this when the Google Play link is available
+                  <a href="#" className="inline-flex items-center justify-center gap-x-3 rounded-lg bg-slate-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-slate-900 transition hover:opacity-90">
                     <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22.848 11.399L3.849 0.904C2.943 0.403 2.115 0.81 1.954 1.761L1.952 1.77L5.78 12L1.952 22.23C1.802 23.144 2.942 23.593 3.849 23.097L22.848 12.6C23.65 12.164 23.65 11.836 22.848 11.399Z" />
                       <path d="M9.608 15.35L5.78 12L9.608 8.65L17.585 12L9.608 15.35Z" fill="#334155" className="dark:fill-white" />
@@ -253,7 +256,8 @@ const EzraAiPage = () => {
                       <p className="text-xs">GET IT ON</p>
                       <p className="text-lg font-semibold">Google Play</p>
                     </div>
-                  </a> */}
+                  </a>
+                  */}
                 </div>
               </div>
               <div className="hidden lg:flex items-center justify-center">

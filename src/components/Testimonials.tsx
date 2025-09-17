@@ -128,7 +128,8 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gray-50 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black font-sans text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden">
+    // --- Margin added here with pb-16 ---
+    <div className="min-h-screen w-full bg-gray-50 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black font-sans text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-12">

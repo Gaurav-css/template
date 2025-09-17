@@ -55,7 +55,7 @@ const CommunityWaitlist = () => {
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight max-w-4xl text-shadow-lg">
           The Ultimate Hub for <br className="hidden sm:inline" /> 
-          <span className="bg-gradient-to-r from-orange-300 to-orange-500 bg-clip-text text-transparent">Happy Paws</span> is Coming Soon.
+          <span className="bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">Happy Paws</span> is Coming Soon.
         </h1>
 
         {/* Description */}
@@ -76,7 +76,7 @@ const CommunityWaitlist = () => {
               onSubmit={handleSubmit}
             >
               <input
-                className="flex-1 h-14 w-full rounded-md border border-gray-300 bg-white/80 px-4 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all backdrop-blur-md dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder:text-gray-400"
+                className="flex-1 h-14 w-full rounded-md border border-gray-300 bg-white/80 px-4 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED6C35] focus:border-transparent transition-all backdrop-blur-md dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder:text-gray-400"
                 placeholder="your-best-friend@email.com"
                 type="email"
                 value={email}
@@ -85,7 +85,7 @@ const CommunityWaitlist = () => {
                 aria-label="Email Address"
               />
               <button
-                className="inline-flex items-center justify-center h-14 rounded-md bg-orange-400 px-8 text-base font-semibold text-gray-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 disabled:opacity-60 disabled:pointer-events-none"
+                className="inline-flex items-center justify-center h-14 rounded-md bg-[#ED6C35] px-8 text-base font-semibold text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED6C35] disabled:opacity-60 disabled:pointer-events-none"
                 type="submit"
                 disabled={status === 'loading'}
               >
