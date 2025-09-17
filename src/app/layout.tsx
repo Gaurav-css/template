@@ -1,13 +1,16 @@
 // app/layout.tsx
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Urbanist } from "next/font/google"
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] })
+const urbanist = Urbanist({ 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "hooman-group-website",
@@ -21,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={urbanist.className}>
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
