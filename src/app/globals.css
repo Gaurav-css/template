@@ -5,6 +5,7 @@ body {
   /* This sets a white background for light mode and a deep gray for dark mode */
   @apply bg-white dark:bg-[#121212];
   @apply transition-colors duration-300;
+   @apply font-urbanist;
 }
 
 /* Keep the keyframes the same */

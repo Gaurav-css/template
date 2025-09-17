@@ -1,4 +1,3 @@
-// app/layout.tsx
 import "./globals.css"
 import type { Metadata } from "next"
 import { Urbanist } from "next/font/google"
@@ -10,6 +9,7 @@ import Footer from "@/components/Footer";
 const urbanist = Urbanist({ 
   subsets: ['latin'],
   display: 'swap',
+  variable: "--font-urbanist",
 });
 
 export const metadata: Metadata = {
@@ -23,14 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={urbanist.className}>
+    <html lang="en" suppressHydrationWarning className={urbanist.variable}>
+      <body>
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
-          {/* <main className="pt-20">{children}</main> */}
           <ScrollToTop />
-          <Footer />   {/* ✅ Add Footer here */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
