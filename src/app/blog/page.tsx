@@ -38,7 +38,7 @@ const blogPosts: Post[] = [
     description: 'Discover the best diets for your furry friend, from puppies to seniors.',
     author: 'John Smith',
     publishDate: '15 January 2025',
-    image: '/img/pets/dog-eating.jpeg',
+    image: '/food.jpg',
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const blogPosts: Post[] = [
     description: 'Learn to interpret your cat\'s signals and moods for a stronger bond.',
     author: 'Dr. Jane Doe',
     publishDate: '10 January 2025',
-    image: '/img/pets/curious-cat.jpeg',
+    image: '/cat.png',
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const blogPosts: Post[] = [
     description: 'Make puppy training fun and effective with these expert tips.',
     author: 'Mark Evans',
     publishDate: '5 January 2025',
-    image: '/img/pets/puppy-training.jpeg',
+    image: '/Train2.jpeg',
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const blogPosts: Post[] = [
     description: 'Stay alert to your pet\'s health with these signs and know when to see a vet.',
     author: 'Dr. Jane Doe',
     publishDate: '28 December 2024',
-    image: '/img/pets/sick-pet-at-vet.jpeg',
+    image: '/illeness.jpg',
   },
   {
     id: 6,
@@ -88,7 +88,7 @@ const blogPosts: Post[] = [
     description: 'Whip up a treat with these nutritious and delicious homemade recipes.',
     author: 'Sarah Lee',
     publishDate: '12 December 2024',
-    image: '/img/pets/homemade-dog-treats.jpeg',
+    image: '/food2.jpg',
   },
   {
     id: 8,
@@ -245,7 +245,7 @@ const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post:
       </div>
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{post.title}</h3>
       <p className="text-gray-600 dark:text-gray-300 text-sm flex-grow mb-4">{post.description}</p>
-      <div className="font-semibold text-blue-600 dark:text-blue-400 flex items-center mt-auto">
+      <div className="font-semibold text-orange-500 dark:text-orange-400 flex items-center mt-auto">
         Read more <ArrowRightIcon />
       </div>
     </div>
@@ -269,7 +269,7 @@ const FeaturedBlogPost = ({ post, onSelectPost }: { post: Post, onSelectPost: (p
       </div>
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{post.title}</h2>
       <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">{post.description}</p>
-      <div className="font-semibold text-lg text-blue-600 dark:text-blue-400 flex items-center">
+      <div className="font-semibold text-lg text-orange-500 dark:text-orange-400 flex items-center">
         Read more <ArrowRightIcon />
       </div>
     </div>
@@ -288,7 +288,7 @@ const BlogList = ({ onSelectPost }: { onSelectPost: (post: Post) => void }) => {
   return (
     <>
       <header className="max-w-4xl mx-auto text-center mb-16">
-        <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">Blog</p>
+        <p className="text-orange-500 dark:text-orange-400 font-semibold mb-2">Blog</p>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">Explore Our Latest Insights</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">Your go-to source for pet care advice</p>
       </header>
@@ -296,7 +296,7 @@ const BlogList = ({ onSelectPost }: { onSelectPost: (post: Post) => void }) => {
       <section className="mb-12">
         <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-4 border-b border-gray-200 dark:border-gray-800 pb-4">
           {categories.map(category => (
-            <button key={category} onClick={() => setActiveCategory(category)} className={`px-4 py-2 text-sm sm:text-base font-medium rounded-md transition-colors duration-200 ${activeCategory === category ? 'bg-blue-600 text-white shadow' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#3c3c3c]'}`}>
+            <button key={category} onClick={() => setActiveCategory(category)} className={`px-4 py-2 text-sm sm:text-base font-medium rounded-md transition-colors duration-200 ${activeCategory === category ? 'bg-orange-500 text-white shadow' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#3c3c3c]'}`}>
               {category}
             </button>
           ))}
@@ -320,7 +320,7 @@ const BlogList = ({ onSelectPost }: { onSelectPost: (post: Post) => void }) => {
 // --- BLOG POST DETAIL PAGE COMPONENT ---
 const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) => (
   <div className="max-w-7xl mx-auto">
-      <button onClick={onGoBack} className="mb-8 text-blue-600 dark:text-blue-400 hover:underline">
+      <button onClick={onGoBack} className="mb-8 text-orange-500 dark:text-orange-400 hover:underline">
           &larr; Back to all articles
       </button>
       <header className="mb-12">
@@ -357,7 +357,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Table of Contents</h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   {['Section Two', 'Section Three', 'Section Four', 'Section Five', 'Section Six'].map(item => (
-                      <li key={item}><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400">{item}</a></li>
+                      <li key={item}><a href="#" className="hover:text-orange-500 dark:hover:text-orange-400">{item}</a></li>
                   ))}
               </ul>
           </aside>
@@ -375,7 +375,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
               
               <figure className="!my-12">
-                   <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
                       {post.image ? (
                           // Re-using the main post image for this example
                           <img src={post.image} alt="Article illustration" className="w-full h-full object-cover" />
@@ -389,7 +389,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <h5>Heading 5</h5>
               <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
               
-              <blockquote className="border-l-4 border-blue-500 pl-4 italic my-8">
+              <blockquote className="border-l-4 border-orange-500 pl-4 italic my-8">
                   <p>"Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci. Tincidunt porttitor tempus."</p>
               </blockquote>
 

@@ -130,7 +130,7 @@ const Navbar = () => {
     <div className="p-4">
       <div className="space-y-2">
         {items.map((item) => (
-          <a key={item.name} href={item.href} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#3C3C3C] transition-colors duration-200 group">
+          <a key={item.name} href={item.href} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#1c1c1e] transition-colors duration-200 group">
             <item.icon className="h-6 w-6 text-orange-600 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-gray-900 dark:text-gray-200 group-hover:text-orange-600 dark:group-hover:text-orange-500">{item.name}</div>
@@ -144,8 +144,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* --- MODIFIED NAVBAR WITH GLASSY EFFECT --- */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-lg font-sans border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-300">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#1c1c1e]/80 backdrop-blur-lg font-sans border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex-shrink-0">
@@ -256,7 +255,7 @@ const Navbar = () => {
                 <h3 className="px-4 text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{section.title}</h3>
                 <div className="mt-2 space-y-1">
                   {section.links.map(link => (
-                    <a key={link.name} href={link.href} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3C3C3C] px-4 py-2.5 rounded-md font-medium group transition-all duration-200">
+                    <a key={link.name} href={link.href} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#1c1c1e] px-4 py-2.5 rounded-md font-medium group transition-all duration-200">
                       <link.icon className="h-5 w-5 text-gray-500 dark:text-gray-400 group-hover:text-orange-600 transition-colors" />
                       <span>{link.name}</span>
                     </a>

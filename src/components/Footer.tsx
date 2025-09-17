@@ -65,7 +65,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-zinc-800 transition-colors duration-300">
+    <footer className="bg-white dark:bg-[#000000] border-t border-gray-200 dark:border-zinc-800 transition-colors duration-300">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -158,7 +158,6 @@ const Footer = () => {
             <div className="text-gray-600 dark:text-gray-300 text-sm text-center sm:text-left">
               © {new Date().getFullYear()} Hooman Group. All rights reserved.
             </div>
-
 
             <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
               <span>Made with</span>

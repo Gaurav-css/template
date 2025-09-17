@@ -88,7 +88,7 @@ const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     title: "Understanding Your Pet's Nutritional Needs",
     description: 'Explore the best diets for your furry friends and how to ensure they live a long, healthy life.',
-    imageUrl: 'Dog.png',
+    imageUrl: 'food.jpg',
     icon: (
       <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
@@ -103,7 +103,7 @@ const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     title: 'Top Tips for Successful Potty Training',
     description: 'Learn effective, positive reinforcement strategies for successful and stress-free potty training.',
-    imageUrl: 'Dog.png',
+    imageUrl: 'train.jpg',
     icon: (
       <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
@@ -117,7 +117,7 @@ const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     title: 'Signs Your Pet Needs to See a Vet',
     description: 'Recognize the subtle but crucial warning signs for your pet’s health to get them timely care.',
-    imageUrl: 'Dog.png',
+    imageUrl: 'doc.png',
     icon: (
       <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
     ),
@@ -233,7 +233,7 @@ export default function App() {
                   <div className="p-5 flex flex-col flex-grow">
                     <div>
                       <span className={`text-sm font-semibold ${post.category === 'Health' ? 'text-green-500' :
-                          post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
+                        post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
                         }`}>
                         {post.category}
                       </span>
@@ -285,7 +285,7 @@ export default function App() {
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
                     <span className={`font-semibold ${post.category === 'Health' ? 'text-green-500' :
-                        post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
+                      post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
                       }`}>{post.category}</span>
                     <span className="mx-2">·</span>
                     <span>{post.readTime}</span>
@@ -296,7 +296,7 @@ export default function App() {
                   <p className="text-gray-600 dark:text-gray-300 mb-4 text-base">{post.description}</p>
                   <a
                     href="#"
-                    className="mt-auto inline-flex items-center font-semibold text-orange-600 dark:text-orange-400 group-hover:text-orange-800 dark:group-hover:text-orange-300 transition-colors duration-200"
+                    className="mt-auto inline-flex items-center font-semibold text-orange-500 dark:text-orange-500 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-200"
                   >
                     Read more
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -310,7 +310,7 @@ export default function App() {
           <div className="text-center mt-16">
             <Link
               href="/blog"
-              className="inline-block bg-orange-800 dark:bg-orange-700 text-white dark:text-orange-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-orange dark:hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-orange-900 dark:focus:ring-grorangeay-400 transition-all duration-300 transform hover:scale-105"
+              className="inline-block bg-orange-500 dark:bg-orange-500 text-white dark:text-orange-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-orange dark:hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-orange-900 dark:focus:ring-grorangeay-400 transition-all duration-300 transform hover:scale-105"
             >
               View All Articles
             </Link>
@@ -343,8 +343,8 @@ export default function App() {
 
             <div className="flex justify-center my-6">
               <div className={`${selectedPost.category === 'Health' ? 'bg-green-100 dark:bg-green-900/50' :
-                  selectedPost.category === 'Training' ? 'bg-blue-100 dark:bg-blue-900/50' :
-                    'bg-red-100 dark:bg-red-900/50'
+                selectedPost.category === 'Training' ? 'bg-blue-100 dark:bg-blue-900/50' :
+                  'bg-red-100 dark:bg-red-900/50'
                 } p-4 rounded-full`}>
                 {selectedPost.icon}
               </div>
@@ -393,4 +393,3 @@ export default function App() {
     </div>
   );
 }
-

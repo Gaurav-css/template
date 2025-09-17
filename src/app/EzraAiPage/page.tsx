@@ -9,15 +9,15 @@ const EzraAiPage = () => {
       <header className="relative py-24 sm:py-32 overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-0 w-full h-full bg-slate-50 dark:bg-[#1a1a1a]"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-gradient-to-br from-blue-200 via-purple-200 to-transparent dark:from-blue-900/40 dark:via-purple-900/30 rounded-full blur-3xl opacity-50 animate-spin-slow"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-gradient-to-br from-orange-200 via-purple-200 to-transparent dark:from-orange-900/40 dark:via-purple-900/30 rounded-full blur-3xl opacity-50 animate-spin-slow"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 mb-6 animate-fade-in-up">
-              <Sparkles className="w-4 h-4 text-yellow-500 dark:text-yellow-400" />
+            <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-6 animate-fade-in-up">
+              <Sparkles className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               <span>The Future of Pet Intelligence</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-fade-in-up [animation-delay:200ms]">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
               Meet Ezra AI: The Future of Proactive Pet Care.
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
@@ -51,21 +51,21 @@ const EzraAiPage = () => {
               </svg>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
-              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 ring-1 ring-blue-200 dark:ring-blue-400/30">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
                 <PawPrint className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">1. Input Pet Data</h3>
               <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Easily log your pet’s daily activities, diet, behavior, and health records in the Hooman app.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
-              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 ring-1 ring-blue-200 dark:ring-blue-400/30">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
                 <BrainCircuit className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">2. Ezra AI Analyzes</h3>
               <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Our proprietary algorithms process this data, identifying patterns, trends, and potential areas for improvement.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
-              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 ring-1 ring-blue-200 dark:ring-blue-400/30">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
                 <BarChart className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">3. Receive Insights</h3>
@@ -77,44 +77,46 @@ const EzraAiPage = () => {
         {/* Key Features Section */}
         <section id="features">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">Advanced Features for Unmatched Care</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
+              Advanced Features for Unmatched Care
+            </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
               Ezra AI is your partner in making informed decisions for every aspect of your pet's life.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
-              icon={<HeartPulse className="h-8 w-8 text-blue-600 dark:text-blue-400" />}
+              icon={<HeartPulse className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Personalized Health Insights"
               description="Analyzes health logs and activity levels to suggest wellness improvements and highlight trends for your vet."
               animationDelay="200ms"
             />
             <FeatureCard
-              icon={<Bell className="h-8 w-8 text-blue-600 dark:text-blue-400" />}
+              icon={<Bell className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Smart Reminders"
               description="Predictive reminders for vaccinations, grooming, and medication based on your pet's specific profile."
               animationDelay="300ms"
             />
             <FeatureCard
-              icon={<Bot className="h-8 w-8 text-blue-600 dark:text-blue-400" />}
+              icon={<Bot className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Behavioral Analysis"
               description="Identifies shifts in behavior patterns that might indicate stress or health issues, helping you intervene early."
               animationDelay="400ms"
             />
             <FeatureCard
-              icon={<BrainCircuit className="h-8 w-8 text-blue-600 dark:text-blue-400" />}
+              icon={<BrainCircuit className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Nutritional Recommendations"
               description="Get AI-driven suggestions for diet adjustments based on your pet’s breed, age, and activity level."
               animationDelay="500ms"
             />
             <FeatureCard
-              icon={<ShieldCheck className="h-8 w-8 text-blue-600 dark:text-blue-400" />}
+              icon={<ShieldCheck className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Proactive Risk Assessment"
               description="Leverages breed-specific data to flag potential genetic health risks, empowering you with knowledge."
               animationDelay="600ms"
             />
             <FeatureCard
-              icon={<Sparkles className="h-8 w-8 text-blue-600 dark:text-blue-400" />}
+              icon={<Sparkles className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Veterinarian Connect"
               description="Generate comprehensive health reports at the tap of a button to share with your veterinarian."
               animationDelay="700ms"
@@ -132,18 +134,18 @@ const EzraAiPage = () => {
               </p>
               <ul className="mt-8 space-y-4 text-slate-700 dark:text-zinc-300">
                 <li className="flex items-start gap-x-3">
-                  <ShieldCheck className="mt-1 h-5 w-5 flex-none text-blue-600 dark:text-blue-500" />
+                  <ShieldCheck className="mt-1 h-5 w-5 flex-none text-orange-600 dark:text-orange-500" />
                   <span><strong>Data Privacy First:</strong> Your personal and pet data is encrypted and anonymized before being used for model training.</span>
                 </li>
                 <li className="flex items-start gap-x-3">
-                  <BrainCircuit className="mt-1 h-5 w-5 flex-none text-blue-600 dark:text-blue-500" />
+                  <BrainCircuit className="mt-1 h-5 w-5 flex-none text-orange-600 dark:text-orange-500" />
                   <span><strong>Continuous Learning:</strong> Ezra AI constantly evolves. It gets smarter and more accurate with every piece of data.</span>
                 </li>
               </ul>
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-72 h-72">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/50 dark:to-purple-900/40 rounded-full blur-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-purple-100 dark:from-orange-900/50 dark:to-purple-900/40 rounded-full blur-2xl"></div>
                 <BrainCircuit className="relative w-full h-full text-slate-400 dark:text-zinc-500 opacity-60" />
               </div>
             </div>
@@ -167,7 +169,9 @@ const EzraAiPage = () => {
         {/* Testimonials Section */}
         <section>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">Trusted by Pet Lovers</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
+              Trusted by Pet Lovers
+            </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
               Hear what our early adopters and veterinary advisors are saying about the potential of Ezra AI.
             </p>
@@ -224,7 +228,7 @@ const EzraAiPage = () => {
           <div className="container mx-auto px-8 py-16 sm:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
                   Get Started with Hooman Today
                 </h2>
                 <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto lg:mx-0">
@@ -271,10 +275,10 @@ const EzraAiPage = () => {
 const FeatureCard = ({ icon, title, description, animationDelay }: { icon: React.ReactNode; title: string; description: string; animationDelay?: string; }) => {
   return (
     <div
-      className="group relative bg-white dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:bg-white dark:hover:bg-zinc-900 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up"
+      className="group relative bg-white dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-white dark:hover:bg-zinc-900 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up"
       style={{ animationDelay: animationDelay || '0s' }}
     >
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-transparent to-blue-500/10 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-transparent to-orange-500/10 dark:to-orange-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
       <div className="relative">
         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 dark:bg-zinc-800">
           {icon}

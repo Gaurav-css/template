@@ -24,7 +24,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <Navbar />
-          <main className="pt-20">{children}</main>
+          <main>{children}</main>
+          {/* <main className="pt-20">{children}</main> */}
           <ScrollToTop />
           <Footer />   {/* ✅ Add Footer here */}
         </ThemeProvider>

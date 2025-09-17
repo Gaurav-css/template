@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 
+// NOTE: This component assumes you have Tailwind CSS dark mode configured to 'class'.
+// A theme-switcher in your app should add/remove the 'dark' class from the <html> tag.
+
 const CommunityWaitlist = () => {
   const [email, setEmail] = useState('');
   // Status can be: 'idle', 'loading', 'success', 'error'
@@ -40,30 +43,23 @@ const CommunityWaitlist = () => {
   };
 
   return (
-    <section className="relative flex items-center justify-center min-h-screen text-white overflow-hidden">
-      {/* Background Image & Overlay */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1548681528-6a5c45b66b42?q=80&w=2070&auto=format&fit=crop')" }}
-      ></div>
-      <div className="absolute inset-0 z-10 bg-black/60 backdrop-blur-sm"></div>
-
+    <section className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gray-50 text-gray-900 dark:bg-[#1a1a1a] dark:text-white transition-colors duration-300">
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center space-y-8 text-center px-4 py-16">
         
         {/* Tagline */}
-        <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
+        <div className="inline-flex items-center rounded-full border border-gray-900/10 bg-gray-900/5 px-4 py-1.5 text-sm font-medium backdrop-blur-md dark:border-white/20 dark:bg-white/10">
           🐾 Paws & Friends
         </div>
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight max-w-4xl text-shadow-lg">
           The Ultimate Hub for <br className="hidden sm:inline" /> 
-          <span className="bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent">Happy Paws</span> is Coming Soon.
+          <span className="bg-gradient-to-r from-orange-300 to-orange-500 bg-clip-text text-transparent">Happy Paws</span> is Coming Soon.
         </h1>
 
         {/* Description */}
-        <p className="max-w-2xl text-lg md:text-xl text-gray-300">
+        <p className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-300">
           Be the first to know! Join our waitlist for exclusive updates, early access to our platform, 
           and special content crafted for you and your beloved pets.
         </p>
@@ -72,7 +68,7 @@ const CommunityWaitlist = () => {
         <div className="w-full max-w-md">
           {status === 'success' ? (
             <div className="text-center p-6 bg-green-500/10 rounded-lg border border-green-500/30 backdrop-blur-md">
-              <p className="text-green-300 text-lg font-semibold">{message}</p>
+              <p className="text-green-800 dark:text-green-300 text-lg font-semibold">{message}</p>
             </div>
           ) : (
             <form
@@ -80,7 +76,7 @@ const CommunityWaitlist = () => {
               onSubmit={handleSubmit}
             >
               <input
-                className="flex-1 h-14 w-full rounded-md border border-white/30 bg-white/10 px-4 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all backdrop-blur-md"
+                className="flex-1 h-14 w-full rounded-md border border-gray-300 bg-white/80 px-4 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all backdrop-blur-md dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder:text-gray-400"
                 placeholder="your-best-friend@email.com"
                 type="email"
                 value={email}
@@ -89,7 +85,7 @@ const CommunityWaitlist = () => {
                 aria-label="Email Address"
               />
               <button
-                className="inline-flex items-center justify-center h-14 rounded-md bg-amber-400 px-8 text-base font-semibold text-gray-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 disabled:opacity-60 disabled:pointer-events-none"
+                className="inline-flex items-center justify-center h-14 rounded-md bg-orange-400 px-8 text-base font-semibold text-gray-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 disabled:opacity-60 disabled:pointer-events-none"
                 type="submit"
                 disabled={status === 'loading'}
               >
@@ -98,7 +94,7 @@ const CommunityWaitlist = () => {
             </form>
           )}
           {status === 'error' && (
-            <p className="mt-3 text-sm text-red-400">{message}</p>
+            <p className="mt-3 text-sm text-red-600 dark:text-red-400">{message}</p>
           )}
         </div>
         

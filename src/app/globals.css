@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  /* This sets a white background for light mode and a deep gray for dark mode */
+  @apply bg-white dark:bg-[#121212];
+  @apply transition-colors duration-300;
+}
 
 /* Keep the keyframes the same */
 @keyframes scroll {
