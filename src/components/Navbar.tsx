@@ -149,7 +149,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             <div className="flex-shrink-0">
               <a href="/">
-                <img src="/logo.png" alt="Hooman Pets Logo" className="h-14 w-auto" />
+                <img src="/Logo.png" alt="Hooman Pets Logo" className="h-14 w-auto" />
               </a>
             </div>
 
