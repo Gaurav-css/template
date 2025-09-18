@@ -60,17 +60,17 @@ const useTheme = () => {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFeaturesDropdownOpen, setIsFeaturesDropdownOpen] = useState(false);
-  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
   const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
 
   const featuresTimeout = useRef<NodeJS.Timeout | null>(null);
-  const resourcesTimeout = useRef<NodeJS.Timeout | null>(null);
-
+  
   const { theme, setTheme, mounted } = useTheme();
 
+  // Updated navLinks to include 'Blog'
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Pricing', href: '/#pricing' },
+    { name: 'Blog', href: '/blog' },
   ];
 
   const featuresLinks: DropdownLink[] = [
@@ -80,6 +80,7 @@ const Navbar = () => {
     { name: 'Community Support', description: 'Join fellow pet parents in our hub.', icon: Users, href: '#' }
   ];
 
+  // This is no longer needed for the navbar, but might be used elsewhere. If not, it can be removed.
   const resourcesLinks: DropdownLink[] = [
     { name: 'Blog', description: 'Explore our articles for pet care tips.', icon: Newspaper, href: '/blog' },
     { name: 'Terms & Conditions', description: 'Understand our policies and practices.', icon: FileText, href: '/terms&services' },
@@ -146,10 +147,10 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/45 dark:bg-[#1c1c1e]/45 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
               <a href="/">
-                <img src="/logo.png" alt="Hooman Pets Logo" className="h-14 w-auto" />
+                <img src="/logo.png" alt="Hooman Pets Logo" className="h-12 lg:h-14 w-auto" />
               </a>
             </div>
 
@@ -171,15 +172,7 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <div className="relative" onMouseEnter={() => handleDropdownEnter(setIsResourcesDropdownOpen, resourcesTimeout)} onMouseLeave={() => handleDropdownLeave(setIsResourcesDropdownOpen, resourcesTimeout)}>
-                <button className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium flex items-center group focus:outline-none transition-colors">
-                  <span>More Resources</span>
-                  <ChevronDown className={`ml-1 h-5 w-5 text-gray-400 group-hover:text-orange-600 dark:group-hover:text-white transition-all duration-300 ${isResourcesDropdownOpen ? 'transform rotate-180' : ''}`} />
-                </button>
-                <div className={`absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 w-screen max-w-sm rounded-xl shadow-2xl bg-white dark:bg-[#2B2B2B] ring-1 ring-black ring-opacity-5 dark:ring-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${isResourcesDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                  <DropdownContent items={resourcesLinks} />
-                </div>
-              </div>
+              {/* More Resources dropdown removed from here */}
             </div>
 
             <div className="hidden lg:flex items-center space-x-4">
@@ -221,6 +214,7 @@ const Navbar = () => {
 
           <div className="flex-1 overflow-y-auto p-4 pb-24">
             <div className="space-y-1">
+              {/* This now automatically includes 'Blog' */}
               {navLinks.map((link) => (
                 <a key={link.name} href={link.href} className="block text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] px-4 py-2 rounded-md font-medium">{link.name}</a>
               ))}
@@ -237,17 +231,7 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <div>
-                <button onClick={() => toggleMobileAccordion('resources')} className="w-full flex justify-between items-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] px-4 py-2 rounded-md font-medium group transition-all duration-200">
-                  <span>More Resources</span>
-                  <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${openMobileAccordion === 'resources' ? 'rotate-180' : ''}`} />
-                </button>
-                <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openMobileAccordion === 'resources' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="pt-2 pl-4">
-                    <DropdownContent items={resourcesLinks} />
-                  </div>
-                </div>
-              </div>
+              {/* More Resources accordion removed from here */}
             </div>
 
             {mobileMenuSections.map(section => (
