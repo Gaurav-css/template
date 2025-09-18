@@ -76,7 +76,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
     <div ref={cardRef} style={wrapperStyle}>
       <div
         style={cardContentStyle}
-        className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 flex items-start space-x-6 hover:shadow-lg dark:hover:border-gray-600"
+        className="bg-white dark:bg-neutral-950 border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 flex items-start space-x-6 hover:shadow-lg dark:hover:border-gray-600"
       >
         <div className="bg-gray-100 dark:bg-gray-800/50 p-3 rounded-full">
           {icon}
