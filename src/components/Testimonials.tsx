@@ -109,27 +109,27 @@ export default function App() {
   ];
 
   const Scroller: React.FC<{ testimonials: Testimonial[], speed: number, direction: 'left' | 'right' }> = ({ testimonials, speed, direction }) => {
-    const duplicatedTestimonials = [...testimonials, ...testimonials];
-    const animationClass = direction === 'right' ? 'animate-scroll-reverse' : 'animate-scroll';
-    return (
-      <div
-        className="w-full overflow-hidden relative"
-        style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
-      >
-        <div className={`flex ${animationClass}`} style={{ animationDuration: `${speed}s` }}>
-          {duplicatedTestimonials.map((testimonial, index) => (
-            <div key={index} className="flex-shrink-0 mx-4" style={{ width: 'clamp(280px, 80vw, 380px)' }}>
-              <TestimonialCard testimonial={testimonial} />
-            </div>
-          ))}
-        </div>
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  const animationClass = direction === 'right' ? 'animate-scroll-reverse' : 'animate-scroll';
+  return (
+    <div
+      className="w-full overflow-hidden relative py-8"
+      style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
+    >
+      <div className={`flex ${animationClass}`} style={{ animationDuration: `${speed}s` }}>
+        {duplicatedTestimonials.map((testimonial, index) => (
+          <div key={index} className="flex-shrink-0 mx-4" style={{ width: 'clamp(280px, 80vw, 380px)' }}>
+            <TestimonialCard testimonial={testimonial} />
+          </div>
+        ))}
       </div>
-    )
-  }
+    </div>
+  )
+}
 
   return (
     // --- Margin added here with pb-16 ---
-    <div className="min-h-screen w-full bg-gray-50 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden pb-16">
+    <div className="min-h-screen w-full bg-gray-100 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-12">
