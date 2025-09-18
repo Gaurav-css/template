@@ -186,7 +186,7 @@ const Navbar = () => {
               <button onClick={toggleTheme} className="p-2 w-[36px] h-[36px] rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] transition-colors">
                 {mounted && (theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
               </button>
-              <a href="/login" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">
+              <a href="/auth" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">
                 <User className="h-5 w-5" />
                 <span>Login / Signup</span>
               </a>
