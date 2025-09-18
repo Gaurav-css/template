@@ -18,7 +18,7 @@ const EzraAIInterface = () => {
 
     return (
         // Web version container with responsive padding and theme support
-        <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white font-sans">
+        <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white ">
             
             {/* Greeting with responsive font size (Adjusted margin for removed pill) */}
             <div className="text-center mt-6 md:mt-0">
@@ -65,7 +65,7 @@ const TrackingChatbotInterface = () => {
     ];
 
     return (
-        <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white font-sans">
+        <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white">
             
             {/* Greeting */}
             <div className="text-center mt-6 md:mt-0">
@@ -112,7 +112,7 @@ const VetIntegrationChatbotInterface = () => {
     ];
 
     return (
-        <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white font-sans">
+        <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white">
             
             {/* Greeting */}
             <div className="text-center mt-6 md:mt-0">
@@ -162,7 +162,7 @@ export default function PetCarePage() {
     const [activeSection, setActiveSection] = useState<SectionKey>('ezra');
 
     return (
-        <div className="min-h-screen bg-white dark:bg-[#1A1A1A] font-sans text-gray-800 dark:text-gray-200 transition-colors duration-300">
+        <div className="min-h-screen bg-white dark:bg-[#1A1A1A] text-gray-800 dark:text-gray-200 transition-colors duration-300">
             <style>{`@keyframes fade-in-up{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}.animate-fade-in-up{animation:fade-in-up .5s ease-out forwards;opacity:0}`}</style>
             <main className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 sm:py-16">
                 <div className="max-w-4xl mx-auto text-center">

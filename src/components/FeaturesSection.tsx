@@ -151,7 +151,7 @@ export default function App() {
 
 
   return (
-    <div className="bg-gray-50 dark:bg-[#1A1A1A] font-sans text-gray-800 dark:text-gray-200">
+    <div className="bg-gray-50 dark:bg-[#1A1A1A] text-gray-800 dark:text-gray-200">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
 

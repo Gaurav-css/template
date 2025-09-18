@@ -75,7 +75,7 @@ export default function App() {
   }, [nextSlide]);
 
   return (
-    <div className="bg-white dark:bg-[#1a1a1a] min-h-screen font-sans text-gray-800 dark:text-gray-200 transition-colors duration-500 flex items-center justify-center overflow-hidden">
+    <div className="bg-white dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200 transition-colors duration-500 flex items-center justify-center overflow-hidden">
       <div className="container mx-auto p-4 lg:p-8">
         <main>
           {/* Header */}

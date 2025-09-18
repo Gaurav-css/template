@@ -421,7 +421,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200 font-sans">
+      <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           {selectedPost ? (
             <BlogPostPage post={selectedPost} onGoBack={handleGoBack} />
