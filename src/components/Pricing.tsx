@@ -3,18 +3,7 @@
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 
-// Dummy Navbar for demonstration purposes
-const Navbar = () => (
-  <nav className="bg-white dark:bg-[#1A1A1A] shadow-sm">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between h-16">
-        <div className="flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white">
-          Hooman Pets
-        </div>
-      </div>
-    </div>
-  </nav>
-);
+import Navbar from "./Navbar";
 
 
 interface Price {
