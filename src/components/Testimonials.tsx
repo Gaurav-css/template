@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Define the type for a single testimonial
 interface Testimonial {
@@ -54,92 +54,68 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
 
 // Main App Component
 export default function App() {
+  // --- ADDITION 1: State and effect to detect mobile screen size ---
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's 'md' breakpoint
+    };
+    checkScreenSize(); // Check on initial load
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   const testimonialsRow1: Testimonial[] = [
-    {
-      quote: "This AI product has transformed the way I manage my daily tasks. It's intuitive, fast, and incredibly accurate!",
-      name: 'Sarah Thompson',
-      title: 'Project Manager',
-      avatar: 'https://i.pravatar.cc/48?u=1',
-    },
-    {
-      quote: "I was skeptical at first, but this AI tool saved me hours of work. The automation features are a game-changer.",
-      name: 'Michael Chen',
-      title: 'Software Developer',
-      avatar: 'https://i.pravatar.cc/48?u=2',
-    },
-    {
-      quote: "The AI's ability to analyze data and provide insights is unmatched. It's like having a personal assistant 24/7.",
-      name: 'Emily Rodriguez',
-      title: 'Data Analyst',
-      avatar: 'https://i.pravatar.cc/48?u=3',
-    },
-    {
-      quote: "I've never seen an AI product this user-friendly. It integrated seamlessly into my workflow from day one.",
-      name: 'David Patel',
-      title: 'IT Consultant',
-      avatar: 'https://i.pravatar.cc/48?u=4',
-    },
+    { quote: "This AI product has transformed the way I manage my daily tasks. It's intuitive, fast, and incredibly accurate!", name: 'Sarah Thompson', title: 'Project Manager', avatar: 'https://i.pravatar.cc/48?u=1' },
+    { quote: "I was skeptical at first, but this AI tool saved me hours of work. The automation features are a game-changer.", name: 'Michael Chen', title: 'Software Developer', avatar: 'https://i.pravatar.cc/48?u=2' },
+    { quote: "The AI's ability to analyze data and provide insights is unmatched. It's like having a personal assistant 24/7.", name: 'Emily Rodriguez', title: 'Data Analyst', avatar: 'https://i.pravatar.cc/48?u=3' },
+    { quote: "I've never seen an AI product this user-friendly. It integrated seamlessly into my workflow from day one.", name: 'David Patel', title: 'IT Consultant', avatar: 'https://i.pravatar.cc/48?u=4' },
   ];
 
   const testimonialsRow2: Testimonial[] = [
-    {
-      quote: "This AI has boosted my productivity tenfold. The predictive features are spot-on and so helpful!",
-      name: 'Olivia Harper',
-      title: 'Marketing Specialist',
-      avatar: 'https://i.pravatar.cc/48?u=5',
-    },
-    {
-      quote: "The customer support paired with the AI product is phenomenal. The team listens and delivers results every time.",
-      name: 'James Carter',
-      title: 'Operations Manager',
-      avatar: 'https://i.pravatar.cc/48?u=6',
-    },
-    {
-      quote: "A must-have tool for any business looking to leverage AI. It simplifies complex processes effortlessly.",
-      name: 'Jessica Wu',
-      title: 'Business Owner',
-      avatar: 'https://i.pravatar.cc/48?u=7',
-    },
-    {
-      quote: "The insights we've gained have been invaluable. This tool has given us a significant competitive advantage.",
-      name: 'Ben Adams',
-      title: 'Strategy Director',
-      avatar: 'https://i.pravatar.cc/48?u=8',
-    },
+    { quote: "This AI has boosted my productivity tenfold. The predictive features are spot-on and so helpful!", name: 'Olivia Harper', title: 'Marketing Specialist', avatar: 'https://i.pravatar.cc/48?u=5' },
+    { quote: "The customer support paired with the AI product is phenomenal. The team listens and delivers results every time.", name: 'James Carter', title: 'Operations Manager', avatar: 'https://i.pravatar.cc/48?u=6' },
+    { quote: "A must-have tool for any business looking to leverage AI. It simplifies complex processes effortlessly.", name: 'Jessica Wu', title: 'Business Owner', avatar: 'https://i.pravatar.cc/48?u=7' },
+    { quote: "The insights we've gained have been invaluable. This tool has given us a significant competitive advantage.", name: 'Ben Adams', title: 'Strategy Director', avatar: 'https://i.pravatar.cc/48?u=8' },
   ];
 
   const Scroller: React.FC<{ testimonials: Testimonial[], speed: number, direction: 'left' | 'right' }> = ({ testimonials, speed, direction }) => {
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
-  const animationClass = direction === 'right' ? 'animate-scroll-reverse' : 'animate-scroll';
-  return (
-    <div
-      className="w-full overflow-hidden relative py-8"
-      style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
-    >
-      <div className={`flex ${animationClass}`} style={{ animationDuration: `${speed}s` }}>
-        {duplicatedTestimonials.map((testimonial, index) => (
-          <div key={index} className="flex-shrink-0 mx-4" style={{ width: 'clamp(280px, 80vw, 380px)' }}>
-            <TestimonialCard testimonial={testimonial} />
-          </div>
-        ))}
+    const duplicatedTestimonials = [...testimonials, ...testimonials];
+    const animationClass = direction === 'right' ? 'animate-scroll-reverse' : 'animate-scroll';
+    return (
+      <div
+        className="w-full overflow-hidden relative py-4"
+        style={{ maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)" }}
+      >
+        <div className={`flex ${animationClass}`} style={{ animationDuration: `${speed}s` }}>
+          {duplicatedTestimonials.map((testimonial, index) => (
+            <div key={index} className="flex-shrink-0 mx-2 w-[240px] md:w-[380px]">
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  )
-}
+    )
+  }
+  
+  // --- ADDITION 2: Set animation speed based on screen size ---
+  // Faster (15s) on mobile, slower (40s) on desktop.
+  const animationSpeed = isMobile ? 5 : 40;
 
   return (
-    // --- Margin added here with pb-16 ---
     <div className="min-h-screen w-full bg-gray-100 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
-        <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-12">
+        <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-4">
           Hooman Pets has transformed our pet care routine!
         </p>
       </div>
 
-      <div className="w-full flex flex-col items-center justify-center space-y-8">
-        <Scroller testimonials={testimonialsRow1} speed={40} direction="left" />
-        <Scroller testimonials={testimonialsRow2} speed={40} direction="right" />
+      <div className="w-full flex flex-col items-center justify-center space-y-4">
+        {/* MODIFIED: Using the dynamic animationSpeed variable */}
+        <Scroller testimonials={testimonialsRow1} speed={animationSpeed} direction="left" />
+        <Scroller testimonials={testimonialsRow2} speed={animationSpeed} direction="right" />
       </div>
 
       <style>{`
