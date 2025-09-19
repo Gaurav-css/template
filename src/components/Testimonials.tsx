@@ -101,11 +101,11 @@ export default function App() {
   
   // --- ADDITION 2: Set animation speed based on screen size ---
   // Faster (15s) on mobile, slower (40s) on desktop.
-  const animationSpeed = isMobile ? 5 : 40;
+  const animationSpeed = isMobile ? 10 : 40;
 
   return (
-    <div className="min-h-screen w-full bg-gray-100 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black text-gray-900 dark:text-white relative flex flex-col items-center justify-center overflow-hidden pb-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 text-center">
+    <div className="w-full bg-gray-100 dark:bg-gradient-to-r dark:from-[#1c1c1e] dark:to-black text-gray-900 dark:text-white relative flex flex-col items-center overflow-hidden py-16 sm:py-20 lg:py-0 lg:min-h-screen lg:justify-center lg:pb-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:py-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-4">
           Hooman Pets has transformed our pet care routine!
