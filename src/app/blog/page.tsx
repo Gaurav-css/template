@@ -2,14 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-// --- PLACEHOLDER COMPONENTS ---
-const Footer = () => (
-    <footer className="bg-white dark:bg-[#2b2b2b] border-t border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500 dark:text-gray-400">
-            &copy; {new Date().getFullYear()} Hooman Pets. All Rights Reserved.
-        </div>
-    </footer>
-);
+
 
 
 // --- MOCK DATA ---
@@ -430,7 +423,7 @@ export default function BlogPage() {
           )}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }
