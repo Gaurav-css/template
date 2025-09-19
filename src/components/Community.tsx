@@ -45,7 +45,7 @@ const CommunityWaitlist = () => {
   return (
     <section className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gray-50 text-gray-900 dark:bg-[#1a1a1a] dark:text-white transition-colors duration-300">
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center space-y-8 text-center px-4 py-16">
+      <div className="relative z-20 flex flex-col items-center justify-center space-y-8 text-center px-4 py-16 -mt-20 -mb-10">
         
         {/* Tagline */}
         <div className="inline-flex items-center rounded-full border border-gray-900/10 bg-gray-900/5 px-4 py-1.5 text-sm font-medium backdrop-blur-md dark:border-white/20 dark:bg-white/10">

@@ -149,12 +149,12 @@ const App: React.FC = () => {
   const defaultPopularPlan = plans.find(p => p.isPopular)?.name || plans[1].name;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 -mb-20">
       <Navbar />
 
       <div id="pricing" className="container mx-auto px-4 py-32 lg:py-40">
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 -mt-28">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Choose Your Plan
           </h1>

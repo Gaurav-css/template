@@ -190,7 +190,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-[#1A1A1A] min-h-screen antialiased text-gray-800 dark:text-gray-200">
+    <div className="bg-white dark:bg-[#1A1A1A] min-h-screen antialiased text-gray-800 dark:text-gray-200 -mt-10 -mb-10">
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
