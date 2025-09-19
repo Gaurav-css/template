@@ -9,6 +9,7 @@ import BlogSection from "@/components/BlogSection"
 import Pricing from '@/components/Pricing' 
 import FAQSection from '@/components/FAQSection'
 import Community from '@/components/Community'
+
 import Footer from '@/components/Footer'
 // import OurStory from '@/app/ourstory/page'
 import blog from '@/app/blog/page'

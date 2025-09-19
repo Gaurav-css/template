@@ -69,7 +69,7 @@ const blogPosts: BlogPost[] = [
     title: "Understanding Your Pet's Nutritional Needs",
     description: 'Explore the best diets for your furry friends and how to ensure they live a long, healthy life.',
     imageUrl: 'food.jpg',
-    href: '/blog/understanding-pet-nutritional-needs', 
+    href: '/blog', 
     icon: (
       <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
@@ -244,7 +244,7 @@ export default function App() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 flex-grow">
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href="/blog"
                       className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                     >
                       {post.title}
@@ -252,7 +252,7 @@ export default function App() {
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4 text-base">{post.description}</p>
                   <Link
-                    href={`@/blog/${post.slug}`}
+                    href="/blog"
                     className="mt-auto inline-flex items-center font-semibold text-orange-500 dark:text-orange-500 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-200"
                   >
                     Read more
