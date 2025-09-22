@@ -157,7 +157,7 @@ const Navbar = () => {
 
               <div className="relative" onMouseEnter={() => handleDropdownEnter(setIsFeaturesDropdownOpen, featuresTimeout)} onMouseLeave={() => handleDropdownLeave(setIsFeaturesDropdownOpen, featuresTimeout)}>
                 <button className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium flex items-center group focus:outline-none transition-colors">
-                  <span>Products</span>
+                  <span>Features</span>
                   <ChevronDown className={`ml-1 h-5 w-5 text-gray-400 group-hover:text-orange-600 dark:group-hover:text-white transition-all duration-300 ${isFeaturesDropdownOpen ? 'transform rotate-180' : ''}`} />
                 </button>
                 <div className={`absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 w-screen max-w-sm rounded-xl shadow-2xl bg-white dark:bg-[#2B2B2B] ring-1 ring-black ring-opacity-5 dark:ring-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${isFeaturesDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
