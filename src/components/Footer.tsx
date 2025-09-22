@@ -52,7 +52,7 @@ const Footer = () => {
       links: [
         { name: "Privacy Policy", href: "/privacypolicy" },
         { name: "Terms of Use", href: "/terms&services" },
-        { name: "Cookie Policy", href: "#" },
+        { name: "Cookie Policy", href: "/ourstory" },
       ],
     },
   ];

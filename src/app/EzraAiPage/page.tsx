@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
-import Image from 'next/image'; // Import the Next.js Image component
-import Link from 'next/link'; // Assuming Next.js for linking
+// Removed 'next/image' and 'next/link' imports as they are Next.js specific.
+// Using standard <img> and <a> tags instead.
 import { 
   Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck, 
   Sparkles, PawPrint, Quote 
@@ -36,7 +38,8 @@ const TestimonialCard = ({ quote, name, role, avatarUrl }: { quote: string; name
         <p className="mt-4 text-slate-600 dark:text-zinc-300">&quot;{quote}&quot;</p>
       </div>
       <div className="mt-4 pt-4 border-t border-slate-200 dark:border-zinc-800 flex items-center gap-x-4">
-        <Image 
+        {/* Replaced Next.js Image with standard <img> tag */}
+        <img 
           className="h-12 w-12 rounded-full bg-slate-200 dark:bg-zinc-700 object-cover" 
           src={avatarUrl} 
           alt={name}
@@ -51,15 +54,6 @@ const TestimonialCard = ({ quote, name, role, avatarUrl }: { quote: string; name
     </div>
   );
 };
-
-// Helper component for FAQ Items
-const FaqItem = ({ question, answer }: { question: string, answer: string }) => (
-  <div className="p-6 bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-lg">
-    <dt className="text-lg font-semibold text-slate-800 dark:text-zinc-100">{question}</dt>
-    <dd className="mt-2 text-base text-slate-600 dark:text-zinc-400">{answer}</dd>
-  </div>
-);
-
 
 // --- Main Page Component ---
 const EzraAiPage = () => {
@@ -84,16 +78,18 @@ const EzraAiPage = () => {
               Ezra AI is our advanced intelligence engine designed to analyze your pet&apos;s data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up [animation-delay:600ms]">
-              <Link
+              {/* Replaced Next.js Link with standard <a> tag */}
+              <a
                 href="#download-app"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-md bg-orange-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-orange-500/30"
               >
                 <span className="absolute h-0 w-0 rounded-full bg-orange-500 transition-all duration-300 ease-in-out group-hover:h-56 group-hover:w-56"></span>
                 <span className="relative">Get The App</span>
-              </Link>
-              <Link href="#features" className="text-base font-semibold leading-6 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+              </a>
+              {/* Replaced Next.js Link with standard <a> tag */}
+              <a href="#features" className="text-base font-semibold leading-6 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white transition-colors">
                 Learn more <span aria-hidden="true">→</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -224,7 +220,7 @@ const EzraAiPage = () => {
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <TestimonialCard
-              quote="Ezra AI identified a subtle change in my dog&apos;s activity that led to an early diagnosis. It’s a game-changer for preventative care."
+              quote="Ezra AI identified a subtle change in my dog's activity that led to an early diagnosis. It’s a game-changer for preventative care."
               name="Sarah L."
               role="Beta Tester & Dog Parent"
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=SL"
@@ -270,12 +266,11 @@ const EzraAiPage = () => {
               <div className="hidden lg:flex items-center justify-center">
                 <div className="relative w-72 h-[36rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-900 dark:bg-zinc-800 rounded-full"></div>
-                  <Image 
+                  {/* Replaced Next.js Image with standard <img> tag and adjusted classes for fill effect */}
+                  <img
                     src="/Ezra.png" 
                     alt="Hooman App on Phone" 
-                    fill={true}
-                    sizes="(max-width: 1024px) 100vw, 18rem" // 18rem = 288px = w-72
-                    className="object-cover rounded-[2rem]" 
+                    className="absolute inset-0 w-full h-full object-cover rounded-[2rem]" 
                   />
                 </div>
               </div>
@@ -289,3 +284,4 @@ const EzraAiPage = () => {
 };
 
 export default EzraAiPage;
+

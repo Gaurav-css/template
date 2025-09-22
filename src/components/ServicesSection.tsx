@@ -8,15 +8,15 @@ import React from 'react';
 const EzraAIInterface = () => {
     // FIXED: Escaped apostrophes in button text
     const suggestionButtons = [
-        'What should my pet eat after vomiting?',
-        "When&apos;s the next flea treatment?",
-        "Log today&apos;s walk at 6pm",
-        "How often should I brush their teeth?",
+        'Log a 30-minute walk for Luna',
+        'Is it safe for dogs to eat apples?',
+        'Remind me to give flea medicine on the 1st of the month',
+        'Analyze my pet&apos;s activity from last week'
     ];
 
     return (
         <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white ">
-            
+
             <div className="text-center mt-6 md:mt-0">
                 <p className="text-gray-500 dark:text-gray-400">Hello, User 👋</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
@@ -24,7 +24,7 @@ const EzraAIInterface = () => {
                     <span className="text-[#ED6C35] dark:text-[#ED6C35]">I&apos;m Ezra,</span> How can I help you today?
                 </h2>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 md:mt-12 w-full">
                 {suggestionButtons.map((text, index) => (
                     <button key={index} className="bg-white dark:bg-[#2C2C2E] border border-gray-200 dark:border-gray-600/70 text-gray-700 dark:text-gray-200 text-xs sm:text-sm rounded-xl py-3 px-4 sm:px-5 text-center hover:bg-gray-200/60 dark:hover:bg-gray-700/50 transition-colors">
@@ -40,7 +40,7 @@ const EzraAIInterface = () => {
                     </button>
                     <input type="text" placeholder="Ask Ezra about your pet..." className="flex-1 bg-transparent focus:outline-none text-sm placeholder-gray-500 dark:placeholder-gray-400" />
                 </div>
-                 <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
+                <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
                     Ezra may not always be accurate. Please double-check important advice.
                 </p>
             </div>
@@ -50,7 +50,7 @@ const EzraAIInterface = () => {
 
 // Chatbot Interface for Tracking Pet Care
 const TrackingChatbotInterface = () => {
-    
+
     const suggestionButtons = [
         'Log a 30-minute walk',
         'How much did my pet eat today?',
@@ -60,7 +60,7 @@ const TrackingChatbotInterface = () => {
 
     return (
         <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white">
-            
+
             <div className="text-center mt-6 md:mt-0">
                 <p className="text-gray-500 dark:text-gray-400">Health & Activity</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
@@ -68,7 +68,7 @@ const TrackingChatbotInterface = () => {
                     How can I assist you with tracking <span className="text-[#ED6C35] dark:text-[#ED6C35]">your pet&rsquo;s healthcare?</span>
                 </h2>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 md:mt-12 w-full">
                 {suggestionButtons.map((text, index) => (
                     <button key={index} className="bg-white dark:bg-[#2C2C2E] border border-gray-200 dark:border-gray-600/70 text-gray-700 dark:text-gray-200 text-xs sm:text-sm rounded-xl py-3 px-4 sm:px-5 text-center hover:bg-gray-200/60 dark:hover:bg-gray-700/50 transition-colors">
@@ -84,7 +84,7 @@ const TrackingChatbotInterface = () => {
                     </button>
                     <input type="text" placeholder="Log an activity or ask a question..." className="flex-1 bg-transparent focus:outline-none text-sm placeholder-gray-500 dark:placeholder-gray-400" />
                 </div>
-                 <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
+                <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
                     Ezra may not always be accurate. Please double-check important advice.
                 </p>
             </div>
@@ -94,7 +94,7 @@ const TrackingChatbotInterface = () => {
 
 // Chatbot Interface for Vet Integration
 const VetIntegrationChatbotInterface = () => {
-    
+
     // FIXED: Escaped apostrophe in button text
     const suggestionButtons = [
         'Find a vet near me',
@@ -105,14 +105,14 @@ const VetIntegrationChatbotInterface = () => {
 
     return (
         <div className="w-full max-w-5xl h-auto bg-gray-100 dark:bg-[#1C1C1E] rounded-2xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 text-gray-800 dark:text-white">
-            
+
             <div className="text-center mt-6 md:mt-0">
                 <p className="text-gray-500 dark:text-gray-400">Professional Care</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
                     Ready to connect with a <span className="text-[#ED6C35] dark:text-[#ED6C35]">veterinarian?</span>
                 </h2>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 md:mt-12 w-full">
                 {suggestionButtons.map((text, index) => (
                     <button key={index} className="bg-white dark:bg-[#2C2C2E] border border-gray-200 dark:border-gray-600/70 text-gray-700 dark:text-gray-200 text-xs sm:text-sm rounded-xl py-3 px-4 sm:px-5 text-center hover:bg-gray-200/60 dark:hover:bg-gray-700/50 transition-colors">
@@ -128,7 +128,7 @@ const VetIntegrationChatbotInterface = () => {
                     </button>
                     <input type="text" placeholder="Find vets, book appointments..." className="flex-1 bg-transparent focus:outline-none text-sm placeholder-gray-500 dark:placeholder-gray-400" />
                 </div>
-                 <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
+                <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
                     For medical emergencies, please contact your local vet clinic directly.
                 </p>
             </div>
@@ -138,7 +138,7 @@ const VetIntegrationChatbotInterface = () => {
 
 // Main Page Component
 export default function PetCarePage() {
-    
+
     const sectionContent = {
         ezra: { contentComponent: <EzraAIInterface /> },
         track: { contentComponent: <TrackingChatbotInterface /> },
@@ -146,7 +146,7 @@ export default function PetCarePage() {
     };
 
     type SectionKey = keyof typeof sectionContent;
-    
+
     const [activeSection, setActiveSection] = useState<SectionKey>('ezra');
 
     return (
@@ -167,7 +167,7 @@ export default function PetCarePage() {
                             const title = { ezra: "Meet Ezra AI", track: "Track Their Care", vet: "Vet Integrations" }[key];
                             return (
                                 <div key={key} onClick={() => setActiveSection(key)}
-                                     className={`text-center py-4 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 ${activeSection === key ? 'border-b-2 border-[#ED6C35] text-gray-900 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}>
+                                    className={`text-center py-4 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 ${activeSection === key ? 'border-b-2 border-[#ED6C35] text-gray-900 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}>
                                     <div className="flex items-center justify-center gap-3">
                                         <Icon className="h-6 w-6 text-[#ED6C35] dark:text-[#ED6C35]" />
                                         <h3 className="text-base sm:text-lg font-semibold">{title}</h3>
@@ -178,7 +178,7 @@ export default function PetCarePage() {
                     </div>
                 </div>
                 <div className="mt-12 max-w-7xl mx-auto">
-                    <div key={activeSection} className="relative flex justify-center items-center animate-fade-in-up" style={{animationDuration: '0.7s'}}>
+                    <div key={activeSection} className="relative flex justify-center items-center animate-fade-in-up" style={{ animationDuration: '0.7s' }}>
                         <div className="absolute w-full h-full max-w-md bg-gradient-to-tr from-purple-400/20 to-indigo-400/20 dark:from-purple-500/10 dark:to-indigo-500/10 rounded-full blur-3xl transition-opacity duration-500 opacity-60"></div>
                         <div className="relative w-full flex justify-center">
                             {sectionContent[activeSection].contentComponent}

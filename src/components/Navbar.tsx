@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image"; // FIXED: Import Next.js Image component
 
 // FIXED: Removed unused icons to prevent build warnings
-import { 
-  Sparkles, LucideIcon, ChevronDown, Menu, X, Box, BarChart, Zap, Mail, 
-  Info, Star, Shield, Activity, Eye, Users, User, Sun, Moon 
+import {
+  Sparkles, LucideIcon, ChevronDown, Menu, X, Box, BarChart, Zap, Mail,
+  Info, Star, Shield, Activity, Eye, Users, User, Sun, Moon
 } from 'lucide-react';
 
 type Theme = 'light' | 'dark';
@@ -62,7 +62,7 @@ const Navbar = () => {
   const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
 
   const featuresTimeout = useRef<NodeJS.Timeout | null>(null);
-  
+
   const { theme, setTheme, mounted } = useTheme();
 
   const navLinks = [
@@ -75,8 +75,8 @@ const Navbar = () => {
     { name: 'Ezra AI', description: 'Advanced AI that can enhance pet care.', icon: Sparkles, href: '/EzraAiPage' },
     // FIXED: Escaped the apostrophe in "pet's"
     { name: 'Care Tracking', description: 'Easily monitor your pet&apos;s health and routines.', icon: Activity, href: '/CareTrack' },
-    { name: 'Vet Insights', description: 'Access professional advice at your fingertips.', icon: Eye, href: '#' },
-    { name: 'Community Support', description: 'Join fellow pet parents in our hub.', icon: Users, href: '#' }
+    { name: 'Vet Insights', description: 'Access professional advice at your fingertips.', icon: Eye, href: '/vet-insights' },
+    { name: 'Community Support', description: 'Join fellow pet parents in our hub.', icon: Users, href: '/community-support' }
   ];
 
   const mobileMenuSections: MobileMenuSection[] = [
