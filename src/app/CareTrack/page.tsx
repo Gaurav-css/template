@@ -1,9 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import Link from 'next/link';
+
+// FIXED: Defined a type for the Icon component's props
+type IconProps = {
+  path: string;
+  className?: string;
+};
 
 // Helper for icons
-const Icon = ({ path, className = "w-6 h-6" }) => (
+const Icon = ({ path, className = "w-6 h-6" }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -34,10 +40,10 @@ export default function Home() {
                <span className="text-2xl font-bold text-[#ED6C35]">Hooman</span>
             </div>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-              <a href="#" className="hover:text-[#ED6C35]">Home</a>
-              <a href="#" className="hover:text-[#ED6C35]">Pricing</a>
-              <a href="#" className="hover:text-[#ED6C35]">Blog</a>
-              <a href="#" className="hover:text-[#ED6C35]">Products</a>
+              <Link href="/" className="hover:text-[#ED6C35]">Home</Link>
+              <Link href="/pricing" className="hover:text-[#ED6C35]">Pricing</Link>
+              <Link href="/blog" className="hover:text-[#ED6C35]">Blog</Link>
+              <Link href="/products" className="hover:text-[#ED6C35]">Products</Link>
             </nav>
           </div>
           <div className="flex items-center gap-4 text-sm font-medium text-gray-600 dark:text-gray-300">
@@ -47,7 +53,7 @@ export default function Home() {
              <button className="p-2 hover:text-[#ED6C35]">
                 <MoreIcon />
             </button>
-            <a href="#" className="hover:text-[#ED6C35]">Login / Signup</a>
+            <Link href="/login" className="hover:text-[#ED6C35]">Login / Signup</Link>
           </div>
         </div>
       </header>
@@ -62,7 +68,7 @@ export default function Home() {
             Smart Pet Care Tracking
           </h1>
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
-            Powered by Ezra AI - Monitor your pet's health, activities, and
+            Powered by Ezra AI - Monitor your pet&apos;s health, activities, and
             well-being in real-time with advanced AI analytics.
           </p>
         </section>
@@ -128,7 +134,6 @@ export default function Home() {
           >
             <div className="mb-4 flex items-center justify-between">
               <span className="text-lg font-semibold">Health Overview</span>
-              {/* FIXED: Theme-friendly badge */}
               <span className="rounded-full bg-green-100 px-3 py-1 text-sm text-green-700 dark:bg-green-500/20 dark:text-green-300">
                 Excellent
               </span>
@@ -151,7 +156,7 @@ export default function Home() {
             <div
               className="mt-4 rounded-lg border-l-4 border-[#ED6C35] bg-orange-50 p-3 dark:bg-[#333]"
             >
-              ✨ Max's activity levels are 15% higher than average. Consider
+              ✨ Max&apos;s activity levels are 15% higher than average. Consider
               adjusting meal portions.
             </div>
           </div>
@@ -162,7 +167,9 @@ export default function Home() {
           >
             <div className="mb-4 flex items-center justify-between">
               <span className="text-lg font-semibold">AI Predictions</span>
-              
+              <span className="rounded-full bg-[#ED6C35] px-3 py-1 text-xs text-white">
+                Machine Learning
+              </span>
             </div>
             <ul className="space-y-2">
               <Prediction
@@ -263,7 +270,6 @@ function BlogCard({
   excerpt: string;
 }) {
   return (
-    // IMPROVED: Added a background color for dark mode and better hover effect
     <article className="cursor-pointer overflow-hidden rounded-xl bg-gray-50/50 shadow transition hover:scale-105 dark:bg-[#333]">
       <div className="flex h-40 items-center justify-center bg-[#ED6C35] text-4xl text-white">
         {icon}
@@ -276,4 +282,3 @@ function BlogCard({
     </article>
   );
 }
-
