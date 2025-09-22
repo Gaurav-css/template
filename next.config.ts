@@ -10,12 +10,19 @@
 // };
 
 // module.exports = nextConfig;
-/** @type {import('next').NextConfig} */
+//** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  eslint: {
-    // Ignore ESLint errors during production build
-    ignoreDuringBuilds: true,
+  // ... any other config you might have
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

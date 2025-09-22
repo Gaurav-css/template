@@ -1,11 +1,10 @@
 "use client";
 import Link from 'next/link';
-
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 
-import Navbar from "./Navbar";
-
+// FIXED: Corrected the import path for the Navbar component
+import Navbar from "@/components/Navbar";
 
 interface Price {
   monthly: number;
@@ -24,9 +23,9 @@ interface Plan {
 interface PricingCardProps {
   plan: Plan;
   isYearly: boolean;
-  isPopular: boolean; // For the text badge only
-  isActive: boolean; // For the ring/scale highlight
-  onMouseEnter: () => void; // Handler for hover
+  isPopular: boolean; 
+  isActive: boolean; 
+  onMouseEnter: () => void;
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, isActive, onMouseEnter }) => {
@@ -35,7 +34,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
 
   return (
     <div
-      id="pricing"
+      id="pricing-card" // Changed id to be more specific to avoid conflicts
       onMouseEnter={onMouseEnter}
       className={`relative bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 transition-all duration-300 ${
         isActive
@@ -70,8 +69,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
       </div>
 
       <div className="mb-8">
+        {/* FIXED: Replaced ' with &apos; to prevent build error */}
         <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
-          What's included:
+          What&apos;s included:
         </p>
         <ul className="space-y-3">
           {plan.features.map((feature, index) => (
@@ -96,9 +96,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
   );
 };
 
-const App: React.FC = () => {
+// FIXED: Renamed component to follow Next.js page conventions
+const PricingPage: React.FC = () => {
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  // State to track the currently active/hovered plan, defaults to "Pro"
   const [activePlan, setActivePlan] = useState<string>("Pro");
 
   const plans: Plan[] = [
@@ -146,7 +146,6 @@ const App: React.FC = () => {
     },
   ];
 
-  // Find the default popular plan name
   const defaultPopularPlan = plans.find(p => p.isPopular)?.name || plans[1].name;
 
   return (
@@ -154,7 +153,6 @@ const App: React.FC = () => {
       <Navbar />
 
       <div id="pricing" className="container mx-auto px-4 py-32 lg:py-40">
-        {/* Header Section */}
         <div className="text-center mb-12 -mt-28">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Choose Your Plan
@@ -164,7 +162,6 @@ const App: React.FC = () => {
           </p>
         </div>
 
-        {/* Billing Toggle */}
         <div className="flex items-center justify-center mb-12">
           <div className="bg-white dark:bg-[#1A1A1A] rounded-full p-1 border border-gray-200 dark:border-gray-700 shadow-sm">
             <div className="flex items-center">
@@ -199,30 +196,29 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-center"
-          onMouseLeave={() => setActivePlan(defaultPopularPlan)} // Reset to default when mouse leaves the grid
+          onMouseLeave={() => setActivePlan(defaultPopularPlan)}
         >
           {plans.map((plan) => (
             <PricingCard
               key={plan.name}
               plan={plan}
               isYearly={isYearly}
-              isPopular={plan.isPopular || false} // For the badge
-              isActive={activePlan === plan.name} // For the highlight
-              onMouseEnter={() => setActivePlan(plan.name)} // Set active on hover
+              isPopular={plan.isPopular || false}
+              isActive={activePlan === plan.name}
+              onMouseEnter={() => setActivePlan(plan.name)}
             />
           ))}
         </div>
 
-        {/* Footer */}
         <div id="contact" className="text-center mt-12">
           <p className="text-gray-600 dark:text-gray-400">
             Need more?{" "}
-            <a href="#" className="text-blue-500 hover:text-blue-600 font-medium hover:underline">
+            {/* FIXED: Replaced <a> with <Link> */}
+            <Link href="/contact" className="text-blue-500 hover:text-blue-600 font-medium hover:underline">
               Contact us
-            </a>{" "}
+            </Link>{" "}
             for a custom plan.
           </p>
         </div>
@@ -231,4 +227,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default PricingPage;

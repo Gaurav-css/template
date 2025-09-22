@@ -1,17 +1,16 @@
 "use client";
 
 import { useState } from 'react';
-// MODIFIED: Updated the icon imports
 import { ShieldCheck, Stethoscope, Activity, Sparkles } from 'lucide-react';
 import React from 'react';
 
 // Component for the main Ezra AI Interface
 const EzraAIInterface = () => {
-    
+    // FIXED: Escaped apostrophes in button text
     const suggestionButtons = [
         'What should my pet eat after vomiting?',
-        "When's the next flea treatment?",
-        "Log today's walk at 6pm",
+        "When&apos;s the next flea treatment?",
+        "Log today&apos;s walk at 6pm",
         "How often should I brush their teeth?",
     ];
 
@@ -21,7 +20,8 @@ const EzraAIInterface = () => {
             <div className="text-center mt-6 md:mt-0">
                 <p className="text-gray-500 dark:text-gray-400">Hello, User 👋</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
-                    <span className="text-[#ED6C35] dark:text-[#ED6C35]">I'm Ezra,</span> How can I help you today?
+                    {/* FIXED: Escaped apostrophe in "I'm" */}
+                    <span className="text-[#ED6C35] dark:text-[#ED6C35]">I&apos;m Ezra,</span> How can I help you today?
                 </h2>
             </div>
             
@@ -33,7 +33,6 @@ const EzraAIInterface = () => {
                 ))}
             </div>
 
-            {/* MODIFIED: Bottom Input Area */}
             <div className="w-full max-w-2xl mx-auto mt-8 md:mt-12">
                 <div className="bg-white dark:bg-[#2C2C2E] rounded-2xl p-2 flex items-center gap-2 border border-gray-200 dark:border-gray-600/70">
                     <button className="text-[#ED6C35] dark:text-[#ED6C35] hover:opacity-80 p-2 rounded-lg transition-colors">
@@ -65,7 +64,8 @@ const TrackingChatbotInterface = () => {
             <div className="text-center mt-6 md:mt-0">
                 <p className="text-gray-500 dark:text-gray-400">Health & Activity</p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
-                    How can I assist you with tracking <span className="text-[#ED6C35] dark:text-[#ED6C35]">your pet’s healthcare?</span>
+                    {/* FIXED: Escaped curly apostrophe in "pet’s" */}
+                    How can I assist you with tracking <span className="text-[#ED6C35] dark:text-[#ED6C35]">your pet&rsquo;s healthcare?</span>
                 </h2>
             </div>
             
@@ -77,7 +77,6 @@ const TrackingChatbotInterface = () => {
                 ))}
             </div>
 
-            {/* MODIFIED: Bottom Input Area */}
             <div className="w-full max-w-2xl mx-auto mt-8 md:mt-12">
                 <div className="bg-white dark:bg-[#2C2C2E] rounded-2xl p-2 flex items-center gap-2 border border-gray-200 dark:border-gray-600/70">
                     <button className="text-[#ED6C35] dark:text-[#ED6C35] hover:opacity-80 p-2 rounded-lg transition-colors">
@@ -96,10 +95,11 @@ const TrackingChatbotInterface = () => {
 // Chatbot Interface for Vet Integration
 const VetIntegrationChatbotInterface = () => {
     
+    // FIXED: Escaped apostrophe in button text
     const suggestionButtons = [
         'Find a vet near me',
         'Book an appointment with Professional doctor',
-        "Share my pet's latest health report",
+        "Share my pet&apos;s latest health report",
         'Start an emergency telehealth call',
     ];
 
@@ -121,7 +121,6 @@ const VetIntegrationChatbotInterface = () => {
                 ))}
             </div>
 
-            {/* MODIFIED: Bottom Input Area */}
             <div className="w-full max-w-2xl mx-auto mt-8 md:mt-12">
                 <div className="bg-white dark:bg-[#2C2C2E] rounded-2xl p-2 flex items-center gap-2 border border-gray-200 dark:border-gray-600/70">
                     <button className="text-[#ED6C35] dark:text-[#ED6C35] hover:opacity-80 p-2 rounded-lg transition-colors">

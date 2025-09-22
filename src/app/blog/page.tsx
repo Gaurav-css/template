@@ -1,9 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-
-
-
+import React, { useState } from 'react';
+import Image from 'next/image'; // FIXED: Import the Next.js Image component
 
 // --- MOCK DATA ---
 type Post = {
@@ -18,12 +16,13 @@ type Post = {
     image?: string;
 };
 
+// FIXED: Escaped all apostrophes (') with (&apos;) to prevent build errors
 const blogPosts: Post[] = [
   {
     id: 1,
     category: 'Health tips',
     readTime: '5 min read',
-    title: 'Understanding Your Pet\'s Nutritional Needs',
+    title: 'Understanding Your Pet&apos;s Nutritional Needs',
     description: 'Learn how to keep your pet healthy and happy with the right diet.',
     author: 'Dr. Jane Doe',
     publishDate: '23 January 2025',
@@ -44,8 +43,8 @@ const blogPosts: Post[] = [
     id: 3,
     category: 'Behaviour',
     readTime: '4 min read',
-    title: 'Understanding Your Cat\'s Body Language',
-    description: 'Learn to interpret your cat\'s signals and moods for a stronger bond.',
+    title: 'Understanding Your Cat&apos;s Body Language',
+    description: 'Learn to interpret your cat&apos;s signals and moods for a stronger bond.',
     author: 'Dr. Jane Doe',
     publishDate: '10 January 2025',
     image: '/cat.png',
@@ -65,7 +64,7 @@ const blogPosts: Post[] = [
     category: 'Health tips',
     readTime: '5 min read',
     title: 'Recognising Signs of Illness in Pets',
-    description: 'Stay alert to your pet\'s health with these signs and know when to see a vet.',
+    description: 'Stay alert to your pet&apos;s health with these signs and know when to see a vet.',
     author: 'Dr. Jane Doe',
     publishDate: '28 December 2024',
     image: '/illeness.jpg',
@@ -75,7 +74,7 @@ const blogPosts: Post[] = [
     category: 'Health tips',
     readTime: '3 min read',
     title: 'The Importance of Regular Vet Check-ups',
-    description: 'Ensure your pet\'s well-being with routine veterinary visits.',
+    description: 'Ensure your pet&apos;s well-being with routine veterinary visits.',
     author: 'John Smith',
     publishDate: '20 December 2024',
     image: '/img/pets/vet-checkup.jpeg',
@@ -95,7 +94,7 @@ const blogPosts: Post[] = [
     category: 'Health tips',
     readTime: '4 min read',
     title: 'Dental Health for Dogs: A Complete Guide',
-    description: 'Everything you need to know about keeping your dog\'s teeth clean and healthy.',
+    description: 'Everything you need to know about keeping your dog&apos;s teeth clean and healthy.',
     author: 'Dr. Emily Carter',
     publishDate: '10 December 2024',
     image: '/img/pets/dog-dental-health.jpeg',
@@ -105,7 +104,7 @@ const blogPosts: Post[] = [
     category: 'Pet care',
     readTime: '6 min read',
     title: 'Grooming Your Long-Haired Cat',
-    description: 'Tips and tricks to keep your feline friend\'s coat mat-free and beautiful.',
+    description: 'Tips and tricks to keep your feline friend&apos;s coat mat-free and beautiful.',
     author: 'Sarah Lee',
     publishDate: '8 December 2024',
     image: '/img/pets/long-haired-cat.jpeg',
@@ -135,7 +134,7 @@ const blogPosts: Post[] = [
     category: 'Behaviour',
     readTime: '6 min read',
     title: 'Solving Common Litter Box Problems',
-    description: 'Understand the reasons behind your cat\'s litter box avoidance and how to fix it.',
+    description: 'Understand the reasons behind your cat&apos;s litter box avoidance and how to fix it.',
     author: 'Dr. Jane Doe',
     publishDate: '30 November 2024',
     image: '/img/pets/cat-litter-box.jpeg',
@@ -232,7 +231,13 @@ const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post:
   <div onClick={() => onSelectPost(post)} className="bg-white dark:bg-[#2b2b2b] rounded-lg overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
     <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] flex items-center justify-center overflow-hidden">
         {post.image ? (
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <Image 
+              src={post.image} 
+              alt={post.title} 
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105" 
+            />
         ) : (
             <ImageIcon className="h-12 w-12" />
         )}
@@ -256,7 +261,13 @@ const FeaturedBlogPost = ({ post, onSelectPost }: { post: Post, onSelectPost: (p
   <div onClick={() => onSelectPost(post)} className="flex flex-col lg:flex-row gap-8 items-center group cursor-pointer">
     <div className="relative w-full lg:w-1/2 aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
         {post.image ? (
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <Image 
+              src={post.image} 
+              alt={post.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105" 
+            />
         ) : (
             <ImageIcon className="h-16 w-16" />
         )}
@@ -346,7 +357,13 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
 
       <div className="relative w-full aspect-[16/9] bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center mb-12 overflow-hidden">
           {post.image ? (
-              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+              <Image 
+                src={post.image} 
+                alt={post.title}
+                fill
+                sizes="100vw"
+                className="object-cover" 
+              />
           ) : (
               <ImageIcon className="h-24 w-24"/>
           )}
@@ -376,11 +393,17 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               
               <figure className="!my-12">
                   <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
-                      {post.image ? (
-                          <img src={post.image} alt="Article illustration" className="w-full h-full object-cover" />
-                      ) : (
-                          <ImageIcon className="h-16 w-16" />
-                      )}
+                          {post.image ? (
+                            <Image 
+                              src={post.image} 
+                              alt="Article illustration" 
+                              fill
+                              sizes="100vw"
+                              className="object-cover" 
+                            />
+                          ) : (
+                              <ImageIcon className="h-16 w-16" />
+                          )}
                   </div>
                   <figcaption className="text-center text-sm italic text-gray-500 dark:text-gray-400 mt-2">Image caption goes here</figcaption>
               </figure>
@@ -389,7 +412,7 @@ const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) 
               <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
               
               <blockquote className="border-l-4 border-[#ED6C35] pl-4 italic my-8">
-                  <p>"Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci. Tincidunt porttitor tempus."</p>
+                  <p>&quot;Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci. Tincidunt porttitor tempus.&quot;</p>
               </blockquote>
 
               <p>Eget quis et enim, leo, feugiat pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis, Faucibus augue enim. Quis at habitant diam et. Suscipit tristique risus, et, diam. In in-varius scelerisque. Sodales curabitur quam nunc, et, nisl.</p>

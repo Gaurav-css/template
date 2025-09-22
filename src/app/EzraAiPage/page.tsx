@@ -1,7 +1,67 @@
 import React from 'react';
-import { Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck, User, Mail, Sparkles, PawPrint, Quote, Plus } from 'lucide-react';
+import Image from 'next/image'; // Import the Next.js Image component
+import Link from 'next/link'; // Assuming Next.js for linking
+import { 
+  Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck, 
+  Sparkles, PawPrint, Quote 
+} from 'lucide-react';
 
-// Main Page Component for Ezra AI
+// --- Helper Components (Moved to top for better organization) ---
+
+// Helper component for Feature Cards
+const FeatureCard = ({ icon, title, description, animationDelay }: { icon: React.ReactNode; title: string; description: string; animationDelay?: string; }) => {
+  return (
+    <div
+      className="group relative bg-white dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-white dark:hover:bg-zinc-900 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up"
+      style={{ animationDelay: animationDelay || '0s' }}
+    >
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-transparent to-orange-500/10 dark:to-orange-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+      <div className="relative">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 dark:bg-zinc-800">
+          {icon}
+        </div>
+        <h3 className="mt-6 text-xl font-semibold text-slate-800 dark:text-zinc-100">{title}</h3>
+        <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+// Helper component for Testimonial Cards
+const TestimonialCard = ({ quote, name, role, avatarUrl }: { quote: string; name: string; role: string; avatarUrl: string }) => {
+  return (
+    <div className="bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 h-full flex flex-col">
+      <div className="flex-grow">
+        <Quote className="w-8 h-8 text-slate-300 dark:text-zinc-700" />
+        <p className="mt-4 text-slate-600 dark:text-zinc-300">&quot;{quote}&quot;</p>
+      </div>
+      <div className="mt-4 pt-4 border-t border-slate-200 dark:border-zinc-800 flex items-center gap-x-4">
+        <Image 
+          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-zinc-700 object-cover" 
+          src={avatarUrl} 
+          alt={name}
+          width={48}
+          height={48}
+        />
+        <div>
+          <p className="font-semibold text-slate-800 dark:text-zinc-100">{name}</p>
+          <p className="text-sm text-slate-500 dark:text-zinc-500">{role}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Helper component for FAQ Items
+const FaqItem = ({ question, answer }: { question: string, answer: string }) => (
+  <div className="p-6 bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-lg">
+    <dt className="text-lg font-semibold text-slate-800 dark:text-zinc-100">{question}</dt>
+    <dd className="mt-2 text-base text-slate-600 dark:text-zinc-400">{answer}</dd>
+  </div>
+);
+
+
+// --- Main Page Component ---
 const EzraAiPage = () => {
   return (
     <div className="bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-zinc-300 antialiased">
@@ -17,35 +77,33 @@ const EzraAiPage = () => {
               <Sparkles className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               <span>The Future of Pet Intelligence</span>
             </div>
-            {/* --- Responsive Typography Adjustments --- */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
               Meet Ezra AI: The Future of Proactive Pet Care.
             </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
-              Ezra AI is our advanced intelligence engine designed to analyze your pet's data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
+              Ezra AI is our advanced intelligence engine designed to analyze your pet&apos;s data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up [animation-delay:600ms]">
-              <a
+              <Link
                 href="#download-app"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-md bg-orange-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-orange-500/30"
               >
                 <span className="absolute h-0 w-0 rounded-full bg-orange-500 transition-all duration-300 ease-in-out group-hover:h-56 group-hover:w-56"></span>
                 <span className="relative">Get The App</span>
-              </a>
-              <a href="#features" className="text-base font-semibold leading-6 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+              </Link>
+              <Link href="#features" className="text-base font-semibold leading-6 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white transition-colors">
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </header>
 
-      {/* --- Adjusted Padding for Better Mobile View --- */}
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24 sm:space-y-32">
         {/* How It Works Section */}
         <section className="text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">How Ezra AI Works</h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">A seamless process to unlock deep insights into your pet's wellbeing.</p>
+          <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">A seamless process to unlock deep insights into your pet&apos;s wellbeing.</p>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 relative">
             <div className="absolute top-1/2 left-0 w-full h-px -translate-y-1/2">
               <svg width="100%" height="2" className="hidden md:block">
@@ -83,7 +141,7 @@ const EzraAiPage = () => {
               Advanced Features for Unmatched Care
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
-              Ezra AI is your partner in making informed decisions for every aspect of your pet's life.
+              Ezra AI is your partner in making informed decisions for every aspect of your pet&apos;s life.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -153,21 +211,7 @@ const EzraAiPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Trusted By Section */}
-        {/* <section>
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="text-lg font-semibold leading-8 text-slate-800 dark:text-zinc-100">
-              Trusted by leading veterinary clinics and pet tech innovators
-            </h2>
-            <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none">
-              <img className="col-span-1 max-h-10 w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300" src="https://tailwindui.com/img/logos/158x48/statamic-light.svg" alt="Statamic" width="158" height="48" />
-              <img className="col-span-1 max-h-10 w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300" src="https://tailwindui.com/img/logos/158x48/tuple-light.svg" alt="Tuple" width="158" height="48" />
-              <img className="col-span-1 max-h-10 w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300" src="https://tailwindui.com/img/logos/158x48/savvycal-light.svg" alt="SavvyCal" width="158" height="48" />
-            </div>
-          </div>
-        </section> */}
-
+        
         {/* Testimonials Section */}
         <section>
           <div className="max-w-3xl mx-auto text-center">
@@ -180,7 +224,7 @@ const EzraAiPage = () => {
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <TestimonialCard
-              quote="Ezra AI identified a subtle change in my dog's activity that led to an early diagnosis. It’s a game-changer for preventative care."
+              quote="Ezra AI identified a subtle change in my dog&apos;s activity that led to an early diagnosis. It’s a game-changer for preventative care."
               name="Sarah L."
               role="Beta Tester & Dog Parent"
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=SL"
@@ -199,31 +243,6 @@ const EzraAiPage = () => {
             />
           </div>
         </section>
-
-        {/* FAQ Section */}
-        {/* <section>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">Frequently Asked Questions</h2>
-            <div className="mt-12 space-y-6">
-              <FaqItem
-                question="Is my pet's data safe and private?"
-                answer="Absolutely. We use bank-grade encryption for all data in transit and at rest. All data used for AI model training is fully anonymized, meaning it cannot be linked back to you or your pet."
-              />
-              <FaqItem
-                question="What kind of pets does Ezra AI support?"
-                answer="Currently, Ezra AI is optimized for dogs and cats. We are actively working on expanding our models to include other household pets in the near future. Stay tuned!"
-              />
-              <FaqItem
-                question="How is this different from a regular activity tracker?"
-                answer="While activity tracking is one data point we use, Ezra AI goes much further. It correlates activity with diet, behavior logs, health records, and breed-specific data to provide a holistic, proactive, and truly personalized care plan, rather than just showing you raw numbers."
-              />
-              <FaqItem
-                question="Can Ezra AI diagnose my pet?"
-                answer="No. Ezra AI is a powerful tool for providing insights and highlighting potential issues, but it is not a substitute for professional veterinary advice. It is designed to help you and your veterinarian make more informed decisions together."
-              />
-            </div>
-          </div>
-        </section> */}
 
         {/* Download App Section */}
         <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
@@ -246,24 +265,18 @@ const EzraAiPage = () => {
                       <p className="text-lg font-semibold">App Store</p>
                     </div>
                   </a>
-                  {/* Uncomment this when the Google Play link is available
-                  <a href="#" className="inline-flex items-center justify-center gap-x-3 rounded-lg bg-slate-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-slate-900 transition hover:opacity-90">
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M22.848 11.399L3.849 0.904C2.943 0.403 2.115 0.81 1.954 1.761L1.952 1.77L5.78 12L1.952 22.23C1.802 23.144 2.942 23.593 3.849 23.097L22.848 12.6C23.65 12.164 23.65 11.836 22.848 11.399Z" />
-                      <path d="M9.608 15.35L5.78 12L9.608 8.65L17.585 12L9.608 15.35Z" fill="#334155" className="dark:fill-white" />
-                    </svg>
-                    <div>
-                      <p className="text-xs">GET IT ON</p>
-                      <p className="text-lg font-semibold">Google Play</p>
-                    </div>
-                  </a>
-                  */}
                 </div>
               </div>
               <div className="hidden lg:flex items-center justify-center">
                 <div className="relative w-72 h-[36rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-900 dark:bg-zinc-800 rounded-full"></div>
-                  <img src="/Ezra.png" alt="Hooman App on Phone" className="w-full h-full object-cover rounded-[2rem]" />
+                  <Image 
+                    src="/Ezra.png" 
+                    alt="Hooman App on Phone" 
+                    fill={true}
+                    sizes="(max-width: 1024px) 100vw, 18rem" // 18rem = 288px = w-72
+                    className="object-cover rounded-[2rem]" 
+                  />
                 </div>
               </div>
             </div>
@@ -274,51 +287,5 @@ const EzraAiPage = () => {
     </div>
   );
 };
-
-// Helper component for Feature Cards
-const FeatureCard = ({ icon, title, description, animationDelay }: { icon: React.ReactNode; title: string; description: string; animationDelay?: string; }) => {
-  return (
-    <div
-      className="group relative bg-white dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-white dark:hover:bg-zinc-900 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up"
-      style={{ animationDelay: animationDelay || '0s' }}
-    >
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-transparent to-orange-500/10 dark:to-orange-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-      <div className="relative">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 dark:bg-zinc-800">
-          {icon}
-        </div>
-        <h3 className="mt-6 text-xl font-semibold text-slate-800 dark:text-zinc-100">{title}</h3>
-        <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">{description}</p>
-      </div>
-    </div>
-  );
-};
-
-// Helper component for Testimonial Cards
-const TestimonialCard = ({ quote, name, role, avatarUrl }: { quote: string; name: string; role: string; avatarUrl: string }) => {
-  return (
-    <div className="bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 h-full flex flex-col">
-      <div className="flex-grow">
-        <Quote className="w-8 h-8 text-slate-300 dark:text-zinc-700" />
-        <p className="mt-4 text-slate-600 dark:text-zinc-300">"{quote}"</p>
-      </div>
-      <div className="mt-4 pt-4 border-t border-slate-200 dark:border-zinc-800 flex items-center gap-x-4">
-        <img className="h-12 w-12 rounded-full bg-slate-200 dark:bg-zinc-700" src={avatarUrl} alt={name} />
-        <div>
-          <p className="font-semibold text-slate-800 dark:text-zinc-100">{name}</p>
-          <p className="text-sm text-slate-500 dark:text-zinc-500">{role}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Helper component for FAQ Items
-const FaqItem = ({ question, answer }: { question: string, answer: string }) => (
-  <div className="p-6 bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-lg">
-    <dt className="text-lg font-semibold text-slate-800 dark:text-zinc-100">{question}</dt>
-    <dd className="mt-2 text-base text-slate-600 dark:text-zinc-400">{answer}</dd>
-  </div>
-);
 
 export default EzraAiPage;

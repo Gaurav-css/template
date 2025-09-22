@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-// FIXED: Defined a type for the Icon component's props
+// FIXED: Defined a type for the Icon component's props to resolve TypeScript errors.
 type IconProps = {
   path: string;
   className?: string;
@@ -37,9 +37,10 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
-               <span className="text-2xl font-bold text-[#ED6C35]">Hooman</span>
+                <span className="text-2xl font-bold text-[#ED6C35]">Hooman</span>
             </div>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+              {/* FIXED: Replaced <a> with <Link> for internal navigation */}
               <Link href="/" className="hover:text-[#ED6C35]">Home</Link>
               <Link href="/pricing" className="hover:text-[#ED6C35]">Pricing</Link>
               <Link href="/blog" className="hover:text-[#ED6C35]">Blog</Link>
@@ -67,6 +68,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-[#ED6C35]">
             Smart Pet Care Tracking
           </h1>
+          {/* FIXED: Escaped the apostrophe in "pet's" to "pet&apos;s" */}
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
             Powered by Ezra AI - Monitor your pet&apos;s health, activities, and
             well-being in real-time with advanced AI analytics.
@@ -156,6 +158,7 @@ export default function Home() {
             <div
               className="mt-4 rounded-lg border-l-4 border-[#ED6C35] bg-orange-50 p-3 dark:bg-[#333]"
             >
+              {/* FIXED: Escaped the apostrophe in "Max's" to "Max&apos;s" */}
               ✨ Max&apos;s activity levels are 15% higher than average. Consider
               adjusting meal portions.
             </div>

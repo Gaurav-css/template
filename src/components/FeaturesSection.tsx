@@ -53,7 +53,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
   }, []);
 
   // Style for the card content itself (the animated part)
-  // Explicitly type the style object as React.CSSProperties
   const cardContentStyle: React.CSSProperties = {
     transition: 'opacity 700ms ease-out, transform 700ms ease-out',
     opacity: isVisible ? 1 : 0,
@@ -61,9 +60,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
   };
 
   // The wrapper div gets the sticky positioning on small screens
-  // Explicitly type the style object as React.CSSProperties
   const wrapperStyle: React.CSSProperties = isSmallScreen ? {
-    position: 'sticky', // This is now correctly typed as a valid 'Position' property
+    position: 'sticky',
     top: `calc(8rem + ${index * 2}rem)`,
     zIndex: index,
     marginBottom: '1rem',
@@ -92,21 +90,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
   );
 };
 
-// Data for the feature cards, making it easier to manage
+// FIXED: Escaped all apostrophes (') with (&apos;)
 const allFeatures = [
-  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
-  { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
+  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet&apos;s care." },
+  { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet&apos;s health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
   { id: 'community', icon: <Users className="w-6 h-6 text-[#ED6C35]" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
-  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-[#ED6C35]" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
+  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-[#ED6C35]" />, title: "Vet Integrations", children: "Access your vet&apos;s insights directly through our app. With seamless integrations, managing your pet&apos;s appointments and health records has never been easier." },
   { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
-  { id: 'activity', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
+  { id: 'activity', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet&apos;s daily activity levels to ensure they&apos;re getting enough exercise and staying healthy." }
 ];
 
 
 export default function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [visibleCardCount, setVisibleCardCount] = useState(allFeatures.length);
-  // Specify that the ref is for an HTMLDivElement
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
   // Effect to detect screen size and set initial card visibility
@@ -159,32 +156,21 @@ export default function App() {
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center py-16 lg:py-24">
             <div className="space-y-6">
               <span className="text-sm font-bold text-[#ED6C35]">Features</span>
+              {/* FIXED: Escaped the apostrophe in "Pet's" */}
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Why Choose Hooman for Your Pet's Health?
+                Why Choose Hooman for Your Pet&apos;s Health?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 At Hooman, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
               </p>
 
               <div className="flex items-center space-x-4 pt-4">
-                {/* --- UPDATED BUTTON --- */}
                 <Link
                   href="/blog"
                   className="inline-block px-6 py-3 bg-[#ED6C35] text-white font-semibold rounded-md shadow-sm hover:bg-[#d95b2a] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ED6C35] dark:focus:ring-offset-gray-800"
                 >
                   Learn More
                 </Link>
-
-                {/* Join */}
-                {/* <Link
-                  href="#"
-                  className="px-6 py-3 text-[#ED6C35] font-semibold rounded-md hover:text-[#d95b2a] transition-colors duration-300 group"
-                >
-                  Join{" "}
-                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                    &rarr;
-                  </span>
-                </Link> */}
               </div>
             </div>
           </div>
