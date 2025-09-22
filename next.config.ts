@@ -1,12 +1,27 @@
-import type { NextConfig } from "next";
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   // Your other config might be here
 
-const nextConfig: NextConfig = {
+//   eslint: {
+//     // Warning: This allows production builds to successfully complete even if
+//     // your project has ESLint errors.
+//     ignoreDuringBuilds: true,
+//   },
+// };
+
+// module.exports = nextConfig;
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+    // Ignore ESLint errors during production build
     ignoreDuringBuilds: true,
   },
-  /* your other config options here */
+  images: {
+    // Optional: allow loading external images if you use them
+    domains: ["example.com"], 
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

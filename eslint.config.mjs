@@ -10,6 +10,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Extend Next.js recommended configs
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     ignores: [
@@ -19,6 +20,11 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      "@next/next/no-img-element": "off",        // Allow <img> tags
+      "@next/next/no-html-link-for-pages": "off", // Allow <a> for internal links
+      "react/no-unescaped-entities": "off",       // Allow unescaped ' and "
+    },
   },
 ];
 
