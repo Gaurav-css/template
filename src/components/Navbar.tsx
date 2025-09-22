@@ -197,7 +197,7 @@ const Navbar = () => {
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
             <Link href="/">
-              <Image src="/logo.png" alt="Hooman Pets Logo" width={120} height={40} className="h-10 w-auto" />
+              <Image src="/Logo.png" alt="Hooman Pets Logo" width={120} height={40} className="h-10 w-auto" />
             </Link>
             <button onClick={handleMenuToggle} className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B]">
               <X className="h-6 w-6" />
