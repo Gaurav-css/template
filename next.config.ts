@@ -10,17 +10,12 @@
 // };
 
 // module.exports = nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
     // Ignore ESLint errors during production build
     ignoreDuringBuilds: true,
-  },
-  images: {
-    // Optional: allow loading external images if you use them
-    domains: ["example.com"], 
   },
 };
 
