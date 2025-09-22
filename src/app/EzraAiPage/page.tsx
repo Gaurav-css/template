@@ -201,7 +201,7 @@ const EzraAiPage = () => {
         </section>
 
         {/* FAQ Section */}
-        <section>
+        {/* <section>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">Frequently Asked Questions</h2>
             <div className="mt-12 space-y-6">
@@ -223,7 +223,7 @@ const EzraAiPage = () => {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Download App Section */}
         <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
@@ -261,9 +261,9 @@ const EzraAiPage = () => {
                 </div>
               </div>
               <div className="hidden lg:flex items-center justify-center">
-                <div className="relative w-72 h-[34rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
+                <div className="relative w-72 h-[36rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-900 dark:bg-zinc-800 rounded-full"></div>
-                  <img src="https://placehold.co/600x1200/1e293b/94a3b8?text=Hooman\nApp\nUI" alt="Hooman App on Phone" className="w-full h-full object-cover rounded-[2rem]" />
+                  <img src="/Ezra.png" alt="Hooman App on Phone" className="w-full h-full object-cover rounded-[2rem]" />
                 </div>
               </div>
             </div>

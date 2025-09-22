@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 
-// NOTE: This component assumes you have Tailwind CSS dark mode configured to 'class'.
 const CommunityWaitlist = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -20,7 +19,6 @@ const CommunityWaitlist = () => {
     }
 
     try {
-      // Simulate an API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setStatus('success');
@@ -38,14 +36,11 @@ const CommunityWaitlist = () => {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-[#1a1a1a] dark:text-white">
-      {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center space-y-8 px-4 py-16 text-center">
-        {/* Tagline */}
         <div className="inline-flex items-center rounded-full border border-gray-900/10 bg-gray-900/5 px-4 py-1.5 text-sm font-medium backdrop-blur-md dark:border-white/20 dark:bg-white/10">
           🐾 Paws & Friends
         </div>
 
-        {/* Main Heading */}
         <h1 className="text-4xl font-bold leading-tight tracking-tight text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl">
           The Ultimate Hub for <br className="hidden sm:inline" />
           <span className="bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
@@ -54,12 +49,10 @@ const CommunityWaitlist = () => {
           is Coming Soon.
         </h1>
 
-        {/* Description */}
         <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-300 md:text-xl">
           Be the first to know! Join our waitlist for exclusive updates, early access to our platform, and special content crafted for you and your beloved pets.
         </p>
 
-        {/* Waitlist Form Container */}
         <div className="w-full max-w-md">
           {status === 'success' ? (
             <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-6 text-center backdrop-blur-md">
@@ -67,7 +60,6 @@ const CommunityWaitlist = () => {
             </div>
           ) : (
             <>
-              {/* --- Form for LARGE screens (md and up) --- */}
               <form
                 className="hidden w-full flex-col gap-3 md:flex md:flex-row"
                 onSubmit={handleSubmit}
@@ -90,7 +82,6 @@ const CommunityWaitlist = () => {
                 </button>
               </form>
 
-              {/* --- Form for SMALL screens --- */}
               <form 
                 className="space-y-4 text-left md:hidden"
                 onSubmit={handleSubmit}

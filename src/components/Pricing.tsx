@@ -112,10 +112,10 @@ const App: React.FC = () => {
         "Mobile & desktop access",
         "Email support",
       ],
-      buttonText: "Start for free",
+      buttonText: "Start for Basic",
     },
     {
-      name: "Pro",
+      name: "Plus",
       description: "For growing teams that need smarter workflows.",
       price: { monthly: 9.99, yearly: 119.98 },
       features: [
@@ -127,10 +127,10 @@ const App: React.FC = () => {
         "Priority support",
       ],
       isPopular: true,
-      buttonText: "Start with Pro",
+      buttonText: "Start with Plus",
     },
     {
-      name: "Enterprise",
+      name: "Pro",
       description: "For large organizations with advanced needs.",
       price: { monthly: 16.99, yearly: 203.88 },
       features: [
@@ -141,7 +141,7 @@ const App: React.FC = () => {
         "KPI dashboards & reporting tools",
         "Onboarding support",
       ],
-      buttonText: "Contact Sales",
+      buttonText: "Start with Pro",
     },
   ];
 

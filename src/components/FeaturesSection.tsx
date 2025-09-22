@@ -176,7 +176,7 @@ export default function App() {
                 </Link>
 
                 {/* Join */}
-                <Link
+                {/* <Link
                   href="#"
                   className="px-6 py-3 text-[#ED6C35] font-semibold rounded-md hover:text-[#d95b2a] transition-colors duration-300 group"
                 >
@@ -184,7 +184,7 @@ export default function App() {
                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                     &rarr;
                   </span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
