@@ -25,7 +25,7 @@ const TermsOfService = () => {
             
             <Section title="1. Agreement to Terms">
               <p>
-                <strong>1.1.</strong> These Terms of Service (“Terms”) constitute a legally binding agreement between you (“you”, “your”, or “User”) and Hooman Group Ltd (“Hooman”, “we”, “our”, or “us”), a company registered in England and Wales with registered address at [Your Address Here], United Kingdom. These Terms govern your access to and use of our websites (including www.hoomanpets.com), mobile applications, platforms, AI-powered tools (such as Ezra AI), digital products, and any related services (collectively, the “Services”).
+                <strong>1.1.</strong> These Terms of Service (“Terms”) constitute a legally binding agreement between you (“you”, “your”, or “User”) and Hooman Group Ltd (“Hooman Group”, “we”, “our”, or “us”), a company registered in England and Wales with registered address at [Your Address Here], United Kingdom. These Terms govern your access to and use of our websites (including www.hoomanpets.com), mobile applications, platforms, AI-powered tools (such as Ezra AI), digital products, and any related services (collectively, the “Services”).
               </p>
               <p>
                 <strong>1.2.</strong> By accessing, registering for, or using the Services in any manner, you acknowledge that you have read, understood, and agree to be bound by these Terms, our Privacy Policy (incorporated herein by reference), and any additional guidelines or rules posted within the Services. If you do not agree to these Terms, you must not access or use the Services and should discontinue any use immediately.
@@ -62,7 +62,7 @@ const TermsOfService = () => {
             
             <Section title="9. Warranties and Limitation of Liability">
               <p><strong>9.1.</strong> The Services are provided “as is” and “as available” without warranties of any kind, express or implied, including but not limited to merchantability, fitness for a particular purpose, accuracy, or non-infringement.</p>
-              <p><strong>9.2.</strong> To the maximum extent permitted by law, Hooman, its affiliates, officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, goodwill, or pet-related harm, arising from or related to the Services, even if advised of the possibility.</p>
+              <p><strong>9.2.</strong> To the maximum extent permitted by law, Hooman Group, its affiliates, officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, goodwill, or pet-related harm, arising from or related to the Services, even if advised of the possibility.</p>
               <p><strong>9.3.</strong> Our total aggregate liability for any claims under these Terms is limited to the amount you paid us for the Services in the twelve (12) months preceding the claim.</p>
               <p><strong>9.4.</strong> Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, fraud, or any other liability that cannot be excluded under applicable law (e.g., UK Consumer Rights Act 2015).</p>
             </Section>

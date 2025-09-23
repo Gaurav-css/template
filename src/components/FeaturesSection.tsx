@@ -158,10 +158,10 @@ export default function App() {
               <span className="text-sm font-bold text-[#ED6C35]">Features</span>
               {/* FIXED: Escaped the apostrophe in "Pet's" */}
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Why Choose Hooman for Your Pet&apos;s Health?
+                Why Choose Hooman Group for Your Pet&apos;s Health?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                At Hooman, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
+                At Hooman Group, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
               </p>
 
               <div className="flex items-center space-x-4 pt-4">

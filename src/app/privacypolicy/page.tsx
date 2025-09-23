@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
               
               <Section title="1. Introduction">
                 <p>
-                  <strong>1.1.</strong> Hooman Group Ltd (“Hooman”, “we”, “our”, or “us”) is committed to safeguarding the privacy and personal data of our users, customers, partners, and visitors (“you” or “your”). As a company dedicated to providing innovative pet care solutions, including AI-powered tools like Ezra AI, we prioritise transparency, security, and compliance in all our data handling practices.
+                  <strong>1.1.</strong> Hooman Group Ltd (“Hooman Group”, “we”, “our”, or “us”) is committed to safeguarding the privacy and personal data of our users, customers, partners, and visitors (“you” or “your”). As a company dedicated to providing innovative pet care solutions, including AI-powered tools like Ezra AI, we prioritise transparency, security, and compliance in all our data handling practices.
                 </p>
                 <p>
                   <strong>1.2.</strong> This Privacy Policy describes how we collect, use, disclose, store, and protect personal data when you access our websites, mobile applications, platforms, and services (collectively, the “Services”). It applies to all interactions with our Services, whether through our website at www.hoomanpets.com, our mobile app, or any integrated third-party features.

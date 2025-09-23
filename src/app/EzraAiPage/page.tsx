@@ -275,7 +275,7 @@ const EzraAiPage = () => {
                   {/* Replaced Next.js Image with standard <img> tag and adjusted classes for fill effect */}
                   <img
                     src="/Ezra.png"
-                    alt="Hooman App on Phone"
+                    alt="Hooman Group App on Phone"
                     className="absolute inset-0 w-full h-full object-cover rounded-[2.7rem]"
                   />
                 </div>

@@ -30,9 +30,9 @@ const Footer = () => {
       title: "Product",
       links: [
         { name: "Ezra AI", href: "/EzraAiPage" },
-        { name: "Hooman Care", href: "/CareTrack" },
+        { name: "Hooman Group Care", href: "/CareTrack" },
         // { name: "Hooman Connect", href: "#" },
-        { name: "Hooman Veterinary", href: "vet-insights" },
+        { name: "Hooman Group Veterinary", href: "vet-insights" },
         { name: "Pricing", href: "/#pricing" },
         { name: "Download Application", href: "#" },
       ],

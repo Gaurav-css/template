@@ -212,7 +212,7 @@ const OurVision = () => {
     ];
 
     const roadmap = [
-        { icon: <Smartphone size={24} className="text-orange-500" />, iconBg: 'bg-orange-500/10', title: 'App Launch', date: 'Q2 2025', description: 'Release Hooman\'s comprehensive pet care platform with Ezra AI and advanced health monitoring.', status: 'Upcoming', statusColor: 'bg-orange-500/20 text-orange-400' },
+        { icon: <Smartphone size={24} className="text-orange-500" />, iconBg: 'bg-orange-500/10', title: 'App Launch', date: 'Q2 2025', description: 'Release Hooman Group\'s comprehensive pet care platform with Ezra AI and advanced health monitoring.', status: 'Upcoming', statusColor: 'bg-orange-500/20 text-orange-400' },
         { icon: <HeartHandshake size={24} className="text-orange-500" />, iconBg: 'bg-orange-500/10', title: 'Pet Partnership', date: 'Q3 2025', description: 'Building the world\'s largest verified network of veterinarians and pet care professionals.', status: 'In Progress', statusColor: 'bg-orange-500/20 text-orange-400' },
         { icon: <Globe size={24} className="text-green-500" />, iconBg: 'bg-green-500/10', title: 'Global Expansion', date: 'Q4 2025', description: 'Bringing smart pet care solutions to families worldwide with multi-language support.', status: 'Planned', statusColor: 'bg-gray-500/20 text-gray-400' },
         { icon: <Users size={24} className="text-purple-500" />, iconBg: 'bg-purple-500/10', title: 'Community Growth', date: '2026', description: 'Creating a thriving ecosystem of pet parents, experts, and AI-powered care solutions.', status: 'Planned', statusColor: 'bg-gray-500/20 text-gray-400' }
@@ -336,7 +336,7 @@ export default function HomePage() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
-            The <span className="text-orange-500 dark:text-orange-400">Hooman</span> <span className="text-orange-500 dark:text-orange-400">Story</span>
+            The <span className="text-orange-500 dark:text-orange-400">Hooman Group</span> <span className="text-orange-500 dark:text-orange-400">Story</span>
           </h1>
           <h2 className="mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
             Revolutionizing Pet Care Through AI

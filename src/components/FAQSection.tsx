@@ -7,19 +7,19 @@ const faqData = [
     category: 'General',
     questions: [
       {
-        question: 'What is Hooman  and how does it work?',
+        question: 'What is Hooman Group and how does it work?',
         answer:
-          "Hooman is an AI-powered mobile app designed to help pet parents manage their pets' health and routines. It offers features like health tracking, vet insights, and personalised care reminders. With Hooman, you can ensure your furry friends receive the best care possible.",
+          "Hooman Group is an AI-powered mobile app designed to help pet parents manage their pets' health and routines. It offers features like health tracking, vet insights, and personalised care reminders. With Hooman Group, you can ensure your furry friends receive the best care possible.",
       },
       {
-        question: 'Is Hooman suitable for both dogs and cats?',
+        question: 'Is Hooman Group suitable for both dogs and cats?',
         answer:
-          'Yes, Hooman is designed to cater to the needs of both dogs and cats, providing customized health tracking and care routines for each.',
+          'Yes, Hooman Group is designed to cater to the needs of both dogs and cats, providing customized health tracking and care routines for each.',
       },
       {
-        question: 'What makes Hooman different from other pet apps?',
+        question: 'What makes Hooman Group different from other pet apps?',
         answer:
-          'Hooman uses advanced AI to provide proactive health insights and personalized recommendations, going beyond simple tracking to become a comprehensive health partner for your pet.',
+          'Hooman Group uses advanced AI to provide proactive health insights and personalized recommendations, going beyond simple tracking to become a comprehensive health partner for your pet.',
       },
     ],
   },
@@ -32,9 +32,9 @@ const faqData = [
           "Ezra AI, our proprietary technology, analyzes data points from your pet's activity, diet, and reported symptoms to identify patterns and potential health issues before they become serious.",
       },
       {
-        question: 'Can Hooman detect serious health issues?',
+        question: 'Can Hooman Group detect serious health issues?',
         answer:
-          "Hooman's AI can flag potential health concerns based on the data you provide. However, it is not a substitute for professional veterinary diagnosis. We always recommend consulting your vet for any serious issues.",
+          "Hooman Group's AI can flag potential health concerns based on the data you provide. However, it is not a substitute for professional veterinary diagnosis. We always recommend consulting your vet for any serious issues.",
       },
     ],
   },
@@ -44,7 +44,7 @@ const faqData = [
       {
         question: 'Can I sync with vets?',
         answer:
-          "Yes, Hooman allows you to connect with your vet directly through the app. You can share health data and receive professional insights seamlessly. This feature enhances communication and ensures your pet's health is monitored effectively.",
+          "Yes, Hooman Group allows you to connect with your vet directly through the app. You can share health data and receive professional insights seamlessly. This feature enhances communication and ensures your pet's health is monitored effectively.",
       },
     ],
   },
@@ -54,10 +54,10 @@ const faqData = [
       {
         question: 'Is it free to use?',
         answer:
-          'Hooman offers a free version with essential features. For advanced functionalities and personalised services, a subscription is required. You can explore the app to see which plan suits you and your pet best.',
+          'Hooman Group offers a free version with essential features. For advanced functionalities and personalised services, a subscription is required. You can explore the app to see which plan suits you and your pet best.',
       },
       {
-        question: "What's included in the Hooman platform?",
+        question: "What's included in the Hooman Group platform?",
         answer:
           'The platform includes health and activity tracking, AI-powered insights, appointment reminders, and the ability to share data with your vet. Premium features unlock more in-depth analysis and telehealth options.',
       },
@@ -95,7 +95,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Find answers to your questions about Hooman.
+            Find answers to your questions about Hooman Group.
           </p>
         </div>
 

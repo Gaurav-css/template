@@ -37,7 +37,7 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-[#ED6C35]">Hooman</span>
+                <span className="text-2xl font-bold text-[#ED6C35]">Hooman Group</span>
             </div>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
               {/* FIXED: Replaced <a> with <Link> for internal navigation */}
