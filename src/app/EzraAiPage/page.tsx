@@ -254,7 +254,9 @@ const EzraAiPage = () => {
                     <span>Download for iPhone</span>
                   </a>
                 </div>
+
               </div>
+              
             </div>
           </div>
         </section>
