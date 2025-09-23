@@ -1,7 +1,7 @@
 "use client";
 import { ArrowRight, ArrowDown, ShieldCheck, Clock, Heart, Star, Lock, FlaskConical, BrainCircuit, Globe, Users, Stethoscope, Smartphone, HeartHandshake, MessageSquare, Share2 } from 'lucide-react';
 
-// Component for the "Our Journey" section
+
 const OurJourney = () => {
   return (
     <section id="our-journey" className="text-gray-800 dark:text-gray-200 py-16 sm:py-24">
