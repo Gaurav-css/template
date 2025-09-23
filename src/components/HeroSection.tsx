@@ -40,7 +40,7 @@ const HeroSection = () => {
                 </span>
               </h1>
               <p className="mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Experience the future of pet care with Hooman Pets. Our AI-powered
+                Experience the future of pet care with Hooman Group Pets. Our AI-powered
                 app ensures your furry friends receive the best care tailored to their
                 needs.
               </p>

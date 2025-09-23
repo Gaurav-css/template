@@ -7,7 +7,7 @@ const faqData = [
     category: 'General',
     questions: [
       {
-        question: 'What is Hooman and how does it work?',
+        question: 'What is Hooman  and how does it work?',
         answer:
           "Hooman is an AI-powered mobile app designed to help pet parents manage their pets' health and routines. It offers features like health tracking, vet insights, and personalised care reminders. With Hooman, you can ensure your furry friends receive the best care possible.",
       },

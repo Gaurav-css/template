@@ -157,7 +157,7 @@ export default function PetCarePage() {
                     <p className="text-sm font-semibold tracking-wider text-[#ED6C35] dark:text-[#ED6C35]">Empower</p>
                     <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">Revolutionise Your Pet Care</h1>
                     <p className="mt-6 max-w-2xl mx-auto text-base leading-7 sm:text-lg sm:leading-8 text-gray-600 dark:text-gray-400">
-                        Discover how Hooman Pets transforms pet care with AI-driven insights. Say goodbye to guesswork and hello to tailored routines for your furry friends.
+                        Discover how Hooman Group Pets transforms pet care with AI-driven insights. Say goodbye to guesswork and hello to tailored routines for your furry friends.
                     </p>
                 </div>
                 <div className="mt-16 sm:mt-20 max-w-4xl mx-auto">

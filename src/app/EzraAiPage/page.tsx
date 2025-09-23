@@ -3,9 +3,9 @@
 import React from 'react';
 // Removed 'next/image' and 'next/link' imports as they are Next.js specific.
 // Using standard <img> and <a> tags instead.
-import { 
-  Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck, 
-  Sparkles, PawPrint, Quote 
+import {
+  Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck,
+  Sparkles, PawPrint, Quote
 } from 'lucide-react';
 
 // --- Helper Components (Moved to top for better organization) ---
@@ -39,9 +39,9 @@ const TestimonialCard = ({ quote, name, role, avatarUrl }: { quote: string; name
       </div>
       <div className="mt-4 pt-4 border-t border-slate-200 dark:border-zinc-800 flex items-center gap-x-4">
         {/* Replaced Next.js Image with standard <img> tag */}
-        <img 
-          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-zinc-700 object-cover" 
-          src={avatarUrl} 
+        <img
+          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-zinc-700 object-cover"
+          src={avatarUrl}
           alt={name}
           width={48}
           height={48}
@@ -111,7 +111,7 @@ const EzraAiPage = () => {
                 <PawPrint className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">1. Input Pet Data</h3>
-              <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Easily log your pet’s daily activities, diet, behavior, and health records in the Hooman app.</p>
+              <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Easily log your pet’s daily activities, diet, behavior, and health records in the Hooman Group app.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
@@ -207,7 +207,7 @@ const EzraAiPage = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Testimonials Section */}
         <section>
           <div className="max-w-3xl mx-auto text-center">
@@ -246,31 +246,37 @@ const EzraAiPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
-                  Get Started with Hooman Today
+                  Get Started with Hooman Group Today
                 </h2>
                 <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto lg:mx-0">
                   Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a href="#" className="inline-flex items-center justify-center gap-x-3 rounded-lg bg-slate-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-slate-900 transition hover:opacity-90">
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19.33 11.0371C19.33 9.4237 20.3771 8.36857 21.6571 7.62286C21.0543 6.64 20.1343 5.92571 19.0343 5.56857C17.6571 4.96571 16.1 5.37429 15.3171 6.16286C14.5429 6.95143 13.5629 7.93143 12.5171 7.93143C11.4714 7.93143 10.3714 6.94286 9.49429 6.94286C7.94286 6.94286 6.25143 7.93143 5.24 9.25429C3.12 11.9657 4.54571 16.2714 6.36286 18.5714C7.30286 19.7257 8.35714 21.04 9.68 21C10.9514 20.9571 11.3771 20.2429 13.28 20.2429C15.1829 20.2429 15.5657 21 16.88 21C18.2029 20.9571 19.1229 19.7257 20.0629 18.5714C20.8029 17.6514 21.3286 16.5829 21.6 15.42C20.2229 14.7143 19.33 13.56 19.33 11.0371ZM13.3714 4.13714C14.2486 3.08286 15.52 2.37714 16.62 2C16.7057 3.20571 16.1 4.39429 15.2229 5.32C14.3457 6.24571 13.0714 6.95143 11.9714 7.22C11.8857 6.01429 12.4914 4.96571 13.3714 4.13714Z" />
-                    </svg>
-                    <div>
-                      <p className="text-xs">Download on the</p>
-                      <p className="text-lg font-semibold">App Store</p>
+                  <a
+                    href="#"
+                    className="inline-flex items-center justify-center gap-x-3 rounded-lg bg-slate-900 dark:bg-white px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-medium text-white dark:text-slate-900 transition hover:opacity-90 w-full sm:w-auto"
+                  >
+                    <img
+                      src="app-store.png"
+                      alt="Download on the App Store"
+                      className="h-8 sm:h-10 md:h-12 w-auto"
+                    />
+                    <div className="text-left">
+                      <p className="text-[10px] sm:text-xs">Download on the</p>
+                      <p className="text-base sm:text-lg font-semibold">App Store</p>
                     </div>
                   </a>
                 </div>
+
               </div>
               <div className="hidden lg:flex items-center justify-center">
-                <div className="relative w-72 h-[36rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
+                <div className="relative w-72 h-[32rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-900 dark:bg-zinc-800 rounded-full"></div>
                   {/* Replaced Next.js Image with standard <img> tag and adjusted classes for fill effect */}
                   <img
-                    src="/Ezra.png" 
-                    alt="Hooman App on Phone" 
-                    className="absolute inset-0 w-full h-full object-cover rounded-[2rem]" 
+                    src="/Ezra.png"
+                    alt="Hooman App on Phone"
+                    className="absolute inset-0 w-full h-full object-cover rounded-[2.7rem]"
                   />
                 </div>
               </div>

@@ -108,7 +108,7 @@ export default function App() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:py-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-4">
-          Hooman Pets has transformed our pet care routine!
+          Hooman Group Pets has transformed our pet care routine!
         </p>
       </div>
 

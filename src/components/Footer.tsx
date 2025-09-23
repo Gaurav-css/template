@@ -30,9 +30,9 @@ const Footer = () => {
       title: "Product",
       links: [
         { name: "Ezra AI", href: "/EzraAiPage" },
-        { name: "Hooman Care", href: "#" },
-        { name: "Hooman Connect", href: "#" },
-        { name: "Hooman Veterinary", href: "#" },
+        { name: "Hooman Care", href: "/CareTrack" },
+        // { name: "Hooman Connect", href: "#" },
+        { name: "Hooman Veterinary", href: "vet-insights" },
         { name: "Pricing", href: "/#pricing" },
         { name: "Download Application", href: "#" },
       ],
@@ -40,10 +40,11 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "#" },
+        { name: "About Us", href: "/About" },
+
         { name: "Blogs", href: "/blog" },
-        { name: "Careers", href: "#" },
-        { name: "Contact Us", href: "#" },
+        { name: "Careers", href: "/career" },
+        { name: "Contact Us", href: "/Contact-Us" },
         { name: "FAQ", href: "/#FAQ" },
       ],
     },
@@ -52,7 +53,6 @@ const Footer = () => {
       links: [
         { name: "Privacy Policy", href: "/privacypolicy" },
         { name: "Terms of Use", href: "/terms&services" },
-        { name: "OurStory", href: "/ourstory" },
       ],
     },
   ];

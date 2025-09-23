@@ -5,15 +5,15 @@ import Image from 'next/image'; // FIXED: Import the Next.js Image component
 
 // --- MOCK DATA ---
 type Post = {
-    id: number;
-    category: string;
-    readTime: string;
-    title: string;
-    description: string;
-    author: string;
-    publishDate: string;
-    featured?: boolean;
-    image?: string;
+  id: number;
+  category: string;
+  readTime: string;
+  title: string;
+  description: string;
+  author: string;
+  publishDate: string;
+  featured?: boolean;
+  image?: string;
 };
 
 // FIXED: Escaped all apostrophes (') with (&apos;) to prevent build errors
@@ -214,7 +214,7 @@ const blogPosts: Post[] = [
 const categories = ['View all', 'Health tips', 'New pet', 'Behaviour', 'Training advice', 'Pet care'];
 
 // --- SVG ICONS ---
-const ImageIcon = ({className}: {className: string}) => (
+const ImageIcon = ({ className }: { className: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={`text-gray-400 dark:text-gray-600 ${className}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
   </svg>
@@ -230,17 +230,17 @@ const ArrowRightIcon = () => (
 const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post: Post) => void }) => (
   <div onClick={() => onSelectPost(post)} className="bg-white dark:bg-[#2b2b2b] rounded-lg overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
     <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] flex items-center justify-center overflow-hidden">
-        {post.image ? (
-            <Image 
-              src={post.image} 
-              alt={post.title} 
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-105" 
-            />
-        ) : (
-            <ImageIcon className="h-12 w-12" />
-        )}
+      {post.image ? (
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      ) : (
+        <ImageIcon className="h-12 w-12" />
+      )}
     </div>
     <div className="p-6 flex-grow flex flex-col">
       <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-x-4 mb-2">
@@ -260,17 +260,17 @@ const BlogPostCard = ({ post, onSelectPost }: { post: Post, onSelectPost: (post:
 const FeaturedBlogPost = ({ post, onSelectPost }: { post: Post, onSelectPost: (post: Post) => void }) => (
   <div onClick={() => onSelectPost(post)} className="flex flex-col lg:flex-row gap-8 items-center group cursor-pointer">
     <div className="relative w-full lg:w-1/2 aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
-        {post.image ? (
-            <Image 
-              src={post.image} 
-              alt={post.title}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-105" 
-            />
-        ) : (
-            <ImageIcon className="h-16 w-16" />
-        )}
+      {post.image ? (
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      ) : (
+        <ImageIcon className="h-16 w-16" />
+      )}
     </div>
     <div className="w-full lg:w-1/2">
       <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-x-4 mb-3">
@@ -331,93 +331,93 @@ const BlogList = ({ onSelectPost }: { onSelectPost: (post: Post) => void }) => {
 // --- BLOG POST DETAIL PAGE COMPONENT ---
 const BlogPostPage = ({ post, onGoBack }: { post: Post, onGoBack: () => void }) => (
   <div className="max-w-7xl mx-auto">
-      <button onClick={onGoBack} className="mb-8 text-[#ED6C35] hover:underline">
-          &larr; Back to all articles
-      </button>
-      <header className="mb-12">
-          <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-x-4 mb-3">
-              <span>{post.category}</span>
-              <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-              <span>{post.readTime}</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">
-              {post.title}
-          </h1>
-          <div className="flex items-center gap-x-8 text-sm text-gray-600 dark:text-gray-300">
-              <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Written by</p>
-                  <p>{post.author}</p>
-              </div>
-              <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Published on</p>
-                  <p>{post.publishDate}</p>
-              </div>
-          </div>
-      </header>
+    <button onClick={onGoBack} className="mb-8 text-[#ED6C35] hover:underline">
+      &larr; Back to all articles
+    </button>
+    <header className="mb-12">
+      <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-x-4 mb-3">
+        <span>{post.category}</span>
+        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+        <span>{post.readTime}</span>
+      </div>
+      <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">
+        {post.title}
+      </h1>
+      <div className="flex items-center gap-x-8 text-sm text-gray-600 dark:text-gray-300">
+        <div>
+          <p className="font-semibold text-gray-900 dark:text-white">Written by</p>
+          <p>{post.author}</p>
+        </div>
+        <div>
+          <p className="font-semibold text-gray-900 dark:text-white">Published on</p>
+          <p>{post.publishDate}</p>
+        </div>
+      </div>
+    </header>
 
-      <div className="relative w-full aspect-[16/9] bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center mb-12 overflow-hidden">
-          {post.image ? (
-              <Image 
-                src={post.image} 
-                alt={post.title}
+    <div className="relative w-full aspect-[16/9] bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center mb-12 overflow-hidden">
+      {post.image ? (
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      ) : (
+        <ImageIcon className="h-24 w-24" />
+      )}
+    </div>
+
+    <div className="flex flex-col lg:flex-row gap-12">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 self-start">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Table of Contents</h3>
+        <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+          {['Section Two', 'Section Three', 'Section Four', 'Section Five', 'Section Six'].map(item => (
+            <li key={item}><a href="#" className="hover:text-[#ED6C35] transition-colors">{item}</a></li>
+          ))}
+        </ul>
+      </aside>
+
+      <article className="w-full lg:w-3/4 prose dark:prose-invert prose-lg max-w-none">
+        <h2>Heading 2</h2>
+        <p>Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae, in aliquet pellentesque et. In magna enim vitae, ut quis. Tincidunt congue praesent, Viverra sit enim, Viverra aliquet augue vitae. Velit malesuada-fringilla.</p>
+        <p>Mi tincidunt elit, id quisque in nulla. Id diam amet, sed id elit. Amet, morbi enim, mi sed. Faucibus aenean vestibulum felis. Dictum quis montes, ut sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vestibulum, amet, et, et. Tincidunt justo, in nulla. Id aliquet, egestas praesent.</p>
+
+        <h3>Heading 3</h3>
+        <p>Eget quis et enim, leo, feugiat pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis, Faucibus augue enim. Quis at habitant diam et. Suscipit tristique risus, et, diam. In in-varius scelerisque. Sodales curabitur quam nunc, et, nisl.</p>
+        <p>Tristique odio senectus, non, posuere, omare leo metus, ultricies. Blandit duis ultricies vulputate morbi feugiat. Ut ipsum, vel, et, pellentesque. Dignissim eu sed. Sit enim, suspendisse ut, et, in. Mauris, id aenean. Cursus aenean aenean magna risus elementum faucibus molestie pellentesque. Arcu ultricies sed mauris suspendisse.</p>
+
+        <h4>Heading 4</h4>
+        <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
+
+        <figure className="!my-12">
+          <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
+            {post.image ? (
+              <Image
+                src={post.image}
+                alt="Article illustration"
                 fill
                 sizes="100vw"
-                className="object-cover" 
+                className="object-cover"
               />
-          ) : (
-              <ImageIcon className="h-24 w-24"/>
-          )}
-      </div>
-      
-      <div className="flex flex-col lg:flex-row gap-12">
-          <aside className="w-full lg:w-1/4 lg:sticky top-24 self-start">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Table of Contents</h3>
-              <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-                  {['Section Two', 'Section Three', 'Section Four', 'Section Five', 'Section Six'].map(item => (
-                      <li key={item}><a href="#" className="hover:text-[#ED6C35] transition-colors">{item}</a></li>
-                  ))}
-              </ul>
-          </aside>
-          
-          <article className="w-full lg:w-3/4 prose dark:prose-invert prose-lg max-w-none">
-              <h2>Heading 2</h2>
-              <p>Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae, in aliquet pellentesque et. In magna enim vitae, ut quis. Tincidunt congue praesent, Viverra sit enim, Viverra aliquet augue vitae. Velit malesuada-fringilla.</p>
-              <p>Mi tincidunt elit, id quisque in nulla. Id diam amet, sed id elit. Amet, morbi enim, mi sed. Faucibus aenean vestibulum felis. Dictum quis montes, ut sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vestibulum, amet, et, et. Tincidunt justo, in nulla. Id aliquet, egestas praesent.</p>
+            ) : (
+              <ImageIcon className="h-16 w-16" />
+            )}
+          </div>
+          <figcaption className="text-center text-sm italic text-gray-500 dark:text-gray-400 mt-2">Image caption goes here</figcaption>
+        </figure>
 
-              <h3>Heading 3</h3>
-              <p>Eget quis et enim, leo, feugiat pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis, Faucibus augue enim. Quis at habitant diam et. Suscipit tristique risus, et, diam. In in-varius scelerisque. Sodales curabitur quam nunc, et, nisl.</p>
-              <p>Tristique odio senectus, non, posuere, omare leo metus, ultricies. Blandit duis ultricies vulputate morbi feugiat. Ut ipsum, vel, et, pellentesque. Dignissim eu sed. Sit enim, suspendisse ut, et, in. Mauris, id aenean. Cursus aenean aenean magna risus elementum faucibus molestie pellentesque. Arcu ultricies sed mauris suspendisse.</p>
+        <h5>Heading 5</h5>
+        <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
 
-              <h4>Heading 4</h4>
-              <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
-              
-              <figure className="!my-12">
-                  <div className="relative w-full aspect-video bg-gray-200 dark:bg-[#3c3c3c] rounded-lg flex items-center justify-center overflow-hidden">
-                          {post.image ? (
-                            <Image 
-                              src={post.image} 
-                              alt="Article illustration" 
-                              fill
-                              sizes="100vw"
-                              className="object-cover" 
-                            />
-                          ) : (
-                              <ImageIcon className="h-16 w-16" />
-                          )}
-                  </div>
-                  <figcaption className="text-center text-sm italic text-gray-500 dark:text-gray-400 mt-2">Image caption goes here</figcaption>
-              </figure>
+        <blockquote className="border-l-4 border-[#ED6C35] pl-4 italic my-8">
+          <p>&quot;Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci. Tincidunt porttitor tempus.&quot;</p>
+        </blockquote>
 
-              <h5>Heading 5</h5>
-              <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque et ultricies ultricies. Duis est sit sed leo nisl. Blandit elit sagittis. Quisque tristique consequat quam sed. Nisl id scelerisque amet nulla purus, tincidunt.</p>
-              
-              <blockquote className="border-l-4 border-[#ED6C35] pl-4 italic my-8">
-                  <p>&quot;Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci. Tincidunt porttitor tempus.&quot;</p>
-              </blockquote>
-
-              <p>Eget quis et enim, leo, feugiat pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis, Faucibus augue enim. Quis at habitant diam et. Suscipit tristique risus, et, diam. In in-varius scelerisque. Sodales curabitur quam nunc, et, nisl.</p>
-          </article>
-      </div>
+        <p>Eget quis et enim, leo, feugiat pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis, Faucibus augue enim. Quis at habitant diam et. Suscipit tristique risus, et, diam. In in-varius scelerisque. Sodales curabitur quam nunc, et, nisl.</p>
+      </article>
+    </div>
   </div>
 );
 
@@ -446,7 +446,7 @@ export default function BlogPage() {
           )}
         </div>
       </div>
-      
+
     </>
   );
 }
