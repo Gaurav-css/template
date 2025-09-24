@@ -51,8 +51,6 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
     const [isLoading, setIsLoading] = useState(false);
     const [isChatLimitReached, setIsChatLimitReached] = useState(false);
     const chatContainerRef = useRef<HTMLDivElement | null>(null);
-
-    const groqApiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY; 
     
     const MESSAGE_LIMIT = 5;
 
@@ -85,38 +83,30 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
 
         let aiResponse: string;
 
-        if (!groqApiKey) {
-            await new Promise(resolve => setTimeout(resolve, 800));
-            aiResponse = "A Groq API key is not configured. Please add your key to the .env.local file to continue.";
-        } else {
-            try {
-                const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${groqApiKey}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        messages: [
-                            { role: "system", content: systemPrompt },
-                            ...updatedChatHistory,
-                        ],
-                        model: 'gemma2-9b-it' 
-                    })
-                });
+        try {
+            // SECURE CHANGE: Call your own server-side API route
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    messages: updatedChatHistory,
+                    systemPrompt: systemPrompt
+                })
+            });
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(`Groq API error: ${response.statusText} - ${errorData.error.message}`);
-                }
-
-                const data = await response.json();
-                aiResponse = data.choices[0]?.message?.content || "Sorry, I couldn't get a response. Please try again.";
-
-            } catch (error) {
-                console.error("Error calling Groq API:", error);
-                aiResponse = "Sorry, something went wrong. Please check your API key and network connection.";
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "An unknown error occurred.");
             }
+
+            const data = await response.json();
+            aiResponse = data.response;
+
+        } catch (error) {
+            console.error("Error calling chat API:", error);
+            aiResponse = "Sorry, something went wrong. Please try again later.";
         }
         
         const assistantMessage: ChatMessage = { role: 'assistant', content: aiResponse };
@@ -163,11 +153,10 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
                                         <AiSparkleIcon size={20} className="text-white" />
                                     </div>
                                 )}
-                                {/* --- THE FIX IS HERE --- */}
                                 <div className={`p-3 rounded-2xl ${
                                     message.role === 'user'
                                         ? 'bg-[#ED6C35] text-white rounded-br-none max-w-md'
-                                        : 'bg-white dark:bg-[#2C2C2E] text-gray-800 dark:text-gray-200 rounded-bl-none max-w-2xl' // Increased max-width for AI
+                                        : 'bg-white dark:bg-[#2C2C2E] text-gray-800 dark:text-gray-200 rounded-bl-none max-w-2xl'
                                 }`}>
                                     <p className="text-base leading-relaxed">{message.content}</p>
                                 </div>
@@ -228,6 +217,7 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
 };
 
 // --- Child Components for different sections ---
+// NOTE: These components do not need any changes.
 
 const EzraAIInterface = () => (
     <ChatbotInterface
