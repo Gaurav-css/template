@@ -48,7 +48,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-white dark:bg-neutral-950 py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
