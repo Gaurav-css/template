@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
-import { Lightbulb, Heart, Users, Stethoscope } from 'lucide-react';
+import { Lightbulb, Cross , Users, Sparkles,Stethoscope ,Salad ,Activity } from 'lucide-react';
 
 // Define the type for the component's props
 type FeatureCardProps = {
@@ -92,12 +92,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
 
 // FIXED: Escaped all apostrophes (') with (&apos;)
 const allFeatures = [
-  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet&apos;s care." },
-  { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet&apos;s health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
+  { id: 'ai', icon: <Sparkles className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet&apos;s care." },
+  { id: 'tracking', icon: <Cross  className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet&apos;s health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
   { id: 'community', icon: <Users className="w-6 h-6 text-[#ED6C35]" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
   { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-[#ED6C35]" />, title: "Vet Integrations", children: "Access your vet&apos;s insights directly through our app. With seamless integrations, managing your pet&apos;s appointments and health records has never been easier." },
-  { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
-  { id: 'activity', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet&apos;s daily activity levels to ensure they&apos;re getting enough exercise and staying healthy." }
+  { id: 'nutrition', icon: <Salad  className="w-6 h-6 text-[#ED6C35]" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
+  { id: 'activity', icon: <Activity  className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet&apos;s daily activity levels to ensure they&apos;re getting enough exercise and staying healthy." }
 ];
 
 
