@@ -166,7 +166,7 @@ export default function App() {
 
               <div className="flex items-center space-x-4 pt-4">
                 <Link
-                  href="/blog"
+                  href="/EzraAiPage"
                   className="inline-block px-6 py-3 bg-[#ED6C35] text-white font-semibold rounded-md shadow-sm hover:bg-[#d95b2a] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ED6C35] dark:focus:ring-offset-gray-800"
                 >
                   Learn More

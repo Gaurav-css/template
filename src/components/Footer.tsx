@@ -58,10 +58,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "X", icon: XIcon, href: "https://x.com" },
+    { name: "X", icon: XIcon, href: "Hoomangrp" },
     { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
     { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/hoomangroup/" },
   ];
 
   return (

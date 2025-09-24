@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-// Removed 'next/image' and 'next/link' imports as they are Next.js specific.
-// Using standard <img> and <a> tags instead.
+// Using standard <img> and <a> tags instead of Next.js specific components.
 import {
   Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck,
   Sparkles, PawPrint, Quote
@@ -78,17 +77,12 @@ const EzraAiPage = () => {
               Ezra AI is our advanced intelligence engine designed to analyze your pet&apos;s data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up [animation-delay:600ms]">
-              {/* Replaced Next.js Link with standard <a> tag */}
               <a
                 href="#download-app"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-md bg-orange-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-orange-500/30"
               >
                 <span className="absolute h-0 w-0 rounded-full bg-orange-500 transition-all duration-300 ease-in-out group-hover:h-56 group-hover:w-56"></span>
                 <span className="relative">Get The App</span>
-              </a>
-              {/* Replaced Next.js Link with standard <a> tag */}
-              <a href="#features" className="text-base font-semibold leading-6 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -243,28 +237,21 @@ const EzraAiPage = () => {
         {/* Download App Section */}
         <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
           <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="text-center lg:text-left">
+            <div className="grid grid-cols-1 gap-12 items-center">
+              <div className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
                   Get Started with Hooman Group Today
                 </h2>
-                <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto lg:mx-0">
+                <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
                   Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
                 </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="#"
-                    className="inline-flex items-center justify-center gap-x-3 rounded-lg bg-slate-900 dark:bg-white px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-medium text-white dark:text-slate-900 transition hover:opacity-90 w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-x-2 rounded-lg bg-orange-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-orange-700 w-full sm:w-auto"
                   >
-                    <img
-                      src="app-store.png"
-                      alt="Download on the App Store"
-                      className="h-8 sm:h-10 md:h-12 w-auto"
-                    />
-                    <div className="text-left">
-                      <p className="text-[10px] sm:text-xs">Download on the</p>
-                      <p className="text-base sm:text-lg font-semibold">App Store</p>
-                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                    <span>Download for iPhone</span>
                   </a>
                 </div>
 
@@ -275,7 +262,7 @@ const EzraAiPage = () => {
                   {/* Replaced Next.js Image with standard <img> tag and adjusted classes for fill effect */}
                   <img
                     src="/Ezra.png"
-                    alt="Hooman Group App on Phone"
+                    alt="Hooman App on Phone"
                     className="absolute inset-0 w-full h-full object-cover rounded-[2.7rem]"
                   />
                 </div>

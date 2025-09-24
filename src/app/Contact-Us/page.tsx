@@ -14,7 +14,7 @@ const ContactForm = () => {
   // State to handle form validation errors
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; terms?: string }>({});
   
-  // State for submission status (replaces the alert)
+  // State for submission status
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | 'idle'>('idle');
 
@@ -47,7 +47,7 @@ const ContactForm = () => {
       return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmissionStatus('idle');
 
@@ -57,23 +57,35 @@ const ContactForm = () => {
     
     setIsSubmitting(true);
     
-    // Simulate an API call
-    setTimeout(() => {
-        console.log('Form Submitted:', formData);
-        
-        // On success
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
         setSubmissionStatus('success');
-        setIsSubmitting(false);
         setFormData({
             name: '',
             email: '',
             message: '',
             termsAccepted: false,
         });
-
         // Hide the success message after a few seconds
         setTimeout(() => setSubmissionStatus('idle'), 5000);
-    }, 1000);
+      } else {
+        // Handle server errors (e.g., 500)
+        setSubmissionStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmissionStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -84,7 +96,7 @@ const ContactForm = () => {
             
             {/* Left Column: Form */}
             <div className="text-left">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-500 dark:text-white tracking-tight mb-4">
                 Get in Touch
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
@@ -135,13 +147,11 @@ const ContactForm = () => {
                     <textarea
                       id="message"
                       name="message"
-                      rows={5}
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Type your message..."
-                      // --- THE FIX IS HERE ---
-                      // Added `resize-none` to disable manual resizing by the user.
-                      className="w-full p-3 bg-slate-50 dark:bg-neutral-800 border border-slate-300 dark:border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition resize-none"
+                      rows={5}
+                      className="w-full p-3 bg-slate-50 dark:bg-neutral-800 border border-slate-300 dark:border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
                       required
                     ></textarea>
                     {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message}</p>}
@@ -161,13 +171,13 @@ const ContactForm = () => {
                     </div>
                     <div className="ml-3 text-sm">
                         <label htmlFor="termsAccepted" className="font-medium text-slate-700 dark:text-slate-300">
-                           I accept the <a href="#" className="text-orange-500 hover:underline">Terms of Service</a>
+                            I accept the <a href="#" className="text-orange-500 hover:underline">Terms of Service</a>
                         </label>
                     </div>
                   </div>
                   {errors.terms && <p className="text-sm text-red-500 -mt-3">{errors.terms}</p>}
                   
-                  {/* Submit Button & Success Message */}
+                  {/* Submit Button & Status Messages */}
                   <div>
                     <button
                       type="submit"
@@ -177,12 +187,17 @@ const ContactForm = () => {
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                       {!isSubmitting && <Send size={18} />}
                     </button>
-
-                    {/* --- REPLACEMENT FOR ALERT() --- */}
+                    
                     {submissionStatus === 'success' && (
                         <div className="mt-4 flex items-center gap-3 p-3 text-sm text-green-800 bg-green-100 dark:text-green-200 dark:bg-green-900/50 rounded-md border border-green-200 dark:border-green-800">
                             <CheckCircle size={20} />
                             <span>Thank you! Your message has been sent successfully.</span>
+                        </div>
+                    )}
+                     {submissionStatus === 'error' && (
+                        <div className="mt-4 flex items-center gap-3 p-3 text-sm text-red-800 bg-red-100 dark:text-red-200 dark:bg-red-900/50 rounded-md border border-red-200 dark:border-red-800">
+                            <XCircle size={20} />
+                            <span>Something went wrong. Please try again later.</span>
                         </div>
                     )}
                   </div>
@@ -212,3 +227,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

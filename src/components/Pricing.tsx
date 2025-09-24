@@ -1,10 +1,8 @@
 "use client";
-import Link from 'next/link';
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 
-// Import for the Navbar component
-import Navbar from "@/components/Navbar";
+// The Navbar component import has been removed as it's not defined in this file.
 
 interface Price {
   monthly: number;
@@ -23,8 +21,8 @@ interface Plan {
 interface PricingCardProps {
   plan: Plan;
   isYearly: boolean;
-  isPopular: boolean; 
-  isActive: boolean; 
+  isPopular: boolean;
+  isActive: boolean;
   onMouseEnter: () => void;
 }
 
@@ -96,7 +94,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
 
 const PricingPage: React.FC = () => {
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  
+
   const plans: Plan[] = [
     {
       name: "Basic",
@@ -112,24 +110,9 @@ const PricingPage: React.FC = () => {
       buttonText: "Start for Basic",
     },
     {
-      name: "Plus",
-      description: "For growing teams that need smarter workflows.",
-      price: { monthly: 7.99, yearly: 95.88 }, // Corrected yearly price for consistency
-      features: [
-        "Time tracking & workload management",
-        "Advanced reporting & filters",
-        "Custom labels, priorities & checklists",
-        "Project insights & team analytics",
-        "Billing & usage tracking",
-        "Priority support",
-      ],
-      isPopular: true,
-      buttonText: "Start with Plus",
-    },
-    {
       name: "Pro",
       description: "For large organizations with advanced needs.",
-      price: { monthly: 16.99, yearly: 203.88 },
+      price: { monthly: 14.99, yearly: 179.88 },
       features: [
         "Dedicated account manager",
         "Custom integrations & automation",
@@ -138,21 +121,19 @@ const PricingPage: React.FC = () => {
         "KPI dashboards & reporting tools",
         "Onboarding support",
       ],
+      isPopular: true, // "Pro" is now the popular plan
       buttonText: "Start with Pro",
     },
   ];
-  
-  const defaultPopularPlan = plans.find(p => p.isPopular)?.name || plans[1].name;
+
+  const defaultPopularPlan = plans.find(p => p.isPopular)?.name || plans[0].name;
   const [activePlan, setActivePlan] = useState<string>(defaultPopularPlan);
 
   return (
-    // FIXED: Removed negative margin (-mb-20) for more stable layout
     <div className="min-h-screen bg-gray-50 dark:bg-[#121212] transition-colors duration-300">
-      <Navbar />
+      {/* <Navbar /> */}
 
-      {/* FIXED: Replaced large padding and negative margins with a more conventional padding structure */}
       <div id="pricing" className="container mx-auto px-4 py-24 sm:py-32">
-        {/* FIXED: Removed negative margin (-mt-28) and adjusted bottom margin */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             Choose Your Plan
@@ -162,13 +143,11 @@ const PricingPage: React.FC = () => {
           </p>
         </div>
 
-        {/* FIXED: Adjusted bottom margin for better spacing */}
         <div className="flex items-center justify-center mb-16">
           <div className="bg-white dark:bg-[#1A1A1A] rounded-full p-1.5 border border-gray-200 dark:border-gray-700 shadow-sm">
             <div className="flex items-center space-x-1">
               <button
                 onClick={() => setIsYearly(false)}
-                // FIXED: Made padding responsive for smaller screens
                 className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm font-medium transition-colors duration-300 ${
                   !isYearly
                     ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-sm"
@@ -179,7 +158,6 @@ const PricingPage: React.FC = () => {
               </button>
               <button
                 onClick={() => setIsYearly(true)}
-                // FIXED: Made padding responsive and simplified classes
                 className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm font-medium transition-colors duration-300 flex items-center ${
                   isYearly
                     ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-sm"
@@ -196,7 +174,7 @@ const PricingPage: React.FC = () => {
         </div>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-center"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto items-center" // Adjusted max-width and columns
           onMouseLeave={() => setActivePlan(defaultPopularPlan)}
         >
           {plans.map((plan) => (
@@ -214,9 +192,9 @@ const PricingPage: React.FC = () => {
         <div id="contact" className="text-center mt-16">
           <p className="text-gray-600 dark:text-gray-400">
             Need more?{" "}
-            <Link href="/contact" className="text-orange-500 hover:text-orange-600 font-medium hover:underline">
+            <a href="/contact" className="text-orange-500 hover:text-orange-600 font-medium hover:underline">
               Contact us
-            </Link>{" "}
+            </a>{" "}
             for a custom plan.
           </p>
         </div>
