@@ -12,24 +12,41 @@ const CommunityWaitlist = () => {
     setStatus('loading');
     setMessage('');
 
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      setStatus('error');
-      setMessage('Whoops! Please enter a valid email address.');
-      return;
-    }
-
+    // --- 1. Call your real API endpoint ---
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch('/api/join-waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
+      const data = await response.json();
+
+      // --- 2. Handle the API response ---
+      if (!response.ok) {
+        // If the server returns an error (like 400 or 500)
+        throw new Error(data.error || 'Something went wrong.');
+      }
+      
+      // The API was successful (status 200)
       setStatus('success');
-      setMessage("Welcome to the pack! 🐾 You're on the list for early access.");
-      setEmail('');
+      setMessage(data.message); // Display the message directly from the API
+      
+      // The API response will be either "Success!..." or "You're already on the list!..."
+      // We set the success status for both cases to show a friendly green message.
+      if (data.message.includes("Success")) {
+        setEmail(''); // Only clear the email on a brand new, successful submission
+      }
+
     } catch (error) {
+      // --- 3. Handle network or other errors ---
       setStatus('error');
       if (error instanceof Error) {
         setMessage(error.message);
       } else {
-        setMessage('Something went wrong. Please try again later.');
+        setMessage('An unknown error occurred.');
       }
     }
   };
@@ -37,6 +54,8 @@ const CommunityWaitlist = () => {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-[#1a1a1a] dark:text-white">
       <div className="relative z-20 flex flex-col items-center justify-center space-y-8 px-4 py-16 text-center">
+        {/* ... The rest of your JSX remains the same, it will display the message correctly ... */}
+        
         <div className="inline-flex items-center rounded-full border border-gray-900/10 bg-gray-900/5 px-4 py-1.5 text-sm font-medium backdrop-blur-md dark:border-white/20 dark:bg-white/10">
           🐾 Paws & Friends
         </div>
@@ -54,6 +73,7 @@ const CommunityWaitlist = () => {
         </p>
 
         <div className="w-full max-w-md">
+          {/* This logic now works perfectly with the API response */}
           {status === 'success' ? (
             <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-6 text-center backdrop-blur-md">
               <p className="text-lg font-semibold text-green-800 dark:text-green-300">{message}</p>
@@ -81,7 +101,6 @@ const CommunityWaitlist = () => {
                   {status === 'loading' ? 'Joining...' : 'Get Early Access'}
                 </button>
               </form>
-
               <form 
                 className="space-y-4 text-left md:hidden"
                 onSubmit={handleSubmit}
