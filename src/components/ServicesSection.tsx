@@ -22,7 +22,7 @@ interface ChatbotInterfaceProps {
 }
 
 // --- AI Icon Component ---
-const AiSparkleIcon = ({ size = 20, className = "" }) => (
+const AiSparklesIcon = ({ size = 20, className = "" }) => (
     <svg
         width={size}
         height={size}
@@ -150,7 +150,7 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
                             <div key={index} className={`flex items-start gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                 {message.role === 'assistant' && (
                                     <div className="w-8 h-8 rounded-full bg-[#ED6C35] flex items-center justify-center flex-shrink-0">
-                                        <AiSparkleIcon size={20} className="text-white" />
+                                        <AiSparklesIcon size={20} className="text-white" />
                                     </div>
                                 )}
                                 <div className={`p-3 rounded-2xl ${
@@ -170,7 +170,7 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
                         {isLoading && (
                             <div className="flex items-start gap-3 justify-start">
                                 <div className="w-8 h-8 rounded-full bg-[#ED6C35] flex items-center justify-center flex-shrink-0">
-                                    <AiSparkleIcon size={20} className="text-white" />
+                                    <AiSparklesIcon size={20} className="text-white" />
                                 </div>
                                 <div className="max-w-md p-3 rounded-2xl bg-white dark:bg-[#2C2C2E] text-gray-800 dark:text-gray-200 rounded-bl-none">
                                     <div className="flex items-center gap-2">
