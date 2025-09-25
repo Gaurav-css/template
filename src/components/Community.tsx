@@ -41,7 +41,7 @@ const CommunityWaitlist = () => {
           🐾 Paws & Friends
         </div>
 
-        <h1 className="text-4xl font-bold leading-tight tracking-tight text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl">
+        <h1 className="text-4xl lg:text-[48px] font-bold leading-tight tracking-tight text-shadow-lg  max-w-4xl">
           The Ultimate Hub for <br className="hidden sm:inline" />
           <span className="bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
             Happy Paws

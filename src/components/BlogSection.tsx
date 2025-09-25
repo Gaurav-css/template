@@ -150,7 +150,7 @@ export default function App() {
             <p className="text-sm font-semibold tracking-wider text-orange-500 dark:text-orange-400 mb-2">
               Our Blog
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            <h2 className="text-4xl lg:text-[48px] font-extrabold text-gray-900 dark:text-white tracking-tight">
               Latest Insights for Pet Parents
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">

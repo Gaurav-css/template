@@ -78,7 +78,7 @@ const EzraAiPage = () => {
               <Sparkles className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               <span>The Future of Pet Intelligence</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
+            <h1 className="text-4xl lg:text-[48px] lg:leading-[56px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
               Meet Ezra AI: The Future of Proactive Pet Care.
             </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">

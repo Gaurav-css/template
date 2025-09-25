@@ -91,7 +91,7 @@ const FAQSection = () => {
     <div id='FAQ' className="bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-white min-h-screen w-full flex items-center justify-center p-4 transition-colors duration-300">
       <div className="w-full max-w-4xl mx-auto p-4 md:p-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl lg:text-[48px] font-bold mb-4">
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">

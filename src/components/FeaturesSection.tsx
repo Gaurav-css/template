@@ -157,7 +157,7 @@ export default function App() {
             <div className="space-y-6">
               <span className="text-sm font-bold text-[#ED6C35]">Features</span>
               {/* FIXED: Escaped the apostrophe in "Pet's" */}
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="text-4xl lg:text-[48px] lg:leading-[56px] font-bold tracking-tight text-gray-900 dark:text-white">
                 Why Choose Hooman Group for Your Pet's Health?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">

@@ -52,8 +52,9 @@ const HeroSection = () => {
 
             {/* Left Column: Text Content */}
             <div className="text-center lg:text-left px-2 sm:px-4 lg:px-0 order-2 lg:order-1">
-              <h1 className="text-[48px] font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
-                Revolutionising Pet Care with{' '}
+              <h1 className="text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
+                Revolutionising Pet Care with
+                <br />
                 <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
                   AI Technology
                 </span>

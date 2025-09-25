@@ -322,7 +322,7 @@ export default function PetCarePage() {
             <main className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 sm:py-16">
                 <div className="max-w-4xl mx-auto text-center">
                     <p className="text-sm font-semibold tracking-wider text-[#ED6C35] dark:text-[#ED6C35]">Empower</p>
-                    <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">Revolutionise Your Pet Care</h1>
+                    <h1 className="mt-2 text-4xl lg:text-[48px] font-bold tracking-tight text-gray-900 dark:text-white">Revolutionise Your Pet Care</h1>
                     <p className="mt-6 max-w-2xl mx-auto text-base leading-7 sm:text-lg sm:leading-8 text-gray-600 dark:text-gray-400">
                         Discover how Hooman Group Pets transforms pet care with AI-driven insights. Say goodbye to guesswork and hello to tailored routines for your furry friends.
                     </p>

@@ -135,7 +135,7 @@ const PricingPage: React.FC = () => {
 
       <div id="pricing" className="container mx-auto px-4 py-24 sm:py-32">
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 -mt-10">
+          <h1 className="text-4xl lg:text-[48px] font-bold text-gray-900 dark:text-white mb-4 -mt-10">
             Choose Your Plan
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -192,7 +192,7 @@ const PricingPage: React.FC = () => {
         <div id="contact" className="text-center mt-16">
           <p className="text-gray-600 dark:text-gray-400">
             Need more?{" "}
-            <a href="/contact" className="text-orange-500 hover:text-orange-600 font-medium hover:underline">
+            <a href="/Contact-Us" className="text-orange-500 hover:text-orange-600 font-medium hover:underline">
               Contact us
             </a>{" "}
             for a custom plan.

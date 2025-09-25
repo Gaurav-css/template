@@ -158,7 +158,7 @@ const Navbar = () => {
               <div className="relative" onMouseEnter={() => handleDropdownEnter(setIsFeaturesDropdownOpen, featuresTimeout)} onMouseLeave={() => handleDropdownLeave(setIsFeaturesDropdownOpen, featuresTimeout)}>
                 <button className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium flex items-center group focus:outline-none transition-colors">
                   <Link href="/EzraAiPage">
-                    <span className="cursor-pointer">EzraAi</span>
+                    <span className="cursor-pointer">Ezra AI</span>
                   </Link>
                   {/* <ChevronDown className={`ml-1 h-5 w-5 text-gray-400 group-hover:text-orange-600 dark:group-hover:text-white transition-all duration-300 ${isFeaturesDropdownOpen ? 'transform rotate-180' : ''}`} /> */}
                 </button>
@@ -173,7 +173,6 @@ const Navbar = () => {
                 {mounted && (theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
               </button>
               <button
-                disabled
                 title="Download App (Coming Soon)"
                 className="inline-flex flex-col items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75 disabled:cursor-not-allowed disabled:opacity-70"
                 >
@@ -247,7 +246,6 @@ const Navbar = () => {
           <div className="flex-shrink-0 p-4 bg-white dark:bg-[#1A1A1A] border-t border-gray-200 dark:border-gray-700">
             <div className="relative w-full max-w-xs px-4">
               <button
-                disabled
                 title="Download App (Coming Soon)"
                 className="inline-flex flex-col items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75 disabled:cursor-not-allowed disabled:opacity-70 w-80"
                 >
