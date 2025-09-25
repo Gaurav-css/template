@@ -9,7 +9,15 @@ import {
 
 // --- Helper Components (Moved to top for better organization) ---
 
-// Helper component for Feature Cards
+// Helper component for the iPhone Icon
+const IPhoneIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+        <path d="M12 18h.01"></path>
+    </svg>
+);
+
+// Helper component for Feature Cards.
 const FeatureCard = ({ icon, title, description, animationDelay }: { icon: React.ReactNode; title: string; description: string; animationDelay?: string; }) => {
   return (
     <div
@@ -235,40 +243,29 @@ const EzraAiPage = () => {
         </section>
 
         {/* Download App Section */}
-        <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
-          <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
-            <div className="grid grid-cols-1 gap-12 items-center">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
-                  Get Started with Hooman Group Today
-                </h2>
-                <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
-                  Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
-                </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center gap-x-2 rounded-lg bg-orange-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-orange-700 w-full sm:w-auto"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
-                    <span>Download for iPhone</span>
-                  </a>
-                </div>
-
-              </div>
-              {/* <div className="hidden lg:flex items-center justify-center">
-                <div className="relative w-72 h-[32rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-900 dark:bg-zinc-800 rounded-full"></div>
-                  <img
-                    src="/Ezra.png"
-                    alt="Hooman Group App on Phone"
-                    className="absolute inset-0 w-full h-full object-cover rounded-[2.7rem]"
-                  />
-                </div>
-              </div> */}
-            </div>
-          </div>
-        </section>
+       <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
+         <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
+           <div className="grid grid-cols-1 gap-12 items-center">
+             <div className="text-center">
+               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
+                 Get Started with Hooman Group Today
+               </h2>
+               <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
+                 Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
+               </p>
+               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                 <a
+                   href="#"
+                   className="inline-flex items-center justify-center gap-x-4 rounded-xl bg-transparent border-2 border-orange-600 px-8 py-4 text-lg font-medium text-orange-600 shadow-lg transition-all duration-300 ease-in-out hover:bg-orange-600 hover:text-white hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
+                 >
+                   <IPhoneIcon />
+                   <span>Download for iPhone</span>
+                 </a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
 
       </main>
     </div>
