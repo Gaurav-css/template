@@ -256,17 +256,16 @@ const EzraAiPage = () => {
                 </div>
 
               </div>
-              <div className="hidden lg:flex items-center justify-center">
+              {/* <div className="hidden lg:flex items-center justify-center">
                 <div className="relative w-72 h-[32rem] bg-slate-900 dark:bg-zinc-800 border-8 border-slate-900 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl">
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-900 dark:bg-zinc-800 rounded-full"></div>
-                  {/* Replaced Next.js Image with standard <img> tag and adjusted classes for fill effect */}
                   <img
                     src="/Ezra.png"
-                    alt="Hooman App on Phone"
+                    alt="Hooman Group App on Phone"
                     className="absolute inset-0 w-full h-full object-cover rounded-[2.7rem]"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

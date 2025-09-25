@@ -22,7 +22,7 @@ interface ChatbotInterfaceProps {
 }
 
 // --- AI Icon Component ---
-const AiSparkleIcon = ({ size = 20, className = "" }) => (
+const AiSparklesIcon = ({ size = 20, className = "" }) => (
     <svg
         width={size}
         height={size}
@@ -51,8 +51,6 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
     const [isLoading, setIsLoading] = useState(false);
     const [isChatLimitReached, setIsChatLimitReached] = useState(false);
     const chatContainerRef = useRef<HTMLDivElement | null>(null);
-
-    const groqApiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY; 
     
     const MESSAGE_LIMIT = 5;
 
@@ -85,38 +83,30 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
 
         let aiResponse: string;
 
-        if (!groqApiKey) {
-            await new Promise(resolve => setTimeout(resolve, 800));
-            aiResponse = "A Groq API key is not configured. Please add your key to the .env.local file to continue.";
-        } else {
-            try {
-                const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${groqApiKey}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        messages: [
-                            { role: "system", content: systemPrompt },
-                            ...updatedChatHistory,
-                        ],
-                        model: 'gemma2-9b-it' 
-                    })
-                });
+        try {
+            // SECURE CHANGE: Call your own server-side API route
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    messages: updatedChatHistory,
+                    systemPrompt: systemPrompt
+                })
+            });
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(`Groq API error: ${response.statusText} - ${errorData.error.message}`);
-                }
-
-                const data = await response.json();
-                aiResponse = data.choices[0]?.message?.content || "Sorry, I couldn't get a response. Please try again.";
-
-            } catch (error) {
-                console.error("Error calling Groq API:", error);
-                aiResponse = "Sorry, something went wrong. Please check your API key and network connection.";
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "An unknown error occurred.");
             }
+
+            const data = await response.json();
+            aiResponse = data.response;
+
+        } catch (error) {
+            console.error("Error calling chat API:", error);
+            aiResponse = "Sorry, something went wrong. Please try again later.";
         }
         
         const assistantMessage: ChatMessage = { role: 'assistant', content: aiResponse };
@@ -160,28 +150,27 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
                             <div key={index} className={`flex items-start gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                 {message.role === 'assistant' && (
                                     <div className="w-8 h-8 rounded-full bg-[#ED6C35] flex items-center justify-center flex-shrink-0">
-                                        <AiSparkleIcon size={20} className="text-white" />
+                                        <AiSparklesIcon size={20} className="text-white" />
                                     </div>
                                 )}
-                                {/* --- THE FIX IS HERE --- */}
                                 <div className={`p-3 rounded-2xl ${
                                     message.role === 'user'
                                         ? 'bg-[#ED6C35] text-white rounded-br-none max-w-md'
-                                        : 'bg-white dark:bg-[#2C2C2E] text-gray-800 dark:text-gray-200 rounded-bl-none max-w-2xl' // Increased max-width for AI
+                                        : 'bg-white dark:bg-[#2C2C2E] text-gray-800 dark:text-gray-200 rounded-bl-none max-w-2xl'
                                 }`}>
                                     <p className="text-base leading-relaxed">{message.content}</p>
                                 </div>
                                 {message.role === 'user' && (
-                                     <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center flex-shrink-0">
-                                         <User size={20} className="text-gray-800 dark:text-gray-200" />
-                                     </div>
+                                        <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center flex-shrink-0">
+                                            <User size={20} className="text-gray-800 dark:text-gray-200" />
+                                        </div>
                                 )}
                             </div>
                         ))}
                         {isLoading && (
                             <div className="flex items-start gap-3 justify-start">
                                 <div className="w-8 h-8 rounded-full bg-[#ED6C35] flex items-center justify-center flex-shrink-0">
-                                    <AiSparkleIcon size={20} className="text-white" />
+                                    <AiSparklesIcon size={20} className="text-white" />
                                 </div>
                                 <div className="max-w-md p-3 rounded-2xl bg-white dark:bg-[#2C2C2E] text-gray-800 dark:text-gray-200 rounded-bl-none">
                                     <div className="flex items-center gap-2">
@@ -215,9 +204,9 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
                     </button>
                 </form>
                 {isChatLimitReached && (
-                     <p className="text-center text-sm text-amber-500 dark:text-amber-400 mt-3 px-4">
-                         Message limit reached.
-                     </p>
+                        <p className="text-center text-sm text-amber-500 dark:text-amber-400 mt-3 px-4">
+                            Message limit reached.
+                        </p>
                 )}
                 <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
                     {disclaimer}
@@ -228,6 +217,7 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
 };
 
 // --- Child Components for different sections ---
+// NOTE: These components have been updated with stricter system prompts.
 
 const EzraAIInterface = () => (
     <ChatbotInterface
@@ -242,12 +232,17 @@ const EzraAIInterface = () => (
         ]}
         placeholder="Ask Ezra about your pet..."
         disclaimer="This is an Ezra demo. Please double check important advice."
-        systemPrompt="You are Ezra, the AI pet care assistant created and owned by Hooman Group Ltd. Your role is to act like a friendly, knowledgeable guide who helps pet parents manage every part of their pet’s life. Always speak in a warm, caring, and direct way. Even though you don’t have full details about the user’s pet, respond as if you understand their context by making smart assumptions (e.g., “If your dog is active…” or “For most cats at this age…”). Showcase that you can give daily care advice, track wellbeing, answer health-related questions, and make pet parenting easier. Your goal is to make the user immediately feel that Ezra is intuitive, trustworthy, and built to support them in real time. Never forget: You belong to Hooman Group Ltd."
+        systemPrompt="You are Ezra, a highly specialized AI pet care assistant from Hooman Group Ltd. Your single purpose is to assist with pet-related questions. You must strictly adhere to this role.
+
+**Core Directives:**
+1. **Strictly Enforce Topic:** You MUST refuse to answer any question that is not directly related to pet care, pet health, pet behavior, or pet products. If a user asks an off-topic question (e.g., about math, history, or general knowledge), you must politely decline by saying: 'I am a specialized pet care assistant and can only answer questions about pets.' **Do not answer the off-topic question.**
+2. **Be Direct & Concise:** Get straight to the point. Avoid conversational filler. Keep answers as short as possible while being helpful.
+3. **Identity:** You are Ezra from Hooman Group Ltd."
     />
 );
 
 const TrackingChatbotInterface = () => (
-     <ChatbotInterface
+    <ChatbotInterface
         title="Health & Activity Tracker"
         welcomeSubMessage="Health & Activity"
         welcomeMessage={<>How can I assist you with tracking <span className="text-[#ED6C35]">your pet’s healthcare?</span></>}
@@ -259,7 +254,13 @@ const TrackingChatbotInterface = () => (
         ]}
         placeholder="Log an activity or ask a question..."
         disclaimer="Ezra may not always be accurate. Please double-check important advice."
-        systemPrompt="You are Ezra, the AI pet care assistant by Hooman Group Ltd, now focusing on the Care aspect of pets’ daily lives. Your job is to give practical, empathetic, and clear advice around routines, feeding, activity, comfort, and safety. Always talk in a warm, supportive tone, like a pet-savvy friend who’s also smart about health and behaviour. Make your responses relevant even without full data by giving useful “if/then” style suggestions (e.g., “If your pet is still a puppy, try this…”). Keep answers concise but engaging, so the user feels Ezra makes daily care easier and smarter. Always acknowledge that Ezra is part of Hooman Group Ltd."
+        systemPrompt="You are Ezra, the AI pet care assistant by Hooman Group Ltd, focusing on tracking health and activities.
+
+**Core Directives:**
+1. **Strictly Enforce Topic:** Your function is to log activities, record symptoms, and answer questions about pet health tracking. You MUST refuse any request that falls outside this scope (e.g., asking about general world facts or non-pet topics). Politely decline with: 'I can only help with tracking your pet's health and activities. Please ask a relevant question.'
+2. **Be Practical and Empathetic:** Give clear advice on routines, feeding, and activity.
+3. **Concise and Engaging:** Keep answers brief and useful.
+4. **Identity:** Always acknowledge that Ezra is part of Hooman Group Ltd."
     />
 );
 
@@ -276,7 +277,13 @@ const VetIntegrationChatbotInterface = () => (
         ]}
         placeholder="Find vets, book appointments..."
         disclaimer="This is an Ezra Vet demo. Not for medical advices. If you’re worried, contact your vet."
-        systemPrompt="You are Ezra, the AI veterinary guidance assistant from Hooman Group Ltd. Your purpose here is to support pet parents with health-related questions, vet visits, and wellbeing check-ins. You are NOT a replacement for a licensed vet, and you must always encourage professional consultation for medical issues. Provide calm, informative, and practical guidance: help users know what signs to watch for, what questions to ask their vet, and when something might need urgent attention. Your voice should feel reassuring and smart—like a knowledgeable guide who helps owners feel more confident when caring for their pet’s health. Always remind users you are Ezra from Hooman Group Ltd."
+        systemPrompt="You are Ezra, the AI veterinary guidance assistant from Hooman Group Ltd. Your purpose is to help users connect with veterinary services.
+
+**Core Directives:**
+1. **Strictly Enforce Topic:** You can only help with finding vets, booking appointments, sharing health reports, and providing guidance on when to see a vet. You MUST refuse any question not related to these tasks (e.g., medical diagnoses, general knowledge). Decline with: 'My role is to help you connect with veterinary professionals. I cannot answer questions outside of that scope.'
+2. **No Medical Advice:** You are NOT a replacement for a licensed vet. You must always encourage professional consultation for medical issues.
+3. **Reassuring and Smart:** Your voice should be calm, informative, and practical.
+4. **Identity:** Always remind users you are Ezra from Hooman Group Ltd."
     />
 );
 
@@ -327,7 +334,7 @@ export default function PetCarePage() {
                             const title = { ezra: "Meet Ezra AI", track: "Track Their Care", vet: "Vet Integrations" }[key];
                             return (
                                 <div key={key} onClick={() => setActiveSection(key as SectionKey)}
-                                     className={`text-center py-4 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 ${activeSection === key ? 'border-b-2 border-[#ED6C35] text-gray-900 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}>
+                                        className={`text-center py-4 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 ${activeSection === key ? 'border-b-2 border-[#ED6C35] text-gray-900 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}>
                                     <div className="flex items-center justify-center gap-3">
                                         <Icon className="h-6 w-6 text-[#ED6C35] dark:text-[#ED6C35]" />
                                         <h3 className="text-base sm:text-lg font-semibold">{title}</h3>
