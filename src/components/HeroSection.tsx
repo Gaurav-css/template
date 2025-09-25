@@ -9,16 +9,17 @@ const HeroSection = () => {
     '/img11.png', '/img12.png', '/img13.png', '/img14.png', '/img15.png'
   ];
 
-  // --- State and logic from CommunityWaitlist component ---
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
+  // --- UPDATED: This function now calls your real backend API ---
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
     setMessage('');
 
+    // Basic client-side validation
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       setStatus('error');
       setMessage('Whoops! Please enter a valid email address.');
@@ -26,25 +27,44 @@ const HeroSection = () => {
     }
 
     try {
-      // Simulate an API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Call the real API endpoint
+      const response = await fetch('/api/join-waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Handle errors from the API (e.g., validation, server errors)
+        throw new Error(data.error || 'Something went wrong.');
+      }
+      
+      // Handle success from the API
       setStatus('success');
-      setMessage("Welcome to the pack! 🐾 You're on the list for early access.");
-      setEmail('');
+      // Use the message sent back from the server ("Success!" or "You're already on the list!")
+      setMessage(data.message); 
+      
+      // Only clear the input field for a brand new submission
+      if (data.message.includes("Success")) {
+        setEmail('');
+      }
+
     } catch (error) {
+      // Handle network errors or exceptions
       setStatus('error');
       if (error instanceof Error) {
         setMessage(error.message);
       } else {
-        setMessage('Something went wrong. Please try again later.');
+        setMessage('An unknown error occurred.');
       }
     }
   };
-  // --- End of integrated logic ---
 
   return (
-    // The parent element should handle the 'dark' class for this to work
     <div>
       <section className="bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 min-h-screen mt-16 lg:mt-20 -mb-20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
@@ -64,7 +84,7 @@ const HeroSection = () => {
                 needs.
               </p>
               
-              {/* --- UPDATED: Functional Waitlist Form --- */}
+              {/* --- Functional Waitlist Form --- */}
               <div className="mt-6 sm:mt-8 md:mt-10 w-full max-w-md mx-auto lg:mx-0">
                 {status === 'success' ? (
                   <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-4 text-center backdrop-blur-md">
@@ -99,7 +119,6 @@ const HeroSection = () => {
                   </>
                 )}
               </div>
-              {/* --- End of Waitlist Form --- */}
             </div>
 
             {/* Right Column: Image Gallery */}
