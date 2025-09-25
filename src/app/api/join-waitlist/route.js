@@ -12,7 +12,6 @@ const isEmailValid = (email) => {
 
 export async function POST(req) {
   // --- 1. Validate Environment Variables ---
-  // Fail fast if the server isn't configured correctly.
   const {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
@@ -50,22 +49,19 @@ export async function POST(req) {
     const table = base(AIRTABLE_TABLE_NAME);
 
     // --- 3. Check for Duplicate Emails ---
-    // Search Airtable to see if the email is already on the list.
     const existingRecords = await table.select({
         maxRecords: 1,
-        filterByFormula: `{Email} = "${email}"`, // Ensure your Airtable column is named "Email"
+        filterByFormula: `{Email} = "${email}"`,
       }).firstPage();
 
     if (existingRecords.length > 0) {
-      // If the email exists, return a friendly message without creating a new record.
       return NextResponse.json(
-        { message: "You're already on the list! We'll keep you posted." },
+        { message: "You're already on the list!" },
         { status: 200 }
       );
     }
 
     // --- 4. Add to Airtable (if new) ---
-    // If the email is new, create the record.
     await table.create([{ fields: { Email: email } }]);
 
     // --- 5. Send Welcome Email ---
@@ -97,16 +93,15 @@ export async function POST(req) {
       ],
     });
 
+    // --- UPDATED SUCCESS MESSAGE ---
     return NextResponse.json(
-      { message: "Success! Check your inbox for a confirmation." },
+      { message: "Congratulations! You're on the waitlist. 🐾" },
       { status: 200 }
     );
+
   } catch (err) {
     // --- 6. Improved Error Logging ---
-    // Log the detailed error on the server for debugging.
     console.error("Error in /api/join-waitlist:", err);
-    
-    // Return a generic error to the client for security.
     return NextResponse.json(
       { error: "Something went wrong. Please try again later." },
       { status: 500 }
