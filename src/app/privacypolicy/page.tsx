@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
                   <strong>1.2.</strong> This Privacy Policy describes how we collect, use, disclose, store, and protect personal data when you access our websites, mobile applications, platforms, and services (collectively, the “Services”). It applies to all interactions with our Services, whether through our website at www.hoomanpets.com, our mobile app, or any integrated third-party features.
                 </p>
                 <p>
-                  <strong>1.3.</strong> We comply with applicable data protection laws, including but not limited to the UK General Data Protection Regulation (UK GDPR), the EU General Data Protection Regulation (EU GDPR), the Data Protection Act 2018 (UK), the California Consumer Privacy Act as amended by the California Privacy Rights Act (CCPA/CPRA), the California Online Privacy Protection Act (CalOPPA), the Children&apos;s Online Privacy Protection Act (COPPA), and other relevant international data protection frameworks such as those under the Asia-Pacific Economic Cooperation (APEC) Privacy Framework where applicable.
+                  <strong>1.3.</strong> We comply with applicable data protection laws, including but not limited to the UK General Data Protection Regulation (UK GDPR), the EU General Data Protection Regulation (EU GDPR), the Data Protection Act 2018 (UK), the California Consumer Privacy Act as amended by the California Privacy Rights Act (CCPA/CPRA), the California Online Privacy Protection Act (CalOPPA), the Children's Online Privacy Protection Act (COPPA), and other relevant international data protection frameworks such as those under the Asia-Pacific Economic Cooperation (APEC) Privacy Framework where applicable.
                 </p>
                 <p>
                   <strong>1.4.</strong> By accessing or using our Services, you acknowledge that you have read, understood, and consent to the practices described in this Privacy Policy. If you do not agree with any part of this Policy, please do not use our Services. For users in certain jurisdictions, continued use may also imply consent where legally permissible, but we will seek explicit consent where required.
@@ -63,12 +63,12 @@ const PrivacyPolicy = () => {
               <Section title="3. Information We Collect">
                   <p>We collect various types of information to provide, improve, and secure our Services. This may include:</p>
                   <p><strong>3.1. Personal Data:</strong> Such as your full name, email address, phone number, username and password (account credentials), billing information (e.g., credit card details processed via secure gateways), and delivery or postal addresses.</p>
-                  <p><strong>3.2. Pet-Related Data:</strong> Information about your pets, including name, breed, species, age, weight, gender, vaccination status, dietary preferences, exercise routines, and care records. This data helps us deliver personalized pet care recommendations.</p>
+                  <p><strong>3.2. Pet-Related Data:</strong> Information about your pets, including name, breed, species, age, weight, gender, vaccination status, dietary preferences, exercise routines, and care records. This data helps us deliver personalised pet care recommendations.</p>
                   <p><strong>3.3. Health & Care Data:</strong> Non-human health information, such as wellness logs, medication reminders, behavioral notes, or grooming schedules. Where this data is linked to identifiable individuals (e.g., owners of service animals or in cases where pet data reveals sensitive human information), it may be treated as special category data under GDPR, requiring additional safeguards.</p>
                   <p><strong>3.4. AI Interaction Data:</strong> User prompts, queries, responses, and feedback provided during interactions with Ezra AI or other AI features. This may include text, voice inputs, or preferences to enhance AI accuracy.</p>
                   <p><strong>3.5. Device & Usage Data:</strong> Technical information such as IP address, device identifiers (e.g., UDID, IMEI), operating system version, browser type, app usage logs, cookies, web beacons, browsing history, session data, and approximate geolocation (derived from IP or with consent via device settings).</p>
                   {/* FIXED: Escaped the apostrophe in "Children's" */}
-                  <p><strong>3.6. Children&apos;s Data:</strong> We do not knowingly collect personal data from children under 16 years of age in the UK/EU or under 13 years of age in the US (as per COPPA). If we become aware of such collection without verifiable parental consent, we will delete the data promptly. Parental consent must be obtained and verified for any underage use of our Services.</p>
+                  <p><strong>3.6. Children's Data:</strong> We do not knowingly collect personal data from children under 16 years of age in the UK/EU or under 13 years of age in the US (as per COPPA). If we become aware of such collection without verifiable parental consent, we will delete the data promptly. Parental consent must be obtained and verified for any underage use of our Services.</p>
                   <p><strong>3.7. Other Data:</strong> Any additional information you voluntarily provide, such as survey responses, feedback, or communications with our support team.</p>
                   <p>We collect this information directly from you (e.g., during registration or use), automatically via our Services (e.g., through cookies), or from third parties (e.g., partners with your consent).</p>
               </Section>
@@ -77,7 +77,7 @@ const PrivacyPolicy = () => {
                 <p>We process your personal data only for specified, explicit, and legitimate purposes. These include:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Providing, maintaining, and improving the Services, including troubleshooting and updates.</li>
-                  <li>Generating AI-powered insights, recommendations, reminders, and personalized content (e.g., pet care tips via Ezra AI).</li>
+                  <li>Generating AI-powered insights, recommendations, reminders, and personalised content (e.g., pet care tips via Ezra AI).</li>
                   <li>Personalizing your user experience based on preferences and usage patterns.</li>
                   <li>Facilitating transactions, processing payments, and managing subscriptions or orders.</li>
                   <li>Enabling integrations with veterinary partners, third-party APIs (e.g., for mapping or device syncing), and external services.</li>
@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
                   <li>Conducting analytics, research, and product development to enhance features and user satisfaction.</li>
                   <li>Complying with legal obligations, resolving disputes, and enforcing our Terms of Service.</li>
                   <li>Detecting, preventing, and addressing fraud, security breaches, or technical issues.</li>
-                  <li>Aggregating anonymized data for statistical purposes or AI model training.</li>
+                  <li>Aggregating anonymised data for statistical purposes or AI model training.</li>
                 </ul>
                 <p>We will not use your data for incompatible purposes without notifying you and, where necessary, obtaining your consent.</p>
               </Section>
@@ -104,7 +104,7 @@ const PrivacyPolicy = () => {
                       <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising these rights.</li>
                   </ul>
                   {/* FIXED: Escaped the apostrophe in "Commissioner's" */}
-                  <p>To exercise rights, contact us at <a href="mailto:privacy@hoomanpets.com" className="text-blue-600 dark:text-blue-400 hover:underline">privacy@hoomanpets.com</a>. We may verify your identity for security. For complaints, contact the UK Information Commissioner&apos;s Office (ICO) at www.ico.org.uk, or your local supervisory authority.</p>
+                  <p>To exercise rights, contact us at <a href="mailto:privacy@hoomanpets.com" className="text-blue-600 dark:text-blue-400 hover:underline">privacy@hoomanpets.com</a>. We may verify your identity for security. For complaints, contact the UK Information Commissioner's Office (ICO) at www.ico.org.uk, or your local supervisory authority.</p>
                   <p>California residents: Under CCPA/CPRA, you have additional rights, including knowing categories of data collected/shared, and opting out of sales/sharing. We respond to verified requests within 45 days (extendable).</p>
               </Section>
             </div>

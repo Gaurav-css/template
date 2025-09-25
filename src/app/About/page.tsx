@@ -4,7 +4,7 @@
 
 import { ArrowRight, ArrowDown, ShieldCheck, Clock, Heart, Star, Lock, FlaskConical, BrainCircuit, Globe, Users, Stethoscope, Smartphone, HeartHandshake } from 'lucide-react';
 
-// I've standardized the dark mode background to bg-neutral-900 and borders to border-neutral-800 for consistency.
+// I've standardised the dark mode background to bg-neutral-900 and borders to border-neutral-800 for consistency.
 const darkBgClass = "dark:bg-neutral-900";
 const darkBorderClass = "dark:border-neutral-800";
 
@@ -23,13 +23,13 @@ const OurJourney = () => {
               Our Journey
             </h2>
             <blockquote className="border-l-4 border-orange-500 dark:border-orange-400 pl-6 italic text-gray-600 dark:text-gray-400 text-lg sm:text-xl my-8">
-              "Every pet has its own unique personality - and we believe each one deserves <span className="text-orange-500 dark:text-orange-400 font-semibold">personalized care</span> that adapts to their specific needs and behaviors."
+              "Every pet has its own unique personality - and we believe each one deserves <span className="text-orange-500 dark:text-orange-400 font-semibold">personalised care</span> that adapts to their specific needs and behaviors."
             </blockquote>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
               Our team of veterinarians, AI specialists, and pet parents come together with a simple mission: to bridge the gap between professional veterinary care and everyday pet parenting through <span className="font-semibold text-gray-800 dark:text-gray-200">intelligent technology.</span>
             </p>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              We've spent years researching pet behavior patterns, health indicators, and the challenges that modern pet families face. The result? <span className="font-semibold text-gray-800 dark:text-gray-200">Ezra AI</span> – your personalized pet care companion.
+              We've spent years researching pet behavior patterns, health indicators, and the challenges that modern pet families face. The result? <span className="font-semibold text-gray-800 dark:text-gray-200">Ezra AI</span> – your personalised pet care companion.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ const OurJourney = () => {
               </div>
               <div>
                 <p className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">100%</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Personalized</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Personalised</p>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ const OurCommitment = () => {
   const commitments = [
     { icon: <ShieldCheck size={24} className="text-green-500" />, subtitle: '100% VET APPROVED', title: 'Trusted Safety', description: 'Every recommendation backed by veterinary science and real-world testing with enterprise-grade security.', progressColor: 'bg-green-500', iconBg: 'bg-green-500/10' },
     { icon: <Clock size={24} className="text-orange-500" />, subtitle: '24/7 AVAILABLE', title: '24/7 Support', description: 'Round-the-clock AI assistance with real-time monitoring whenever your pet needs care guidance.', progressColor: 'bg-orange-500', iconBg: 'bg-orange-500/10' },
-    { icon: <Heart size={24} className="text-red-500" />, subtitle: '1-TO-1 PERSONALIZED', title: 'Personalized Care', description: "Advanced ML algorithms that adapt to your pet's unique personality, health history, and behavioral patterns.", progressColor: 'bg-red-500', iconBg: 'bg-red-500/10' },
+    { icon: <Heart size={24} className="text-red-500" />, subtitle: '1-TO-1 PERSONALISED', title: 'Personalised Care', description: "Advanced ML algorithms that adapt to your pet's unique personality, health history, and behavioral patterns.", progressColor: 'bg-red-500', iconBg: 'bg-red-500/10' },
     { icon: <Star size={24} className="text-purple-500" />, subtitle: '99.9% ACCURACY', title: 'Excellence Promise', description: 'Continuously improving through advanced AI, machine learning, and comprehensive user feedback loops.', progressColor: 'bg-purple-500', iconBg: 'bg-purple-500/10' },
   ];
 
@@ -204,7 +204,7 @@ const OurPrinciples = () => {
 const OurVision = () => {
     const buildingList = [
         'Real-time health monitoring and smart alerts',
-        'Personalized nutrition and exercise plans',
+        'Personalised nutrition and exercise plans',
         'Emergency care guidance and vet connections',
         'AI-powered behavioral insights and training tips',
         'Community support and expert consultations',
@@ -230,7 +230,7 @@ const OurVision = () => {
                             Our Vision
                         </h2>
                         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                            We're building a future where every pet receives <span className="font-semibold text-orange-500 dark:text-orange-400">personalized, intelligent care</span> that adapts to their unique needs. Our vision extends beyond just an app – it's about creating a comprehensive <span className="font-semibold text-green-500 dark:text-green-400">ecosystem of care.</span>
+                            We're building a future where every pet receives <span className="font-semibold text-orange-500 dark:text-orange-400">personalised, intelligent care</span> that adapts to their unique needs. Our vision extends beyond just an app – it's about creating a comprehensive <span className="font-semibold text-green-500 dark:text-green-400">ecosystem of care.</span>
                         </p>
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">What we're building:</h3>
                         <ul className="space-y-4 mb-8">

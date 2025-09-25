@@ -20,7 +20,7 @@ const CareersPage = () => {
 
         {/* Subheading */}
         <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300">
-          Help us revolutionize pet care through AI. We&apos;re building the future of pet health and looking for passionate people to join our pack.
+          Help us revolutionize pet care through AI. We're building the future of pet health and looking for passionate people to join our pack.
         </p>
         
         {/* "Coming Soon" Message */}
@@ -31,7 +31,7 @@ const CareersPage = () => {
         {/* Optional: Link for speculative applications */}
         {/* <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
             <p>
-                Can&apos;t wait? Email your resume to{' '}
+                Can't wait? Email your resume to{' '}
                 <a 
                     href="mailto:careers@hoomanpets.com" 
                     className="text-orange-500 font-medium underline hover:text-orange-400"

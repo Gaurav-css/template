@@ -90,7 +90,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
   );
 };
 
-// FIXED: Escaped all apostrophes (') with (&apos;)
 const allFeatures = [
   { id: 'ai', icon: <Sparkles className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
   { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },

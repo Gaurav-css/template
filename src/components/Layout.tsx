@@ -47,7 +47,7 @@ export default function App() {
       supertitle: 'Solutions',
       title: 'Our Commitment to Pet Health',
       description:
-        'At Happy Pet, we believe every pet deserves personalized care. Our platform simplifies health tracking, vet access, and community support to simplify pet parenting.',
+        'At Happy Pet, we believe every pet deserves personalised care. Our platform simplifies health tracking, vet access, and community support to simplify pet parenting.',
       image: 'Dog.png',
       layout: 'text-right',
     },

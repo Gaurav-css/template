@@ -88,7 +88,7 @@ const Footer = () => {
 
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 max-w-sm leading-relaxed">
               Smarter pet parenting with AI-powered insights, health tracking,
-              and personalized care recommendations for your furry family
+              and personalised care recommendations for your furry family
               members.
             </p>
 

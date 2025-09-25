@@ -74,7 +74,7 @@ const Navbar = () => {
   const featuresLinks: DropdownLink[] = [
     // { name: 'Ezra AI', description: 'Advanced AI that can enhance pet care.', icon: Sparkles, href: '/EzraAiPage' },
     // FIXED: Escaped the apostrophe in "pet's"
-    // { name: 'Care Tracking', description: 'Easily monitor your pet&apos;s health and routines.', icon: Activity, href: '/CareTrack' },
+    // { name: 'Care Tracking', description: 'Easily monitor your pet's health and routines.', icon: Activity, href: '/CareTrack' },
     // { name: 'Vet Insights', description: 'Access professional advice at your fingertips.', icon: Eye, href: '/vet-insights' },
     // { name: 'Community Support', description: 'Join fellow pet parents in our hub.', icon: Users, href: '/community-support' }
   ];

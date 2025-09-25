@@ -68,9 +68,9 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-[#ED6C35]">
             Smart Pet Care Tracking
           </h1>
-          {/* FIXED: Escaped the apostrophe in "pet's" to "pet&apos;s" */}
+          {/* FIXED: Escaped the apostrophe in "pet's" to "pet's" */}
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
-            Powered by Ezra AI - Monitor your pet&apos;s health, activities, and
+            Powered by Ezra AI - Monitor your pet's health, activities, and
             well-being in real-time with advanced AI analytics.
           </p>
         </section>
@@ -158,8 +158,8 @@ export default function Home() {
             <div
               className="mt-4 rounded-lg border-l-4 border-[#ED6C35] bg-orange-50 p-3 dark:bg-[#333]"
             >
-              {/* FIXED: Escaped the apostrophe in "Max's" to "Max&apos;s" */}
-              ✨ Max&apos;s activity levels are 15% higher than average. Consider
+              {/* FIXED: Escaped the apostrophe in "Max's" to "Max's" */}
+              ✨ Max's activity levels are 15% higher than average. Consider
               adjusting meal portions.
             </div>
           </div>
@@ -217,7 +217,7 @@ export default function Home() {
             />
             <BlogCard
               icon="🥗"
-              title="Personalized Diet Plans Using AI Analytics"
+              title="Personalised Diet Plans Using AI Analytics"
               meta="Nutrition • 3 min read"
               excerpt="Learn how machine learning creates custom nutrition plans based on your pet's breed and age..."
             />

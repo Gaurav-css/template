@@ -67,7 +67,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
 
       <div className="mb-8">
         <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
-          What&apos;s included:
+          What's included:
         </p>
         <ul className="space-y-3">
           {plan.features.map((feature, index) => (
@@ -111,7 +111,7 @@ const PricingPage: React.FC = () => {
     },
     {
       name: "Pro",
-      description: "For large organizations with advanced needs.",
+      description: "For large organisations with advanced needs.",
       price: { monthly: 14.99, yearly: 179.88 },
       features: [
         "Dedicated account manager",

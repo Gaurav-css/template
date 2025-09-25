@@ -14,12 +14,12 @@ const faqData = [
       {
         question: 'Is Hooman Group suitable for both dogs and cats?',
         answer:
-          'Yes, Hooman Group is designed to cater to the needs of both dogs and cats, providing customized health tracking and care routines for each.',
+          'Yes, Hooman Group is designed to cater to the needs of both dogs and cats, providing customised health tracking and care routines for each.',
       },
       {
         question: 'What makes Hooman Group different from other pet apps?',
         answer:
-          'Hooman Group uses advanced AI to provide proactive health insights and personalized recommendations, going beyond simple tracking to become a comprehensive health partner for your pet.',
+          'Hooman Group uses advanced AI to provide proactive health insights and personalised recommendations, going beyond simple tracking to become a comprehensive health partner for your pet.',
       },
     ],
   },

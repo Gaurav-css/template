@@ -53,7 +53,7 @@ const TermsOfService = () => {
 
             <Section title="4. Accounts and Registration">
                 <p><strong>4.1.</strong> To access certain features, you must create an account by providing accurate, current, and complete information as requested (e.g., name, email, pet details). You agree to update your information promptly if it changes.</p>
-                <p><strong>4.2.</strong> You are solely responsible for maintaining the confidentiality of your account credentials (e.g., username, password) and for all activities occurring under your account. You must notify us immediately at <a href="mailto:support@hoomanpets.com" className="text-blue-600 dark:text-blue-400 hover:underline">support@hoomanpets.com</a> of any unauthorized use or security breach.</p>
+                <p><strong>4.2.</strong> You are solely responsible for maintaining the confidentiality of your account credentials (e.g., username, password) and for all activities occurring under your account. You must notify us immediately at <a href="mailto:support@hoomanpets.com" className="text-blue-600 dark:text-blue-400 hover:underline">support@hoomanpets.com</a> of any unauthorised use or security breach.</p>
                 <p><strong>4.3.</strong> We reserve the right to refuse registration, suspend, or terminate accounts at our discretion, particularly for violations of these Terms or suspected fraudulent activity.</p>
                 <p><strong>4.4.</strong> You may delete your account at any time through the account settings, subject to any ongoing obligations (e.g., unpaid fees). Upon deletion, we may retain certain data as outlined in our Privacy Policy.</p>
             </Section>

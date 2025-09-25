@@ -8,7 +8,7 @@ import {
   NotebookPen
 } from 'lucide-react';
 
-// --- Helper Components (Moved to top for better organization) ---
+// --- Helper Components (Moved to top for better organisation) ---
 
 // Helper component for the iPhone Icon
 const IPhoneIcon = () => (
@@ -83,7 +83,7 @@ const EzraAiPage = () => {
               Meet Ezra AI: The Future of Proactive Pet Care.
             </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
-              Ezra AI is our advanced intelligence engine designed to analyze your pet&apos;s data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
+              Ezra AI is our advanced intelligence engine designed to analyze your pet's data, delivering personalised insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up [animation-delay:600ms]">
               <a
@@ -102,7 +102,7 @@ const EzraAiPage = () => {
         {/* How It Works Section */}
         <section className="text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">How Ezra AI Works</h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">A seamless process to unlock deep insights into your pet&apos;s wellbeing.</p>
+          <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">A seamless process to unlock deep insights into your pet's wellbeing.</p>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 relative">
             <div className="absolute top-1/2 left-0 w-full h-px -translate-y-1/2">
               <svg width="100%" height="2" className="hidden md:block">
@@ -128,7 +128,7 @@ const EzraAiPage = () => {
                 <BarChart className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">3. Receive Insights</h3>
-              <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Get clear, personalized, and actionable recommendations right on your dashboard.</p>
+              <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Get clear, personalised, and actionable recommendations right on your dashboard.</p>
             </div>
           </div>
         </section>
@@ -140,13 +140,13 @@ const EzraAiPage = () => {
               Advanced Features for Unmatched Care
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
-              Ezra AI is your partner in making informed decisions for every aspect of your pet&apos;s life.
+              Ezra AI is your partner in making informed decisions for every aspect of your pet's life.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               icon={<HeartPulse className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
-              title="Personalized Health Insights"
+              title="Personalised Health Insights"
               description="Analyzes health logs and activity levels to suggest wellness improvements and highlight trends for your vet."
               animationDelay="200ms"
             />
@@ -189,12 +189,12 @@ const EzraAiPage = () => {
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">The Science Behind Ezra AI</h2>
               <p className="mt-6 text-lg text-slate-600 dark:text-zinc-400">
-                Ezra AI is built on state-of-the-art machine learning models trained on a vast, anonymized dataset of veterinary knowledge and pet care best practices.
+                Ezra AI is built on state-of-the-art machine learning models trained on a vast, anonymised dataset of veterinary knowledge and pet care best practices.
               </p>
               <ul className="mt-8 space-y-4 text-slate-700 dark:text-zinc-300">
                 <li className="flex items-start gap-x-3">
                   <ShieldCheck className="mt-1 h-5 w-5 flex-none text-orange-600 dark:text-orange-500" />
-                  <span><strong>Data Privacy First:</strong> Your personal and pet data is encrypted and anonymized before being used for model training.</span>
+                  <span><strong>Data Privacy First:</strong> Your personal and pet data is encrypted and anonymised before being used for model training.</span>
                 </li>
                 <li className="flex items-start gap-x-3">
                   <BrainCircuit className="mt-1 h-5 w-5 flex-none text-orange-600 dark:text-orange-500" />

@@ -41,7 +41,7 @@ export const blogs: Blog[] = [
             <br />
             <p>But when it comes to caring for that furry family member curled up beside you are you still juggling a crumpled vaccination card, half-forgotten phone reminders, and those late-night Google searches when something seems off?</p>
             <br />
-            <p>It&apos;s not about lacking love for your pet. The real problem is trying to manage their care across a dozen different apps and systems. One app for reminders, another for vet records, a third for booking walks. It creates chaos, not clarity.</p>
+            <p>It's not about lacking love for your pet. The real problem is trying to manage their care across a dozen different apps and systems. One app for reminders, another for vet records, a third for booking walks. It creates chaos, not clarity.</p>
             <br />
             <p>Your pet deserves better than this scattered approach to their wellbeing.</p>
             <br />
@@ -68,13 +68,13 @@ export const blogs: Blog[] = [
             <h4 className='text-2xl font-bold'>How Ezra will make you a Smarter Pet Parent:</h4>
             <br />
             <ul>
-                <li><strong>Get Instant, Personalised Answers Anytime:</strong> Have a concern at 2 AM? Just ask Ezra. Because it knows your pet&apos;s breed, age, and health history, you get specific advice tailored to your situation—not generic responses that leave you guessing.</li>
+                <li><strong>Get Instant, Personalised Answers Anytime:</strong> Have a concern at 2 AM? Just ask Ezra. Because it knows your pet's breed, age, and health history, you get specific advice tailored to your situation—not generic responses that leave you guessing.</li>
                 <br />
                 <li><strong>Enjoy Everyday Peace of Mind:</strong> Stop worrying about what you might be missing. Ezra provides helpful alerts about everything from seasonal hazards to breed-specific health considerations, creating a safety net of knowledge around your pet.</li>
                 <br />
-                <li><strong>Walk Into Vet Visits Prepared:</strong> Transform those stressful appointments into productive conversations. Ezra helps organise your pet&apos;s health timeline, tracks symptoms you might forget to mention, and suggests the right questions to ask your vet.</li>
+                <li><strong>Walk Into Vet Visits Prepared:</strong> Transform those stressful appointments into productive conversations. Ezra helps organise your pet's health timeline, tracks symptoms you might forget to mention, and suggests the right questions to ask your vet.</li>
                 <br />
-                <li><strong>Make Smart Decisions About Pet Insurance:</strong> Remove the guesswork from important financial choices. Ezra helps you understand and compare pet insurance options based on your pet&apos;s actual needs, making a complex decision much clearer.</li>
+                <li><strong>Make Smart Decisions About Pet Insurance:</strong> Remove the guesswork from important financial choices. Ezra helps you understand and compare pet insurance options based on your pet's actual needs, making a complex decision much clearer.</li>
                 <br />
                 <li><strong>Access Expert Help When You Need It:</strong> Connect with veterinary professionals for online consultations directly through the app. Get professional guidance without the stress of unnecessary vet clinic visits.</li>
             </ul>
@@ -107,9 +107,9 @@ export const blogs: Blog[] = [
             <br />
             <blockquote className='text-xl text-gray-300'>"You know the best thing about getting your pet’s life in order? It’s not just about them. It’s about you, too. Suddenly, you’ve got less stress on your plate and more time for what actually matters."</blockquote>
             <br />
-            <p>With Hooman Group and Ezra on your side you&apos;re free to enjoy the extra cuddles, longer walks, and simple joy of your pet&apos;s companionship.</p>
+            <p>With Hooman Group and Ezra on your side you're free to enjoy the extra cuddles, longer walks, and simple joy of your pet's companionship.</p>
             <br />
-            <blockquote>&quot;It&apos;s time to step away from the scattered, stressful approach to pet care and embrace the intelligent partner you and your pet have been waiting for.&quot;</blockquote>
+            <blockquote>It's time to step away from the scattered, stressful approach to pet care and embrace the intelligent partner you and your pet have been waiting for.&quot;</blockquote>
 
             {/* === IMAGE 5: Woman playing with dog === */}
             <figure className="my-8">
