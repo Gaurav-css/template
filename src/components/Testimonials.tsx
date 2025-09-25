@@ -2,34 +2,29 @@
 
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote, MessageSquare } from 'lucide-react';
 
 // Data for the testimonials
 const testimonialsData = [
   {
-    quote: "Ezra AI identified a subtle change in my dog's activity that led to an early diagnosis. It’s a game-changer for preventative care.",
-    name: "Sarah L.",
-    role: "Beta Tester & Dog Parent",
+    quote: "I've been using the Hooman app for about six weeks now. As someone with a young Lhasa Apso, I really value having all health records in one place, it's much easier than rifling through old vet papers when I need vaccination dates or deworming reminders. The AI assistant gave me some useful guidance when my older dog went off his food, but I still rang my vet to be on the safe side.",
+    name: "Charu Mongla",
+    role: "Pet owner - Eva",
     avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=SL"
   },
   {
-    quote: "The ability to generate a concise, data-driven report for vet visits is incredibly powerful. This tool bridges the gap between owner observation and clinical data.",
-    name: "Dr. Mark Evans, DVM",
-    role: "Veterinary Advisor",
+    quote: "I have a rescue dog with severe anxiety issues, and being able to track his progress and connect with other owners dealing with similar challenges has been reassuring. The vet reminder feature saved me from missing his heartworm treatment last month. The interface is clean and straightforward to use, although I did have trouble uploading a video once.",
+    name: "Lara Rachdi",
+    role: "Pet owner - Milo",
     avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=ME"
   },
   {
-    quote: "As a cat owner, tracking nuanced behaviors is difficult. Ezra AI helps me see patterns I would have otherwise missed. Highly recommended.",
-    name: "James P.",
-    role: "Beta Tester & Cat Parent",
+    quote: "I can easily share access with my dog walker and pet sitter, and they can update me with photos and notes throughout the day. The AI feature gave me some handy suggestions for training techniques, though I still prefer speaking to my trainer for serious issues.",
+    name: "Niall O'Riordan",
+    role: "Pet owner - Pixel",
     avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=JP"
-  },
-  {
-    quote: "The nutrition planner is fantastic. It takes the guesswork out of feeding time and ensures my pet gets a balanced diet tailored to her needs.",
-    name: "Anna M.",
-    role: "Early Adopter",
-    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=AM"
-  },
+  }
+  
 ];
 
 const Testimonials = () => {
@@ -50,7 +45,11 @@ const Testimonials = () => {
     <section className="bg-white dark:bg-neutral-950 py-16 sm:py-24">
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center">
+        <div className="text-center -mt-6">
+          <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-16 animate-fade-in-up">
+                    <MessageSquare className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>Reviews</span>
+                    </div>
           <h2 className="text-4xl lg:text-[48px] font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl -mt-10">
             Customer Testimonials
           </h2>

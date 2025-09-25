@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { PawPrint } from 'lucide-react';
 
 const CommunityWaitlist = () => {
   const [email, setEmail] = useState('');
@@ -53,12 +54,13 @@ const CommunityWaitlist = () => {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-[#1a1a1a] dark:text-white">
-      <div className="relative z-20 flex flex-col items-center justify-center space-y-8 px-4 py-16 text-center">
+      <div className="relative z-20 flex flex-col items-center justify-center space-y-8 px-4 py-10 text-center">
         {/* ... The rest of your JSX remains the same, it will display the message correctly ... */}
         
-        <div className="inline-flex items-center rounded-full border border-gray-900/10 bg-gray-900/5 px-4 py-1.5 text-sm font-medium backdrop-blur-md dark:border-white/20 dark:bg-white/10">
-          🐾 Paws & Friends
-        </div>
+        <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 -mb-5 animate-fade-in-up">
+                    <PawPrint className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>Paws & Friends</span>
+                    </div>
 
         <h1 className="text-4xl lg:text-[48px] font-bold leading-tight tracking-tight text-shadow-lg  max-w-4xl">
           The Ultimate Hub for <br className="hidden sm:inline" />

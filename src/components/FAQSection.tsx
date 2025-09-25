@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import { HelpCircle, Info, MessageCircle, LifeBuoy } from 'lucide-react';
 
 const faqData = [
   {
@@ -90,7 +91,11 @@ const FAQSection = () => {
   return (
     <div id='FAQ' className="bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-white min-h-screen w-full flex items-center justify-center p-4 transition-colors duration-300">
       <div className="w-full max-w-4xl mx-auto p-4 md:p-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mt-6">
+          <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-6 animate-fade-in-up">
+                    <MessageCircle className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>FAQ</span>
+                    </div>
           <h1 className="text-4xl lg:text-[48px] font-bold mb-4">
             Frequently Asked Questions
           </h1>

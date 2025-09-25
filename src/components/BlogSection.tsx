@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef, SVGProps } from "react";
+import { FileText } from "lucide-react";
 
 // Define the shape of a blog post for TypeScript
 interface BlogPost {
@@ -147,9 +148,10 @@ export default function App() {
 
           {/* Header Section */}
           <div className="text-center mb-12 lg:mb-16">
-            <p className="text-sm font-semibold tracking-wider text-orange-500 dark:text-orange-400 mb-2">
-              Our Blog
-            </p>
+            <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-6 animate-fade-in-up">
+                    <FileText className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>Our Blog</span>
+                    </div>
             <h2 className="text-4xl lg:text-[48px] font-extrabold text-gray-900 dark:text-white tracking-tight">
               Latest Insights for Pet Parents
             </h2>

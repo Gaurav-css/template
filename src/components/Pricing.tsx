@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, DollarSign } from "lucide-react";
 
 // The Navbar component import has been removed as it's not defined in this file.
 
@@ -107,7 +107,7 @@ const PricingPage: React.FC = () => {
         "Mobile & desktop access",
         "Email support",
       ],
-      buttonText: "Start for Basic",
+      buttonText: "Comming Soon",
     },
     {
       name: "Pro",
@@ -122,7 +122,7 @@ const PricingPage: React.FC = () => {
         "Onboarding support",
       ],
       isPopular: true, // "Pro" is now the popular plan
-      buttonText: "Start with Pro",
+      buttonText: "Coming Soon",
     },
   ];
 
@@ -134,7 +134,11 @@ const PricingPage: React.FC = () => {
       {/* <Navbar /> */}
 
       <div id="pricing" className="container mx-auto px-4 py-24 sm:py-32">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 -mt-14">
+          <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-16 animate-fade-in-up">
+                    <DollarSign className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>Pricing</span>
+                    </div>
           <h1 className="text-4xl lg:text-[48px] font-bold text-gray-900 dark:text-white mb-4 -mt-10">
             Choose Your Plan
           </h1>

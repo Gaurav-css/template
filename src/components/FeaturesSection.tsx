@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
-import { Lightbulb, Heart, Users, Stethoscope, Sparkles, NotebookPen, BarChart4 } from 'lucide-react';
+import { Layers, Heart, Users, Stethoscope, Sparkles, NotebookPen, BarChart4, Settings } from 'lucide-react';
 
 // Define the type for the component's props
 type FeatureCardProps = {
@@ -154,8 +154,10 @@ export default function App() {
           {/* --- Left Column (Sticky on large screens) --- */}
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center py-16 lg:py-24">
             <div className="space-y-6">
-              <span className="text-sm font-bold text-[#ED6C35]">Features</span>
-              {/* FIXED: Escaped the apostrophe in "Pet's" */}
+              <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 -mb-4 animate-fade-in-up">
+                    <Settings className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>Features</span>
+                    </div>
               <h1 className="text-4xl lg:text-[48px] lg:leading-[56px] font-bold tracking-tight text-gray-900 dark:text-white">
                 Why Choose Hooman Group for Your Pet's Health?
               </h1>
