@@ -172,10 +172,14 @@ const Navbar = () => {
               <button onClick={toggleTheme} className="p-2 w-[36px] h-[36px] rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] transition-colors">
                 {mounted && (theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
               </button>
-              <Link href="/auth" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">
-                <User className="h-5 w-5" />
-                <span>Login / Signup</span>
-              </Link>
+              <button
+                disabled
+                title="Download App (Coming Soon)"
+                className="inline-flex flex-col items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                <span className="text-sm font-semibold leading-tight">Download The App</span>
+                <span className="text-[10px] font-light leading-tight opacity-90">Coming Soon</span>
+              </button>
             </div>
 
             <div className="lg:hidden flex items-center">
@@ -241,9 +245,17 @@ const Navbar = () => {
           </div>
 
           <div className="flex-shrink-0 p-4 bg-white dark:bg-[#1A1A1A] border-t border-gray-200 dark:border-gray-700">
-            <Link href="/login" className="block w-full text-center py-2.5 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors duration-300">
-              Login / Signup
-            </Link>
+            <div className="relative w-full max-w-xs px-4">
+              <button
+                disabled
+                title="Download App (Coming Soon)"
+                className="inline-flex flex-col items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75 disabled:cursor-not-allowed disabled:opacity-70 w-80"
+                >
+                <span className="text-sm font-semibold leading-tight">Download The App</span>
+                <span className="text-[10px] font-light leading-tight opacity-90">Coming Soon</span>
+              </button>
+  
+            </div>
           </div>
         </div>
       </div>

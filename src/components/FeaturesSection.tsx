@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
-import { Lightbulb, Heart, Users, Stethoscope } from 'lucide-react';
+import {Heart, Users, Stethoscope, Sparkles, Notebook, BarChart3, NotebookPen, NotebookTabs, BarChart4 } from 'lucide-react';
 
 // Define the type for the component's props
 type FeatureCardProps = {
@@ -92,12 +92,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children, isSmal
 
 // FIXED: Escaped all apostrophes (') with (&apos;)
 const allFeatures = [
-  { id: 'ai', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet&apos;s care." },
-  { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet&apos;s health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
+  { id: 'ai', icon: <Sparkles className="w-6 h-6 text-[#ED6C35]" />, title: "Ezra AI", children: "Meet Ezra, your personal pet assistant. With smart insights and reminders, Ezra ensures you never miss a beat in your pet's care." },
+  { id: 'tracking', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Care Tracking", children: "Track your pet's health and wellness with ease. Our app provides tailored care routines and health updates to keep your pet thriving." },
   { id: 'community', icon: <Users className="w-6 h-6 text-[#ED6C35]" />, title: "Community Hub", children: "Connect with fellow pet parents and share experiences. Our community hub is a space for support, advice, and friendship." },
-  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-[#ED6C35]" />, title: "Vet Integrations", children: "Access your vet&apos;s insights directly through our app. With seamless integrations, managing your pet&apos;s appointments and health records has never been easier." },
-  { id: 'nutrition', icon: <Lightbulb className="w-6 h-6 text-[#ED6C35]" />, title: "Nutrition Planner", children: "Get personalized meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
-  { id: 'activity', icon: <Heart className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet&apos;s daily activity levels to ensure they&apos;re getting enough exercise and staying healthy." }
+  { id: 'vet', icon: <Stethoscope className="w-6 h-6 text-[#ED6C35]" />, title: "Vet Integrations", children: "Access your vet's insights directly through our app. With seamless integrations, managing your pet's appointments and health records has never been easier." },
+  { id: 'nutrition', icon: <NotebookPen className="w-6 h-6 text-[#ED6C35]" />, title: "Nutrition Planner", children: "Get personalised meal plans for your pet based on their breed, age, and activity level to ensure optimal nutrition." },
+  { id: 'activity', icon: <BarChart4 className="w-6 h-6 text-[#ED6C35]" />, title: "Activity Monitoring", children: "Keep an eye on your pet's daily activity levels to ensure they're getting enough exercise and staying healthy." }
 ];
 
 
@@ -148,7 +148,7 @@ export default function App() {
 
 
   return (
-    <div className="bg-gray-50 dark:bg-[#1A1A1A] text-gray-800 dark:text-gray-200 -mb-20">
+    <div className="bg-gray-50 dark:bg-[#1A1A1A] text-gray-800 dark:text-gray-200 -mb-10">
       <div className="container mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
 
@@ -158,7 +158,7 @@ export default function App() {
               <span className="text-sm font-bold text-[#ED6C35]">Features</span>
               {/* FIXED: Escaped the apostrophe in "Pet's" */}
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Why Choose Hooman Group for Your Pet&apos;s Health?
+                Why Choose Hooman Group for Your Pet's Health?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 At Hooman Group, we understand that your pets are family. Our AI-powered tools are designed to simplify pet care, ensuring your furry friends receive the best attention possible.
