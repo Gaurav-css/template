@@ -247,8 +247,8 @@ const EzraAiPage = () => {
           <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
             <div className="grid grid-cols-1 gap-12 items-center">
               <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
-                  Get Started with Hooman Group Today
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
+                  Get Started with <span className="text-[#ED6C35]">Hooman Group</span> Today
                 </h2>
                 <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
                   Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
