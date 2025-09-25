@@ -4,17 +4,18 @@ import React from 'react';
 // Using standard <img> and <a> tags instead of Next.js specific components.
 import {
   Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck,
-  Sparkles, PawPrint, Quote
+  Sparkles, PawPrint, Quote, Stethoscope,
+  NotebookPen
 } from 'lucide-react';
 
 // --- Helper Components (Moved to top for better organization) ---
 
 // Helper component for the iPhone Icon
 const IPhoneIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
-        <path d="M12 18h.01"></path>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+    <path d="M12 18h.01"></path>
+  </svg>
 );
 
 // Helper component for Feature Cards.
@@ -78,8 +79,8 @@ const EzraAiPage = () => {
               <Sparkles className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               <span>The Future of Pet Intelligence</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
-              Meet Ezra AI: The Future of Proactive Pet Care.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white animate-fade-in-up [animation-delay:200ms]">
+              Meet Ezra AI: The Future of Proactive <span className="text-[#ED6C35]">Pet Care.</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
               Ezra AI is our advanced intelligence engine designed to analyze your pet&apos;s data, delivering personalized insights and actionable advice to enhance their health, happiness, and longevity.
@@ -135,7 +136,7 @@ const EzraAiPage = () => {
         {/* Key Features Section */}
         <section id="features">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
               Advanced Features for Unmatched Care
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
@@ -156,13 +157,13 @@ const EzraAiPage = () => {
               animationDelay="300ms"
             />
             <FeatureCard
-              icon={<Bot className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
+              icon={<Sparkles className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Behavioral Analysis"
               description="Identifies shifts in behavior patterns that might indicate stress or health issues, helping you intervene early."
               animationDelay="400ms"
             />
             <FeatureCard
-              icon={<BrainCircuit className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
+              icon={<NotebookPen className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Nutritional Recommendations"
               description="Get AI-driven suggestions for diet adjustments based on your pet’s breed, age, and activity level."
               animationDelay="500ms"
@@ -174,7 +175,7 @@ const EzraAiPage = () => {
               animationDelay="600ms"
             />
             <FeatureCard
-              icon={<Sparkles className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
+              icon={<Stethoscope className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Veterinarian Connect"
               description="Generate comprehensive health reports at the tap of a button to share with your veterinarian."
               animationDelay="700ms"
@@ -203,7 +204,7 @@ const EzraAiPage = () => {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-72 h-72">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-purple-100 dark:from-orange-900/50 dark:to-purple-900/40 rounded-full blur-2xl"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-purple-100 dark:from-orange-900/50 dark:to-purple-900/40 rounded-full blur-2xl"></div> */}
                 <BrainCircuit className="relative w-full h-full text-slate-400 dark:text-zinc-500 opacity-60" />
               </div>
             </div>
@@ -213,9 +214,8 @@ const EzraAiPage = () => {
         {/* Testimonials Section */}
         <section>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
-              Trusted by Pet Lovers
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
+              Trusted by Pet Lovers           </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
               Hear what our early adopters and veterinary advisors are saying about the potential of Ezra AI.
             </p>
@@ -243,29 +243,29 @@ const EzraAiPage = () => {
         </section>
 
         {/* Download App Section */}
-       <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
-         <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
-           <div className="grid grid-cols-1 gap-12 items-center">
-             <div className="text-center">
-               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
-                 Get Started with Hooman Group Today
-               </h2>
-               <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
-                 Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
-               </p>
-               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                 <a
-                   href="#"
-                   className="inline-flex items-center justify-center gap-x-4 rounded-xl bg-transparent border-2 border-orange-600 px-8 py-4 text-lg font-medium text-orange-600 shadow-lg transition-all duration-300 ease-in-out hover:bg-orange-600 hover:text-white hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
-                 >
-                   <IPhoneIcon />
-                   <span>Download for iPhone</span>
-                 </a>
-               </div>
-             </div>
-           </div>
-         </div>
-       </section>
+        <section id="download-app" className="relative bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
+          <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
+            <div className="grid grid-cols-1 gap-12 items-center">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white">
+                  Get Started with Hooman Group Today
+                </h2>
+                <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
+                  Take the first step towards proactive pet care. Download the app and unlock a new world of insights.
+                </p>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="#"
+                    className="inline-flex items-center justify-center gap-x-4 rounded-xl bg-transparent border-2 border-orange-600 px-8 py-4 text-lg font-medium text-orange-600 shadow-lg transition-all duration-300 ease-in-out hover:bg-orange-600 hover:text-white hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
+                  >
+                    <IPhoneIcon />
+                    <span>Download for iPhone</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </main>
     </div>
