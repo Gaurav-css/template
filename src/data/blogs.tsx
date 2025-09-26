@@ -23,7 +23,7 @@ export const blogs: Blog[] = [
     readTime: '3 min read',
     author: 'Prayas Ahuja',
     publishDate: 'September 24, 2025',
-    image: '/blog1.1.png',
+    image: '/blog1.2.png',
     content: (
     <>
         {/* === IMAGE 1: Stressed person with phone === */}

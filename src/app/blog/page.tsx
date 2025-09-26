@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogs, Blog } from '../../data/blogs';
+import { FileText } from 'lucide-react';
 
 // --- DATA PREPARATION ---
 // Assumes the first blog in the array is the latest/featured one.
@@ -103,7 +104,10 @@ const BlogList = () => {
   return (
     <>
       <header className="max-w-4xl mx-auto text-center mb-16">
-        <p className="text-[#ED6C35] font-semibold mb-2">Blog</p>
+        <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-6 animate-fade-in-up">
+                    <FileText className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>Blog</span>
+                    </div>
         <h1 className="text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">Explore Our Latest Insights</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">Your go-to source for pet care advice</p>
       </header>

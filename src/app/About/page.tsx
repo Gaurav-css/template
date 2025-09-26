@@ -2,7 +2,7 @@
 
 "use client"; // Required for onClick handlers like handleScrollToJourney
 
-import { ArrowRight, ArrowDown, ShieldCheck, Clock, Heart, Star, Lock, FlaskConical, BrainCircuit, Globe, Users, Stethoscope, Smartphone, HeartHandshake } from 'lucide-react';
+import { ArrowRight, ArrowDown, ShieldCheck, Clock, Heart, Star, Lock, FlaskConical, BrainCircuit, Globe, Users, Stethoscope, Smartphone, HeartHandshake, Sparkle } from 'lucide-react';
 
 // I've standardised the dark mode background to bg-neutral-900 and borders to border-neutral-800 for consistency.
 const darkBgClass = "dark:bg-neutral-900";
@@ -327,18 +327,19 @@ export default function HomePage() {
   };
 
   return (
-    <div className="bg-white dark:bg-neutral-950 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-500 overflow-x-hidden">
+    <div className="bg-white dark:bg-neutral-950 text-gray-800 dark:text-gray-200 transition-colors duration-500 overflow-x-hidden">
       <main className="relative flex flex-col items-center justify-center min-h-screen px-4 pt-20 pb-10 text-center">
         <div className="z-10 flex flex-col items-center">
           <div className="mb-6">
-            <span className="bg-orange-100/10 dark:bg-orange-900/50 border border-orange-400/30 text-orange-400 dark:text-orange-300 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full">
-              ✨ The Future of Pet Care
-            </span>
+            <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 animate-fade-in-up">
+                    <Sparkle className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                        <span>The Future of Pet Care</span>
+                    </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h1 className="text-5xl lg:text-[56px] font-bold text-gray-900 dark:text-white leading-tight">
             The <span className="text-orange-500 dark:text-orange-400">Hooman Group</span> <span className="text-orange-500 dark:text-orange-400">Story</span>
           </h1>
-          <h2 className="mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h2 className="mt-2 text-5xl lg:text-[56px] font-bold text-gray-900 dark:text-white leading-tight">
             Revolutionizing Pet Care Through AI
           </h2>
           <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400">

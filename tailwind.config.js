@@ -18,6 +18,13 @@ module.exports = {
         'fade-in': 'fade-in 0.5s ease-out forwards',
       },
     },
+    screens: {
+      xs: '320px',   
+      sm: '480px',   
+      md: '768px',  
+      lg: '1280px',   
+      xl: '1728px',  
+    },
   },
   plugins: [],
 }

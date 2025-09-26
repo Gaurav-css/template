@@ -14,17 +14,17 @@ const CareersPage = () => {
         <Briefcase className="mx-auto h-12 w-12 text-orange-500/80 mb-6" />
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h1 className="text-5xl lg:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white">
           Join Our <span className="text-orange-500">Mission</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300">
+        <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
           Help us revolutionize pet care through AI. We're building the future of pet health and looking for passionate people to join our pack.
         </p>
         
         {/* "Coming Soon" Message */}
-        <p className="mt-8 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+        <p className="mt-8 text-xl font-semibold text-gray-800 dark:text-gray-100">
           Our careers page is coming soon. Stay tuned!
         </p>
 

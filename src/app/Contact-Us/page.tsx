@@ -89,14 +89,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-neutral-950 text-slate-800 dark:text-slate-200 font-sans">
+    <div className="bg-white dark:bg-neutral-950 text-slate-800 dark:text-slate-200">
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
             {/* Left Column: Form */}
             <div className="text-left">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-500 dark:text-white tracking-tight mb-4">
+              <h1 className="text-4xl lg:text-[48px] font-extrabold text-orange-500 dark:text-white tracking-tight mb-4">
                 Get in Touch
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
