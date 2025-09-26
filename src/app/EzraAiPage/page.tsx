@@ -80,12 +80,11 @@ const EzraAiPage = () => {
               <span>The Future of Pet Intelligence</span>
             </div>
             <h1 className="text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
-                Meet Ezra AI: The Future of 
+                Meet <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
+                  Ezra AI
+                </span>: The Future of 
                 <br />
-                <span>Proactive{' '}</span>
-                <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
-                   Pet Care.
-                </span>
+                <span>Proactive Pet Care</span>
               </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
               Ezra AI is our advanced intelligence engine designed to analyze your pet's data, delivering personalised insights and actionable advice to enhance their health, happiness, and longevity.
