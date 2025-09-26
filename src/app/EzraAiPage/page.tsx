@@ -79,9 +79,14 @@ const EzraAiPage = () => {
               <Sparkles className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               <span>The Future of Pet Intelligence</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-slate-900 dark:from-orange-400 dark:to-white animate-fade-in-up [animation-delay:200ms]">
-              Meet Ezra AI: The Future of Proactive Pet Care.
-            </h1>
+            <h1 className="text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
+                Meet Ezra AI: The Future of 
+                <br />
+                <span>Proactive{' '}</span>
+                <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
+                   Pet Care.
+                </span>
+              </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
               Ezra AI is our advanced intelligence engine designed to analyze your pet's data, delivering personalised insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
@@ -101,7 +106,7 @@ const EzraAiPage = () => {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24 sm:space-y-32">
         {/* How It Works Section */}
         <section className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">How Ezra AI Works</h2>
+          <h2 className="text-4xl lg:text-[48px] font-bold tracking-tight bg-clip-text text-gray-900 dark:text-white -mt-16">How Ezra AI Works</h2>
           <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">A seamless process to unlock deep insights into your pet's wellbeing.</p>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 relative">
             <div className="absolute top-1/2 left-0 w-full h-px -translate-y-1/2">
@@ -136,8 +141,8 @@ const EzraAiPage = () => {
         {/* Key Features Section */}
         <section id="features">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
-              Advanced Features for Unmatched Care
+            <h2 className="text-4xl lg:text-[48px] font-bold tracking-tight text-gray-900 dark:text-white">
+              Advanced Features for Pet Care
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
               Ezra AI is your partner in making informed decisions for every aspect of your pet's life.
@@ -187,7 +192,7 @@ const EzraAiPage = () => {
         <section className="bg-slate-50 dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 dark:from-zinc-100 dark:to-zinc-400">The Science Behind Ezra AI</h2>
+              <h2 className="text-4xl lg:text-[40px] font-bold tracking-tight bg-clip-text text-gray-900 dark:text-white">The Science Behind Ezra AI</h2>
               <p className="mt-6 text-lg text-slate-600 dark:text-zinc-400">
                 Ezra AI is built on state-of-the-art machine learning models trained on a vast, anonymised dataset of veterinary knowledge and pet care best practices.
               </p>
@@ -214,7 +219,7 @@ const EzraAiPage = () => {
         {/* Testimonials Section */}
         <section>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
+            <h2 className="text-4xl lg:text-[48px] font-bold tracking-tight text-slate-900 dark:text-white">
               Trusted by Pet Lovers           </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400">
               Hear what our early adopters and veterinary advisors are saying about the potential of Ezra AI.
@@ -247,7 +252,7 @@ const EzraAiPage = () => {
           <div className="container mx-auto px-6 sm:px-8 py-16 sm:py-24">
             <div className="grid grid-cols-1 gap-12 items-center">
               <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
+                <h2 className="text-4xl font-bold tracking-tight lg:text-[40px] text-slate-900 dark:text-white">
                   Get Started with <span className="text-[#ED6C35]">Hooman Group</span> Today
                 </h2>
                 <p className="mt-4 text-lg text-slate-600 dark:text-zinc-400 max-w-md mx-auto">
