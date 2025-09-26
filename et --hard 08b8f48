@@ -1,0 +1,75 @@
+[33m4938509[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m4938509[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: pull: Fast-forward
+[33m59a30b0[m HEAD@{2}: reset: moving to HEAD@{1}
+[33m08b8f48[m[33m ([m[1;31mtemplate/main[m[33m)[m HEAD@{3}: reset: moving to HEAD@{1}
+[33m59a30b0[m HEAD@{4}: pull: Fast-forward
+[33m08b8f48[m[33m ([m[1;31mtemplate/main[m[33m)[m HEAD@{5}: commit: ezrapage gradient fix
+[33md53494b[m HEAD@{6}: commit: change icon and heading of ezra
+[33mf022362[m HEAD@{7}: commit: finalize waitlist for deploy
+[33m499b493[m HEAD@{8}: commit: fix waitlist
+[33mc699b33[m HEAD@{9}: commit: update get earky access btn in hersection
+[33m24006be[m HEAD@{10}: pull (finish): returning to refs/heads/main
+[33m24006be[m HEAD@{11}: pull (pick): ezra page
+[33m46e0049[m HEAD@{12}: pull (start): checkout 46e00493ea48cf7f502b98cac64a557aaeeaedab
+[33m6e221d8[m HEAD@{13}: commit: ezra page
+[33mb9bc8d2[m HEAD@{14}: commit: fix typo error in featuresSection
+[33m81a76da[m HEAD@{15}: commit: ezra update to accurate and related questin
+[33mf7622ee[m HEAD@{16}: rebase (finish): returning to refs/heads/main
+[33mf7622ee[m HEAD@{17}: rebase (pick): ezra ai fixes
+[33m07b5faf[m HEAD@{18}: rebase (pick): ezra box length fix
+[33m289ab5a[m HEAD@{19}: rebase (continue): Change content from Hooman to Hooman Group
+[33md06844d[m HEAD@{20}: pull origin main (pick): ezra box length fix
+[33m8d7d66b[m HEAD@{21}: pull origin main (start): checkout 8d7d66b67da7847ecc10b9190cd44e2d2471e110
+[33m4eddf00[m HEAD@{22}: commit: ezra ai fixes
+[33m78c0983[m HEAD@{23}: rebase (finish): returning to refs/heads/main
+[33m78c0983[m HEAD@{24}: rebase (continue): ezra box length fix
+[33mddbee61[m HEAD@{25}: rebase (continue): Change content from Hooman to Hooman Group
+[33m4a65c97[m HEAD@{26}: pull template main (start): checkout 4a65c97bf4f39fa753fd9c37b8a6522da4a51bdf
+[33m8d7d66b[m HEAD@{27}: commit: `Fixed icon in FeaturesSection component`
+[33m9d127f6[m HEAD@{28}: rebase (finish): returning to refs/heads/main
+[33m9d127f6[m HEAD@{29}: rebase (continue): ezra box length fix
+[33ma01a8a3[m HEAD@{30}: pull origin main (start): checkout a01a8a37cb06be5f8b817aedefd38ff6a4936b2b
+[33m4a65c97[m HEAD@{31}: commit: ezra box length fix
+[33m2088eb8[m HEAD@{32}: reset: moving to HEAD~1
+[33m2d11a61[m HEAD@{33}: commit: features changes to ezra, testimonial changes to new
+[33m2088eb8[m HEAD@{34}: commit: create page - abouts us,contact us,carrer,vet,care,commuinity
+[33ma67365a[m HEAD@{35}: commit: create a new page for ourstory
+[33m901b772[m HEAD@{36}: commit: `Refactored OurStory page, added new components and sections, and updated VetInsights page with new features and design changes.`
+[33m52a24c8[m HEAD@{37}: commit: `Replaced Next.js components with standard HTML tags and updated code accordingly`
+[33me1d18be[m HEAD@{38}: commit: `Update "Products" to "Features" in Navbar button`
+[33mbddbe9a[m HEAD@{39}: commit: Logo.png in smalll device fix
+[33m78d06e3[m HEAD@{40}: commit: Fix build issue
+[33m82fd6ae[m HEAD@{41}: commit: Fix build issues
+[33m874a46e[m HEAD@{42}: commit: Bypass ESLint for Vercel deployment
+[33md061e96[m HEAD@{43}: commit: Bypass ESLint for Vercel deployment
+[33m109a926[m HEAD@{44}: commit: next.config
+[33me387a4a[m HEAD@{45}: commit: ezra pages changes
+[33mdfda56d[m HEAD@{46}: commit: `Refactor Community component and BlogSection to remove specific URLs and improve responsiveness`
+[33ma102142[m HEAD@{47}: commit: Add href property to BlogPost interface and update blog post data
+[33m40a7085[m HEAD@{48}: rebase (finish): returning to refs/heads/main
+[33m40a7085[m HEAD@{49}: pull --rebase origin main (start): checkout 40a7085698d0760649ca0eae32934aab6fd3ad2f
+[33m62961ab[m HEAD@{50}: reset: moving to HEAD~1
+[33m02000a8[m HEAD@{51}: pull: Merge made by the 'ort' strategy.
+[33m62961ab[m HEAD@{52}: commit: changes into web
+[33m1560440[m HEAD@{53}: commit: deploy change
+[33m1ce9fa9[m HEAD@{54}: commit: repo change to deploy to vercel
+[33m50f5d53[m HEAD@{55}: commit: font error
+[33m05d0a56[m HEAD@{56}: commit (merge): Merge branch 'main' of https://github.com/prayasahuja5/Hooman-group.website
+[33m67fef4a[m HEAD@{57}: commit: pull create done
+[33mcbc3f73[m HEAD@{58}: commit: testimonials,pricing change
+[33m56b4273[m HEAD@{59}: pull origin main: Fast-forward
+[33m790f819[m HEAD@{60}: commit: full website changes done
+[33med08ab0[m HEAD@{61}: commit: nav,join/sinup btn fix
+[33md22a3a6[m HEAD@{62}: commit: changes in file
+[33made75ec[m HEAD@{63}: rebase (abort): returning to refs/heads/main
+[33md29d49c[m HEAD@{64}: pull origin main --rebase (start): checkout d29d49c97aa4d16a2d0611ad05497105c0090bc7
+[33made75ec[m HEAD@{65}: Branch: renamed refs/heads/main to refs/heads/main
+[33made75ec[m HEAD@{67}: commit: full website change
+[33mc72be43[m HEAD@{68}: Branch: renamed refs/heads/main to refs/heads/main
+[33mc72be43[m HEAD@{70}: commit (merge): home page full complete and modify
+[33m43a631a[m HEAD@{71}: reset: moving to ORIG_HEAD
+[33m43a631a[m HEAD@{72}: commit: trying pull
+[33m99c1b26[m HEAD@{73}: checkout: moving from main to main
+[33m99c1b26[m HEAD@{74}: pull origin main: Fast-forward
+[33m1d3389c[m HEAD@{75}: checkout: moving from main to main
+[33m1d3389c[m HEAD@{76}: clone: from https://github.com/prayasahuja5/Hooman-group.website.git
