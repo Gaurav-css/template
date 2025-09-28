@@ -32,7 +32,7 @@ const Footer = () => {
         { name: "Ezra AI", href: "/EzraAiPage" },
         //{ name: "Hooman Group Care", href: "/CareTrack" },
         // { name: "Hooman Connect", href: "#" },
-        { name: "Hooman Group Veterinary", href: "vet-insights" },
+        // { name: "Hooman Group Veterinary", href: "vet-insights" },
         { name: "Pricing", href: "/#pricing" },
         { name: "Download Application", href: "#" },
       ],
