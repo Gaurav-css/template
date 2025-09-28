@@ -208,12 +208,12 @@ const ContactForm = () => {
             {/* Right Column: Map */}
             <div className="w-full h-[550px] rounded-2xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-black/20">
               <iframe
+                title="Location map of our office in London"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317715.7119213196!2d-0.3012434255761614!3d51.52873519823157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1727088923058!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={false}
-                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="filter dark:invert dark:grayscale"
               ></iframe>

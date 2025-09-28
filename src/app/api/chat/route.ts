@@ -1,3 +1,5 @@
+// src/app/api/chat/route.ts
+
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
@@ -18,7 +20,8 @@ export async function POST(request: Request) {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorisation': `Bearer ${groqApiKey}`,
+        // CORRECTED TYPO HERE
+        'Authorization': `Bearer ${groqApiKey}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({

@@ -148,8 +148,8 @@ export default function App() {
 
   return (
     <div className="bg-gray-50 dark:bg-[#1A1A1A] text-gray-800 dark:text-gray-200 -mb-10">
-      <div className="container mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+      <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
 
           {/* --- Left Column (Sticky on large screens) --- */}
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center py-16 lg:py-24">
