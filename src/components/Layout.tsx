@@ -87,7 +87,7 @@ export default function App() {
               The Future of Pet Care
             </h1>
             <p className="text-gray-600 dark:text-gray-400 mt-1">
-              Revolutionizing how we care for our pets.
+              Revolutionising how we care for our pets.
             </p>
           </div>
 

@@ -2,9 +2,11 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { blogs } from '../../../data/blogs';
 
-export default function BlogDetailPage({ params }: { params: { id: string } }) {
-  const blog = blogs.find(b => b.id === params.id);
+export default async function BlogDetailPage({ params }: { params: { id: string } }) {
+  const { id } = await params;
+  const blog = blogs.find(b => String(b.id) === id);
   if (!blog) return notFound();
+
 
   return (
     <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-800 dark:text-gray-200">

@@ -6,102 +6,58 @@ import { FileText } from "lucide-react";
 
 // Define the shape of a blog post for TypeScript
 interface BlogPost {
+  id: number; // 👈 added for unique keys and links
   category: string;
   readTime: string;
   title: string;
   description: string;
   imageUrl: string;
-  icon: React.ReactNode;
-  href: string;   // 👈 new property
+  href: string;
   details: {
     heading: string;
     content: string;
   }[];
 }
 
-// Define a props interface for icons that can take a size prop
-interface IconProps extends SVGProps<SVGSVGElement> {
-  size?: number;
-}
-
 // Icon for scrolling left
 const ArrowLeft = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M19 12H5" />
     <path d="m12 19-7-7 7-7" />
   </svg>
 );
 
-// Icon for the "Read more" link and scrolling right
+// Icon for scrolling right
 const ArrowRight = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M5 12h14" />
     <path d="m12 5 7 7-7 7" />
   </svg>
 );
 
-// Sample data for the blog posts
+// Updated blog post data with 2 items
 const blogPosts: BlogPost[] = [
   {
-    category: 'Health',
-    readTime: '5 min read',
-    title: "Understanding Your Pet's Nutritional Needs",
-    description: 'Explore the best diets for your furry friends and how to ensure they live a long, healthy life.',
-    imageUrl: 'food.jpg',
-    href: '/blog/understanding-pet-nutritional-needs', 
-    icon: (
-      <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    ),
+    id: 1,
+    category: 'General',
+    readTime: '3 min read',
+    title: "The App Overload: When More Tools Mean Less Care",
+    description: 'Still juggling a dozen apps for your pet\'s care? Discover how a single, intelligent platform can reduce chaos and help you become a smarter pet parent.',
+    imageUrl: '/blog1.2.png',
+    href: '/blog/1', // 👈 dynamic link
     details: []
   },
   {
-    category: 'Training',
-    readTime: '7 min read',
-    title: 'Top Tips for Successful  Training',
-    description: 'Learn effective, positive reinforcement strategies for successful and stress-free  training.',
-    imageUrl: 'train.jpg',
-      href: '/blog/understanding-pet-nutritional-needs', // 👈 direct page path
-
-    icon: (
-      <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-    ),
+    id: 2,
+    category: 'Pet Health & Wellness',
+    readTime: '12 min read',
+    title: 'Why Pet Care is Important Today: A Comprehensive Guide',
+    description: 'In our rapidly evolving world, the importance of proper pet care has never been more critical. From emerging health challenges to groundbreaking technological advances, understanding why modern pet care matters is essential for every pet parent.',
+    imageUrl: '/blog2.png',
+    href: '/blog/2', // 👈 dynamic link
     details: []
   },
-  {
-    category: 'Wellness',
-    readTime: '6 min read',
-    title: 'Signs Your Pet Needs to See a Vet',
-    description: 'Recognize the subtle but crucial warning signs for your pet’s health to get them timely care.',
-    imageUrl: 'doc.png',
-     href: '/blog/understanding-pet-nutritional-needs', // 👈 direct page path
-
-    icon: (
-      <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-    ),
-    details: []
-  },
+  
 ];
 
 // Main Component
@@ -120,8 +76,9 @@ export default function App() {
 
   useEffect(() => {
     const container = scrollContainerRef.current;
+    checkArrows(); // Initial check
+
     if (container) {
-      checkArrows();
       container.addEventListener('scroll', checkArrows);
     }
     window.addEventListener('resize', checkArrows);
@@ -148,10 +105,10 @@ export default function App() {
 
           {/* Header Section */}
           <div className="text-center mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-6 animate-fade-in-up">
-                    <FileText className="w-4 h-4 text-orange-500 dark:text-orange-400" />
-                        <span>Our Blog</span>
-                    </div>
+            <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 mb-6">
+              <FileText className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+              <span>Our Blog</span>
+            </div>
             <h2 className="text-4xl lg:text-[48px] font-extrabold text-gray-900 dark:text-white tracking-tight">
               Latest Insights for Pet Parents
             </h2>
@@ -165,17 +122,18 @@ export default function App() {
             {showLeftArrow && (
               <button
                 onClick={() => scroll('left')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-[#1A1A1A] p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-gray-800 transition-all"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-black/60 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-gray-800 transition-all"
                 aria-label="Scroll left"
               >
                 <ArrowLeft className="h-6 w-6 text-gray-700 dark:text-gray-200" />
               </button>
             )}
+            {/* NOTE: For `scrollbar-hide` to work, you may need the `tailwind-scrollbar-hide` plugin */}
             <div ref={scrollContainerRef} className="flex overflow-x-auto space-x-6 pb-8 pl-4 -mx-4 scrollbar-hide">
-              {blogPosts.map((post, index) => (
+              {blogPosts.map((post) => (
                 <div
-                  key={index}
-                  className="flex flex-col flex-shrink-0 w-[85%] sm:w-2/3 md:w-1/2 bg-white dark:bg-[#1A1A1A] rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 active:scale-95 transition-transform duration-200 cursor-pointer"
+                  key={post.id}
+                  className="flex flex-col flex-shrink-0 w-[85%] sm:w-2/3 md:w-1/2 bg-white dark:bg-[#222] rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 active:scale-95 transition-transform duration-200"
                 >
                   <img
                     src={post.imageUrl}
@@ -184,11 +142,7 @@ export default function App() {
                   />
                   <div className="p-5 flex flex-col flex-grow">
                     <div>
-                      <span className={`text-sm font-semibold ${post.category === 'Health' ? 'text-green-500' :
-                        post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
-                        }`}>
-                        {post.category}
-                      </span>
+                      <span className="text-sm font-semibold text-orange-500">{post.category}</span>
                       <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-2">
                         {post.title}
                       </h3>
@@ -198,7 +152,7 @@ export default function App() {
                     </div>
                     <div className="mt-auto pt-4">
                       <Link
-                        href="/blog"
+                        href={post.href}
                         className="inline-flex items-center font-semibold text-orange-600 dark:text-orange-400"
                       >
                         Read more
@@ -213,7 +167,7 @@ export default function App() {
             {showRightArrow && (
               <button
                 onClick={() => scroll('right')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-[#1A1A1A] p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-gray-800 transition-all"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-black/60 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-gray-800 transition-all"
                 aria-label="Scroll right"
               >
                 <ArrowRight className="h-6 w-6 text-gray-700 dark:text-gray-200" />
@@ -222,13 +176,14 @@ export default function App() {
           </div>
 
           {/* --- Grid for Desktop --- */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {blogPosts.map((post, index) => (
+          {/* 👇 KEY CHANGE IS HERE: Removed lg:grid-cols-3 to make it responsive */}
+          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 gap-8">
+            {blogPosts.map((post) => (
               <div
-                key={index}
-                className="group flex flex-col bg-white dark:bg-[#1A1A1A] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+                key={post.id}
+                className="group flex flex-col bg-white dark:bg-[#222] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
               >
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={post.imageUrl}
                     alt={`Image for ${post.title}`}
@@ -238,24 +193,22 @@ export default function App() {
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    <span className={`font-semibold ${post.category === 'Health' ? 'text-green-500' :
-                      post.category === 'Training' ? 'text-blue-500' : 'text-red-500'
-                      }`}>{post.category}</span>
+                    <span className="font-semibold text-orange-500">{post.category}</span>
                     <span className="mx-2">·</span>
                     <span>{post.readTime}</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 flex-grow">
                     <Link
-                      href="/blog"
-                      className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                      href={post.href}
+                      className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200"
                     >
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-base">{post.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-base line-clamp-3">{post.description}</p>
                   <Link
-                    href="/blog"
-                    className="mt-auto inline-flex items-center font-semibold text-orange-500 dark:text-orange-500 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-200"
+                    href={post.href}
+                    className="mt-auto inline-flex items-center font-semibold text-orange-600 dark:text-orange-400 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-200"
                   >
                     Read more
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -269,29 +222,13 @@ export default function App() {
           <div className="text-center mt-16">
             <Link
               href="/blog"
-              className="inline-block bg-orange-500 dark:bg-orange-500 text-white dark:text-orange-100 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-orange dark:hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-orange-900 dark:focus:ring-grorangeay-400 transition-all duration-300 transform hover:scale-105"
+              className="inline-block bg-orange-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-900 dark:focus:ring-gray-400 transition-all duration-300 transform hover:scale-105"
             >
               View All Articles
             </Link>
           </div>
         </div>
       </section>
-
-      <style jsx global>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .line-clamp-3 {
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-        }
-      `}</style>
     </div>
   );
 }

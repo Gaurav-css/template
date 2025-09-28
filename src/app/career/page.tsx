@@ -15,17 +15,17 @@ const CareersPage = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl lg:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white">
-          Join Our <span className="text-orange-500">Mission</span>
+          Careers at <span className="text-orange-500">Hooman Group</span>
         </h1>
 
         {/* Subheading */}
         <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-          Help us revolutionize pet care through AI. We're building the future of pet health and looking for passionate people to join our pack.
+          We’re not actively hiring at the moment, but we’re always open to connecting with talented individuals who are passionate about our mission to transform pet care with AI.
         </p>
         
         {/* "Coming Soon" Message */}
         <p className="mt-8 text-xl font-semibold text-gray-800 dark:text-gray-100">
-          Our careers page is coming soon. Stay tuned!
+          If you’re interested in future opportunities, please reach out to us — we’d be glad to keep your details on file for upcoming roles.
         </p>
 
         {/* Optional: Link for speculative applications */}

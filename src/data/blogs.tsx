@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 export type Blog = {
-  id: string;
+  id: string | number;
   title: string;
   description: string;
   category: string;
@@ -22,7 +22,7 @@ export const blogs: Blog[] = [
     category: 'General',
     readTime: '3 min read',
     author: 'Prayas Ahuja',
-    publishDate: 'September 24, 2025',
+    publishDate: '10 August 2025',
     image: '/blog1.2.png',
     content: (
     <>
@@ -38,7 +38,7 @@ export const blogs: Blog[] = [
         </figure>
 
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">We can order a takeaway with a single tap, book a train to Manchester in seconds, and manage our entire lives from our phones. Everything around us is designed for streamlined, intelligent living.</p>
-        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">But when it comes to caring for that furry family member curled up beside you are you still juggling a crumpled vaccination card, half-forgotten phone reminders, and those late-night Google searches when something seems off?</p>
+        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">But when it comes to caring for that furry family member curled up beside you? Are you still juggling a crumpled vaccination card, half-forgotten phone reminders, and those late-night Google searches when something seems off?</p>
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">It's not about lacking love for your pet. The real problem is trying to manage their care across a dozen different apps and systems. One app for reminders, another for vet records, a third for booking walks. It creates chaos, not clarity.</p>
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">Your pet deserves better than this scattered approach to their wellbeing.</p>
 
@@ -125,16 +125,16 @@ export const blogs: Blog[] = [
     description: 'In our rapidly evolving world, the importance of proper pet care has never been more critical. From emerging health challenges to groundbreaking technological advances, understanding why modern pet care matters is essential for every pet parent.',
     category: 'Pet Health & Wellness',
     readTime: '12 min read',
-    author: 'Dr. Sarah Mitchell, DVM',
-    publishDate: '20 December 2024',
-    image: '/blog2.1.png',
+    author: 'Prayas Ahuja',
+    publishDate: '20 August 2025',
+    image: '/blog2.png',
     content: (
     <>
         <figure className="my-8">
             <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-800">
                 <img
-                    src="/blog2.1.png"
-                    alt="A person looking stressed surrounded by multiple smartphones"
+                    src="/blog2.png"
+                    alt="Pet parent caring for their cat and dog"
                     className="object-cover w-full h-full"
                 />
             </div>
@@ -142,7 +142,7 @@ export const blogs: Blog[] = [
 
         <h3 className="text-3xl font-bold mt-12 mb-4 text-gray-900 dark:text-white">The Evolution of Pet Care</h3>
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">The landscape of pet care has transformed dramatically over the past decade. What once consisted of basic feeding and occasional veterinary visits has evolved into a sophisticated ecosystem of preventive medicine, behavioural understanding, and cutting-edge technology. Today's pet parents face unique challenges that require a more comprehensive approach to animal welfare.</p>
-        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">According to the American Pet Products Association's 2023-2024 National Pet Owners Survey, 70% of U.S. households own a pet, representing approximately 90.5 million families. This statistic alone underscores the massive responsibility we collectively bear in ensuring proper pet care standards.</p>
+        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">According to the Pet Food Manufacturers Association's (PFMA) 2024 report, 62% of UK households own at least one pet, representing 16.7 million families. This statistic alone underscores the massive responsibility we collectively bear in ensuring proper pet care standards.</p>
 
         <h3 className="text-3xl font-bold mt-12 mb-4 text-gray-900 dark:text-white">The Deepening Human-Animal Bond</h3>
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">The relationship between humans and their pets has evolved from utility-based companionship to genuine family membership. Research published in the Journal of Applied Animal Welfare Science demonstrates that pets now serve multiple roles: emotional support providers, stress reducers, and even health monitors for their human companions.</p>
@@ -163,19 +163,19 @@ export const blogs: Blog[] = [
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">Today's pets face health challenges that were virtually unknown a generation ago. Environmental factors, lifestyle changes, and genetic predispositions have created a complex web of health concerns that require proactive management.</p>
 
         <h4 className="text-2xl font-semibold mt-8 mb-3 text-gray-900 dark:text-white">Obesity Epidemic</h4>
-        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">The Association for Pet Obesity Prevention reports that 59% of dogs and 61% of cats in the United States are overweight or obese. This epidemic mirrors human obesity trends and carries similar health consequences: diabetes, arthritis, heart disease, and reduced lifespan.</p>
+        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">In the UK, the PDSA's 2023 PAW Report highlights a major pet obesity crisis, with veterinarians estimating that 46% of dogs and 34% of cats are overweight or obese. This epidemic mirrors human obesity trends and carries similar health consequences: diabetes, arthritis, heart disease, and reduced lifespan.</p>
 
         <h4 className="text-2xl font-semibold mt-8 mb-3 text-gray-900 dark:text-white">Environmental Toxins</h4>
         <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">Modern pets are exposed to environmental toxins at unprecedented levels. From household chemicals to air pollution, these exposures contribute to increased cancer rates, respiratory issues, and autoimmune disorders. The Veterinary Cancer Society estimates that cancer now affects 1 in 4 dogs and 1 in 5 cats.</p>
 
         <h4 className="text-2xl font-semibold mt-8 mb-3 text-gray-900 dark:text-white">Behavioural Disorders</h4>
-        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">Anxiety, aggression, and compulsive disorders in pets have increased significantly. The American Veterinary Medical Association attributes this rise to urbanisation, reduced exercise, and changes in family dynamics. Proper behavioural care is now recognised as essential to overall pet health.</p>
+        <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">Anxiety, aggression, and compulsive disorders in pets have increased significantly. The British Veterinary Association (BVA) attributes this rise to urbanisation, reduced exercise, and changes in family dynamics. Proper behavioural care is now recognised as essential to overall pet health.</p>
 
         <h3 className="text-3xl font-bold mt-12 mb-4 text-gray-900 dark:text-white">The Technology Revolution in Pet Care</h3>
         <div className="grid md:grid-cols-2 gap-6 my-8">
             <div className="bg-white dark:bg-[#2b2b2b] rounded-xl p-6 shadow-md">
                 <h5 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Wearable Health Monitors</h5>
-                <p className="text-gray-600 dark:text-gray-300">Devices like FitBark and Whistle track activity levels, sleep patterns, and vital signs, providing early warning signs of health issues.</p>
+                <p className="text-gray-600 dark:text-gray-300">Devices like the UK-based PitPat, or the internationally known FitBark and Whistle, track activity levels, sleep patterns, and vital signs, providing early warning signs of health issues.</p>
             </div>
             <div className="bg-white dark:bg-[#2b2b2b] rounded-xl p-6 shadow-md">
                 <h5 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Telemedicine</h5>
@@ -259,11 +259,10 @@ export const blogs: Blog[] = [
         <h4 className="text-2xl font-semibold mt-8 mb-3 text-gray-900 dark:text-white">References</h4>
         <div className="bg-white dark:bg-[#2b2b2b] rounded-xl p-6 my-8 shadow-md">
             <ol className="list-decimal list-inside space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                <li>American Pet Products Association. (2023-2024). National Pet Owners Survey.</li>
+                <li>Pet Food Manufacturers Association. (2024). Pet Population Report.</li>
                 <li>Journal of Applied Animal Welfare Science. (2023). "The Human-Animal Bond in Modern Society."</li>
-                <li>Association for Pet Obesity Prevention. (2024). "Pet Obesity Statistics."</li>
+                <li>PDSA. (2023). PAW (Pet Animal Wellbeing) Report.</li>
                 <li>Veterinary Cancer Society. (2024). "Cancer in Companion Animals."</li>
-                <li>American Veterinary Medical Association. (2024). "Behavioural Disorders in Pets."</li>
                 <li>British Veterinary Association. (2024). "Preventive Care Cost Analysis."</li>
                 <li>World Animal Protection. (2024). "Global Animal Welfare Index."</li>
                 <li>Farm Animal Welfare Council. "Five Freedoms of Animal Welfare."</li>

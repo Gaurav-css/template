@@ -65,7 +65,7 @@ const CommunityWaitlist = () => {
         <h1 className="text-4xl lg:text-[48px] font-bold leading-tight tracking-tight text-shadow-lg  max-w-4xl">
           The Ultimate Hub for <br className="hidden sm:inline" />
           <span className="bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
-            Happy Paws
+            Smarter Pet Care
           </span>{' '}
           is Coming Soon.
         </h1>

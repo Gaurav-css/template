@@ -5,7 +5,10 @@ import React from 'react';
 import {
   Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck,
   Sparkles, PawPrint, Quote, Stethoscope,
-  NotebookPen
+  NotebookPen,
+  Brain,
+  Cpu,
+  TrendingUp
 } from 'lucide-react';
 
 // --- Helper Components (Moved to top for better organisation) ---
@@ -118,13 +121,13 @@ const EzraAiPage = () => {
                 <PawPrint className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">1. Input Pet Data</h3>
-              <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Easily log your pet’s daily activities, diet, behavior, and health records in the Hooman Group app.</p>
+              <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Easily log your pet’s daily activities, diet, behaviour, and health records in the Hooman Group app.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
-                <BrainCircuit className="h-6 w-6" />
+                <TrendingUp className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">2. Ezra AI Analyzes</h3>
+              <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">2. Ezra AI Analyses</h3>
               <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Our proprietary algorithms process this data, identifying patterns, trends, and potential areas for improvement.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
@@ -151,7 +154,7 @@ const EzraAiPage = () => {
             <FeatureCard
               icon={<HeartPulse className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
               title="Personalised Health Insights"
-              description="Analyzes health logs and activity levels to suggest wellness improvements and highlight trends for your vet."
+              description="Analyses health logs and activity levels to suggest wellness improvements and highlight trends for your vet."
               animationDelay="200ms"
             />
             <FeatureCard
@@ -162,8 +165,8 @@ const EzraAiPage = () => {
             />
             <FeatureCard
               icon={<Sparkles className="h-8 w-8 text-orange-600 dark:text-orange-400" />}
-              title="Behavioral Analysis"
-              description="Identifies shifts in behavior patterns that might indicate stress or health issues, helping you intervene early."
+              title="Behavioural Analysis"
+              description="Identifies shifts in behaviour patterns that might indicate stress or health issues, helping you intervene early."
               animationDelay="400ms"
             />
             <FeatureCard
@@ -238,7 +241,7 @@ const EzraAiPage = () => {
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=ME"
             />
             <TestimonialCard
-              quote="As a cat owner, tracking nuanced behaviors is difficult. Ezra AI helps me see patterns I would have otherwise missed. Highly recommended."
+              quote="As a cat owner, tracking nuanced behaviours is difficult. Ezra AI helps me see patterns I would have otherwise missed. Highly recommended."
               name="James P."
               role="Beta Tester & Cat Parent"
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=JP"
@@ -259,11 +262,11 @@ const EzraAiPage = () => {
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="#"
+                    href="/"
                     className="inline-flex items-center justify-center gap-x-4 rounded-xl bg-transparent border-2 border-orange-600 px-8 py-4 text-lg font-medium text-orange-600 shadow-lg transition-all duration-300 ease-in-out hover:bg-orange-600 hover:text-white hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
                   >
                     <IPhoneIcon />
-                    <span>Download for iPhone</span>
+                    <span>Coming soon on iPhone</span>
                   </a>
                 </div>
               </div>

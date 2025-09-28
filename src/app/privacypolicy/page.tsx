@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 const PrivacyPolicy = () => {
   return (
     <>
-      <Navbar />
+      
       <div className="bg-gray-50 dark:bg-[#1a1a1a] text-gray-800 dark:text-zinc-300 antialiased">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-4xl mx-auto bg-white dark:bg-zinc-900 p-8 sm:p-10 rounded-2xl shadow-lg dark:border dark:border-zinc-800">
@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
                   <p>We collect various types of information to provide, improve, and secure our Services. This may include:</p>
                   <p><strong>3.1. Personal Data:</strong> Such as your full name, email address, phone number, username and password (account credentials), billing information (e.g., credit card details processed via secure gateways), and delivery or postal addresses.</p>
                   <p><strong>3.2. Pet-Related Data:</strong> Information about your pets, including name, breed, species, age, weight, gender, vaccination status, dietary preferences, exercise routines, and care records. This data helps us deliver personalised pet care recommendations.</p>
-                  <p><strong>3.3. Health & Care Data:</strong> Non-human health information, such as wellness logs, medication reminders, behavioral notes, or grooming schedules. Where this data is linked to identifiable individuals (e.g., owners of service animals or in cases where pet data reveals sensitive human information), it may be treated as special category data under GDPR, requiring additional safeguards.</p>
+                  <p><strong>3.3. Health & Care Data:</strong> Non-human health information, such as wellness logs, medication reminders, behavioural notes, or grooming schedules. Where this data is linked to identifiable individuals (e.g., owners of service animals or in cases where pet data reveals sensitive human information), it may be treated as special category data under GDPR, requiring additional safeguards.</p>
                   <p><strong>3.4. AI Interaction Data:</strong> User prompts, queries, responses, and feedback provided during interactions with Ezra AI or other AI features. This may include text, voice inputs, or preferences to enhance AI accuracy.</p>
                   <p><strong>3.5. Device & Usage Data:</strong> Technical information such as IP address, device identifiers (e.g., UDID, IMEI), operating system version, browser type, app usage logs, cookies, web beacons, browsing history, session data, and approximate geolocation (derived from IP or with consent via device settings).</p>
                   {/* FIXED: Escaped the apostrophe in "Children's" */}
@@ -111,8 +111,6 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </div>
-      {/* FIXED: Added the Footer component to complete the page layout */}
-      <Footer />
     </>
   );
 };

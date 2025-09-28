@@ -13,7 +13,7 @@ const testimonialsData = [
     avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=SL"
   },
   {
-    quote: "I have a rescue dog with severe anxiety issues, and being able to track his progress and connect with other owners dealing with similar challenges has been reassuring. The vet reminder feature saved me from missing his heartworm treatment last month. The interface is clean and straightforward to use, although I did have trouble uploading a video once.",
+    quote: "I have a rescue dog with severe anxiety issues, and being able to track his progress and connect with other owners dealing with similar challenges has been reassuring. The vet reminder feature saved me from missing his flea and worm treatment treatment last month. The interface is clean and straightforward to use, although I did have trouble uploading a video once.",
     name: "Lara Rachdi",
     role: "Pet owner - Milo",
     avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=ME"

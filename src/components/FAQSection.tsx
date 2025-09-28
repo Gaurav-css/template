@@ -30,7 +30,7 @@ const faqData = [
       {
         question: "How does Ezra AI monitor my pet's health?",
         answer:
-          "Ezra AI, our proprietary technology, analyzes data points from your pet's activity, diet, and reported symptoms to identify patterns and potential health issues before they become serious.",
+          "Ezra AI, our proprietary technology, analyses data points from your pet's activity, diet, and reported symptoms to identify patterns and potential health issues before they become serious.",
       },
       {
         question: 'Can Hooman Group detect serious health issues?',

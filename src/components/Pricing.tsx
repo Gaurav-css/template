@@ -59,7 +59,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
           <div className="text-4xl font-bold text-gray-900 dark:text-white">Free</div>
         ) : (
           <div className="flex items-baseline justify-center">
-            <span className="text-5xl font-bold text-gray-900 dark:text-white">${price}</span>
+            <span className="text-5xl font-bold text-gray-900 dark:text-white">£{price}</span>
             <span className="text-gray-600 dark:text-gray-400 ml-1 text-lg">{billingCycle}</span>
           </div>
         )}
@@ -110,7 +110,7 @@ const PricingPage: React.FC = () => {
         "Limited product recommendation",
         "Limited access to nutritional goals"
       ],
-      buttonText: "Comming Soon",
+      buttonText: "Coming Soon",
     },
     {
       name: "Pro",

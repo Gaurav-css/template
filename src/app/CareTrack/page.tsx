@@ -213,7 +213,7 @@ export default function Home() {
               icon="🏥"
               title="How AI Detects Early Signs of Pet Illness"
               meta="AI Health Tips • 5 min read"
-              excerpt="Discover how Ezra AI's advanced algorithms can identify subtle changes in your pet's behavior..."
+              excerpt="Discover how Ezra AI's advanced algorithms can identify subtle changes in your pet's behaviour..."
             />
             <BlogCard
               icon="🥗"

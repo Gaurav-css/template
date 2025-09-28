@@ -44,7 +44,7 @@ const initialPosts: Post[] = [
       author: "CatLover_88", 
       authorAvatar: "https://i.pravatar.cc/40?u=catlover",
       replies: [], 
-      category: "Behavior" 
+      category: "Behaviour" 
     },
     { 
       id: "post-3",
@@ -201,7 +201,7 @@ const CreatePostModal = ({ isOpen, onClose, onAddPost, currentUser }: { isOpen: 
           <div>
             <label htmlFor="category" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Category</label>
             <select id="category" value={category} onChange={(e) => setCategory(e.target.value)} className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 rounded-lg focus:ring-orange-500 focus:border-orange-500">
-              <option>General Advice</option><option>Nutrition</option><option>Behavior</option><option>Health</option><option>Training</option>
+              <option>General Advice</option><option>Nutrition</option><option>Behaviour</option><option>Health</option><option>Training</option>
             </select>
           </div>
           <div className="pt-4">
