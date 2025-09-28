@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
-import { Layers, Heart, Users, Stethoscope, Sparkles, NotebookPen, BarChart4, Settings } from 'lucide-react';
+import { Heart, Users, Stethoscope, Sparkles, NotebookPen, BarChart4, Settings } from 'lucide-react';
 
 // Define the type for the component's props
 type FeatureCardProps = {

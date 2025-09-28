@@ -3,12 +3,12 @@
 import React from 'react';
 // Using standard <img> and <a> tags instead of Next.js specific components.
 import {
-  Bot, BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck,
-  Sparkles, PawPrint, Quote, Stethoscope,
+  BarChart, Bell, BrainCircuit, HeartPulse, ShieldCheck,
+  Sparkles, Quote, Stethoscope,
   NotebookPen,
-  Brain,
+
   Cpu,
-  TrendingUp
+  FileText
 } from 'lucide-react';
 
 // --- Helper Components (Moved to top for better organisation) ---
@@ -83,12 +83,12 @@ const EzraAiPage = () => {
               <span>The Future of Pet Intelligence</span>
             </div>
             <h1 className="text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-800 dark:text-white leading-tight">
-                Meet <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
-                  Ezra AI
-                </span>: The Future of 
-                <br />
-                <span>Proactive Pet Care</span>
-              </h1>
+              Meet <span className="text-[#ED6C35] bg-gradient-to-r from-[#ED6C35] to-[#d95b2a] bg-clip-text text-transparent">
+                Ezra AI
+              </span>: The Future of
+              <br />
+              <span>Proactive Pet Care</span>
+            </h1>
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
               Ezra AI is our advanced intelligence engine designed to analyze your pet's data, delivering personalised insights and actionable advice to enhance their health, happiness, and longevity.
             </p>
@@ -118,14 +118,14 @@ const EzraAiPage = () => {
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
-                <PawPrint className="h-6 w-6" />
+                <FileText className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">1. Input Pet Data</h3>
               <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Easily log your pet’s daily activities, diet, behaviour, and health records in the Hooman Group app.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm border border-slate-200 dark:border-zinc-800 rounded-xl z-10">
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-600/20 text-orange-600 dark:text-orange-400 ring-1 ring-orange-200 dark:ring-orange-400/30">
-                <TrendingUp className="h-6 w-6" />
+                <Cpu className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-800 dark:text-zinc-100">2. Ezra AI Analyses</h3>
               <p className="mt-2 text-base text-slate-500 dark:text-zinc-400">Our proprietary algorithms process this data, identifying patterns, trends, and potential areas for improvement.</p>
@@ -229,24 +229,25 @@ const EzraAiPage = () => {
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <TestimonialCard
-              quote="Ezra AI identified a subtle change in my dog's activity that led to an early diagnosis. It’s a game-changer for preventative care."
-              name="Sarah L."
-              role="Beta Tester & Dog Parent"
+              quote="I've been using the Hooman app for about six weeks now. As someone with a young Lhasa Apso, I really value having all health records in one place, it's much easier than rifling through old vet papers when I need vaccination dates or deworming reminders. The AI assistant gave me some useful guidance when my older dog went off his food, but I still rang my vet to be on the safe side."
+              name="Charu Mongla"
+              role="Pet owner - Eva"
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=SL"
             />
             <TestimonialCard
-              quote="The ability to generate a concise, data-driven report for vet visits is incredibly powerful. This tool bridges the gap between owner observation and clinical data."
-              name="Dr. Mark Evans, DVM"
-              role="Veterinary Advisor"
+              quote="I have a rescue dog with severe anxiety issues, and being able to track his progress and connect with other owners dealing with similar challenges has been reassuring. The vet reminder feature saved me from missing his flea and worm treatment treatment last month. The interface is clean and straightforward to use, although I did have trouble uploading a video once."
+              name="Lara Rachdi"
+              role="Pet owner - Milo"
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=ME"
             />
             <TestimonialCard
-              quote="As a cat owner, tracking nuanced behaviours is difficult. Ezra AI helps me see patterns I would have otherwise missed. Highly recommended."
-              name="James P."
-              role="Beta Tester & Cat Parent"
+              quote="I can easily share access with my dog walker and pet sitter, and they can update me with photos and notes throughout the day. The AI feature gave me some handy suggestions for training techniques, though I still prefer speaking to my trainer for serious issues."
+              name="Niall O'Riordan"
+              role="Pet owner - Pixel"
               avatarUrl="https://placehold.co/100x100/334155/e2e8f0?text=JP"
             />
           </div>
+
         </section>
 
         {/* Download App Section */}

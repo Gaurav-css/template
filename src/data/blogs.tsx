@@ -127,13 +127,13 @@ export const blogs: Blog[] = [
     readTime: '12 min read',
     author: 'Prayas Ahuja',
     publishDate: '20 August 2025',
-    image: '/blog2.png',
+    image: '/blog2.1.png',
     content: (
     <>
         <figure className="my-8">
             <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-800">
                 <img
-                    src="/blog2.png"
+                    src="/blog2.1.png"
                     alt="Pet parent caring for their cat and dog"
                     className="object-cover w-full h-full"
                 />

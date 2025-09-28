@@ -53,7 +53,7 @@ const blogPosts: BlogPost[] = [
     readTime: '12 min read',
     title: 'Why Pet Care is Important Today: A Comprehensive Guide',
     description: 'In our rapidly evolving world, the importance of proper pet care has never been more critical. From emerging health challenges to groundbreaking technological advances, understanding why modern pet care matters is essential for every pet parent.',
-    imageUrl: '/blog2.png',
+    imageUrl: '/blog2.1.png',
     href: '/blog/2', // 👈 dynamic link
     details: []
   },
