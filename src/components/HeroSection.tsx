@@ -42,12 +42,12 @@ const HeroSection = () => {
         // Handle errors from the API (e.g., validation, server errors)
         throw new Error(data.error || 'Something went wrong.');
       }
-
+      
       // Handle success from the API
       setStatus('success');
       // Use the message sent back from the server ("Success!" or "You're already on the list!")
-      setMessage(data.message);
-
+      setMessage(data.message); 
+      
       // Only clear the input field for a brand new submission
       if (data.message.includes("Success")) {
         setEmail('');
@@ -67,7 +67,7 @@ const HeroSection = () => {
   return (
     <div>
       <section className="bg-gray-50 dark:bg-[#1A1A1A] transition-colors duration-300 mt-16 lg:mt-20">
-        <div >
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
 
             {/* Left Column: Text Content */}
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 app ensures your furry friends receive the best care tailored to their
                 needs.
               </p>
-
+              
               {/* --- Functional Waitlist Form --- */}
               <div className="mt-6 sm:mt-8 md:mt-10 w-full max-w-md mx-auto lg:mx-0">
                 {status === 'success' ? (
