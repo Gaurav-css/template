@@ -85,7 +85,7 @@ const HeroSection = () => {
               </p>
               
               {/* --- Functional Waitlist Form --- */}
-              <div className="mt-6 sm:mt-8 md:mt-10 w-full max-w-md mx-auto lg:mx-0">
+              <div className="mt-6 sm:mt-8 md:mt-10 w-full max-w-md mx-auto lg:mx-0 px-4 sm:px-0">
                 {status === 'success' ? (
                   <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-4 text-center backdrop-blur-md">
                     <p className="font-semibold text-green-800 dark:text-green-300">{message}</p>
@@ -97,7 +97,7 @@ const HeroSection = () => {
                       onSubmit={handleSubmit}
                     >
                       <input
-                        className="h-14 flex-1 rounded-md border border-gray-300 bg-white/80 px-4 text-gray-900 placeholder:text-gray-500 backdrop-blur-md transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#ED6C35] dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder:text-gray-400"
+                        className="h-14 sm:h-14 min-h-[56px] flex-1 rounded-md border border-gray-300 bg-white/80 px-4 sm:px-4 text-base sm:text-base text-gray-900 placeholder:text-gray-500 backdrop-blur-md transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#ED6C35] dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder:text-gray-400"
                         placeholder="your-best-friend@email.com"
                         type="email"
                         value={email}
@@ -106,7 +106,7 @@ const HeroSection = () => {
                         aria-label="Email Address"
                       />
                       <button
-                        className="inline-flex h-14 w-full items-center justify-center rounded-md bg-[#ED6C35] px-8 text-base font-semibold text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED6C35] disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
+                        className="inline-flex h-14 sm:h-14 min-h-[56px] w-full items-center justify-center rounded-md bg-[#ED6C35] px-6 sm:px-8 text-base font-semibold text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED6C35] disabled:pointer-events-none disabled:opacity-60 sm:w-auto whitespace-nowrap"
                         type="submit"
                         disabled={status === 'loading'}
                       >
