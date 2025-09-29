@@ -1,6 +1,42 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { blogs } from '../../../data/blogs';
+import type { Metadata, ResolvingMetadata } from 'next';
+
+
+async function getPostBySlug(slug: string) {
+  // In a real app, you'd fetch this from a CMS or database
+  return {
+    title: `Amazing Blog Post: ${slug}`,
+    excerpt: 'This is a summary of the amazing blog post...',
+    imageUrl: 'https://your-domain.com/blog/some-image.png'
+  }
+}
+
+type Props = {
+  params: { slug: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = params;
+
+  // Fetch product data
+  const post = await getPostBySlug(slug);
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      images: [post.imageUrl],
+    },
+  };
+}
+
 
 export default async function BlogDetailPage({ params }: { params: { id: string } }) {
   const { id } = await params;

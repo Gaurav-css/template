@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, XCircle } from 'lucide-react';
 
+// This is the interactive client component.
+// All the form logic, state, and event handlers are here.
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,10 +13,8 @@ const ContactForm = () => {
     termsAccepted: false,
   });
 
-  // State to handle form validation errors
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; terms?: string }>({});
   
-  // State for submission status
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | 'idle'>('idle');
 
@@ -74,10 +74,8 @@ const ContactForm = () => {
             message: '',
             termsAccepted: false,
         });
-        // Hide the success message after a few seconds
         setTimeout(() => setSubmissionStatus('idle'), 5000);
       } else {
-        // Handle server errors (e.g., 500)
         setSubmissionStatus('error');
       }
     } catch (error) {
@@ -171,7 +169,7 @@ const ContactForm = () => {
                     </div>
                     <div className="ml-3 text-sm">
                         <label htmlFor="termsAccepted" className="font-medium text-slate-700 dark:text-slate-300">
-                            I accept the <a href="" className="text-orange-500 hover:underline">Terms of Service</a>
+                            I accept the <a href="#" className="text-orange-500 hover:underline">Terms of Service</a>
                         </label>
                     </div>
                   </div>

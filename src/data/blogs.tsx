@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 
 export type Blog = {
@@ -21,7 +21,7 @@ export const blogs: Blog[] = [
     description: 'Still juggling a dozen apps for your pet\'s care? Discover how a single, intelligent platform can reduce chaos and help you become a smarter pet parent.',
     category: 'General',
     readTime: '3 min read',
-    author: 'Prayas Ahuja',
+    author: 'Nitik Kalra',
     publishDate: '10 August 2025',
     image: '/blog1.2.png',
     content: (

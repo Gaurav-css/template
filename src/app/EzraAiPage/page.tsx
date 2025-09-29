@@ -212,7 +212,7 @@ const EzraAiPage = () => {
             <div className="flex items-center justify-center">
               <div className="relative w-72 h-72">
                 <img
-                  src="/AI -hinking.png" // place inside /public folder
+                  src="/AI-Thinking.png" // place inside /public folder
                   alt="My Image"
                   className="w-full h-full object-contain opacity-80"
                 />
