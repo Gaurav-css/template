@@ -34,7 +34,7 @@ const Footer = () => {
         // { name: "Hooman Connect", href: "#" },
         // { name: "Hooman Group Veterinary", href: "vet-insights" },
         { name: "Pricing", href: "/#pricing" },
-        { name: "Download Application", href: "#" },
+        { name: "Download Application", href: "/EzraAiPage" },
       ],
     },
     {

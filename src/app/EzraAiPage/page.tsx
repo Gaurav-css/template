@@ -211,10 +211,14 @@ const EzraAiPage = () => {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-72 h-72">
-                {/* <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-purple-100 dark:from-orange-900/50 dark:to-purple-900/40 rounded-full blur-2xl"></div> */}
-                <BrainCircuit className="relative w-full h-full text-slate-400 dark:text-zinc-500 opacity-60" />
+                <img
+                  src="/AI -hinking.png" // place inside /public folder
+                  alt="My Image"
+                  className="w-full h-full object-contain opacity-80"
+                />
               </div>
             </div>
+
           </div>
         </section>
 
