@@ -9,11 +9,11 @@ import Community from '@/components/Community';
 import type { Metadata } from 'next';
 // ✅ DYNAMIC METADATA FOR HOMEPAGE
 export const metadata: Metadata = {
-  title: 'Contact Us', // This will become "Contact Us | Hooman Group"
+  title: 'Hooman Group', // This will become "Contact Us | Hooman Group"
   description: 'Get in touch with the Hooman Group team. We are here to help with any questions about our pet care platform.',
   openGraph: {
       // You can override specific OG tags here if needed
-      title: 'Contact Us | Hooman Group',
+      title: ' Hooman Group',
   }
 };
 

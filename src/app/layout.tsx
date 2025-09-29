@@ -44,6 +44,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const urbanist = Urbanist({ 
   subsets: ['latin'],
