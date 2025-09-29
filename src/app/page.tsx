@@ -9,8 +9,8 @@ import Community from '@/components/Community';
 import type { Metadata } from 'next';
 // ✅ DYNAMIC METADATA FOR HOMEPAGE
 export const metadata: Metadata = {
-  title: 'Hooman Group', // This will become "Contact Us | Hooman Group"
-  description: 'Get in touch with the Hooman Group team. We are here to help with any questions about our pet care platform.',
+  title: 'Hooman Group', //  Hooman Group"
+  description: 'Discover how Hooman Group transforms pet care with AI-driven insights, health tracking, and vet integrations. Your partner in pet wellness.',
   openGraph: {
       // You can override specific OG tags here if needed
       title: ' Hooman Group',
