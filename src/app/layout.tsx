@@ -52,7 +52,7 @@ const urbanist = Urbanist({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Hooman Group', // Appends site name to page titles
+    template: 'Hooman Group', // Appends site name to page titles
     default: 'Hooman Group - Revolutionising Pet Care', // Default title for the homepage
   },
   description: 'Discover how Hooman Group transforms pet care with AI-driven insights, health tracking, and vet integrations. Your partner in pet wellness.',

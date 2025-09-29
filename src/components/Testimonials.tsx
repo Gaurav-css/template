@@ -10,19 +10,19 @@ const testimonialsData = [
     quote: "I've been using the Hooman app for about six weeks now. As someone with a young Lhasa Apso, I really value having all health records in one place, it's much easier than rifling through old vet papers when I need vaccination dates or deworming reminders. The AI assistant gave me some useful guidance when my older dog went off his food, but I still rang my vet to be on the safe side.",
     name: "Charu Mongla",
     role: "Pet owner - Eva",
-    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=SL"
+    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=CM"
   },
   {
     quote: "I have a rescue dog with severe anxiety issues, and being able to track his progress and connect with other owners dealing with similar challenges has been reassuring. The vet reminder feature saved me from missing his flea and worm treatment treatment last month. The interface is clean and straightforward to use, although I did have trouble uploading a video once.",
     name: "Lara Rachdi",
     role: "Pet owner - Milo",
-    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=ME"
+    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=LR"
   },
   {
     quote: "I can easily share access with my dog walker and pet sitter, and they can update me with photos and notes throughout the day. The AI feature gave me some handy suggestions for training techniques, though I still prefer speaking to my trainer for serious issues.",
     name: "Niall O'Riordan",
     role: "Pet owner - Pixel",
-    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=JP"
+    avatarUrl: "https://placehold.co/100x100/334155/e2e8f0?text=NR"
   }
   
 ];
