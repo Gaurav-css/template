@@ -187,9 +187,9 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
 
             {/* Input Bar */}
             <div className="w-full max-w-2xl mx-auto mt-8">
-                <form onSubmit={(e) => { e.preventDefault(); handleSendMessage(inputValue); }} className="bg-white dark:bg-[#2C2C2E] rounded-2xl p-2 flex items-center gap-2 border border-gray-200 dark:border-gray-600/70">
-                    <button type="button" className="text-[#ED6C35] p-2 rounded-lg transition-colors">
-                        <Sparkles size={24} />
+                <form onSubmit={(e) => { e.preventDefault(); handleSendMessage(inputValue); }} className="bg-white dark:bg-[#2C2C2E] rounded-2xl p-1 sm:p-2 flex items-center gap-1 sm:gap-2 border border-gray-200 dark:border-gray-600/70">
+                    <button type="button" className="text-[#ED6C35] p-1.5 sm:p-2 rounded-lg transition-colors">
+                        <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" />
                     </button>
                     <input 
                         type="text" 
@@ -199,14 +199,14 @@ const ChatbotInterface: React.FC<ChatbotInterfaceProps> = ({ title, welcomeSubMe
                         className="flex-1 bg-transparent focus:outline-none text-sm placeholder-gray-500 dark:placeholder-gray-400" 
                         disabled={isChatLimitReached}
                     />
-                    <button type="submit" disabled={isLoading || !inputValue.trim() || isChatLimitReached} className="bg-[#ED6C35] text-white p-2 rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity">
-                        <ArrowUp size={24} />
+                    <button type="submit" disabled={isLoading || !inputValue.trim() || isChatLimitReached} className="bg-[#ED6C35] text-white p-1.5 sm:p-2 rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity">
+                        <ArrowUp className="h-5 w-5 sm:h-6 sm:w-6" />
                     </button>
                 </form>
                 {isChatLimitReached && (
-                        <p className="text-center text-sm text-amber-500 dark:text-amber-400 mt-3 px-4">
-                            Message limit reached.
-                        </p>
+                            <p className="text-center text-sm text-amber-500 dark:text-amber-400 mt-3 px-4">
+                                Message limit reached.
+                            </p>
                 )}
                 <p className="text-center text-xs text-gray-500 dark:text-gray-600 mt-3 px-4">
                     {disclaimer}
