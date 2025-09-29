@@ -39,13 +39,13 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isPopular, is
           : "border border-gray-200 dark:border-gray-700 shadow-md"
       }`}
     >
-      {isPopular && (
+      {/* {isPopular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
             MOST POPULAR
           </div>
         </div>
-      )}
+      )} */}
 
       <div className="text-center mb-6">
         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
