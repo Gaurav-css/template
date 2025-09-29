@@ -53,11 +53,11 @@ const CommunityWaitlist = () => {
   };
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-[#1a1a1a] dark:text-white">
+    <section  className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-[#1a1a1a] dark:text-white">
       <div className="relative z-20 flex flex-col items-center justify-center space-y-8 px-4 py-10 text-center">
         {/* ... The rest of your JSX remains the same, it will display the message correctly ... */}
         
-        <div className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 -mb-5 animate-fade-in-up">
+        <div id='join-us' className="inline-flex items-center gap-x-2 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-full px-4 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 -mb-5 animate-fade-in-up">
                     <PawPrint className="w-4 h-4 text-orange-500 dark:text-orange-400" />
                         <span>Paws & Friends</span>
                     </div>
@@ -70,11 +70,11 @@ const CommunityWaitlist = () => {
           is Coming Soon.
         </h1>
 
-        <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-300 md:text-xl">
+        <p  className="max-w-2xl text-lg text-gray-600 dark:text-gray-300 md:text-xl">
           Be the first to know! Join our waitlist for exclusive updates, early access to our platform, and special content crafted for you and your beloved pets.
         </p>
 
-        <div className="w-full max-w-md">
+        <div  className="w-full max-w-md">
           {/* This logic now works perfectly with the API response */}
           {status === 'success' ? (
             <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-6 text-center backdrop-blur-md">
@@ -82,7 +82,7 @@ const CommunityWaitlist = () => {
             </div>
           ) : (
             <>
-              <form
+              <form 
                 className="hidden w-full flex-col gap-3 md:flex md:flex-row"
                 onSubmit={handleSubmit}
               >

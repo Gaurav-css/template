@@ -171,7 +171,7 @@ const ContactForm = () => {
                     </div>
                     <div className="ml-3 text-sm">
                         <label htmlFor="termsAccepted" className="font-medium text-slate-700 dark:text-slate-300">
-                            I accept the <a href="#" className="text-orange-500 hover:underline">Terms of Service</a>
+                            I accept the <a href="" className="text-orange-500 hover:underline">Terms of Service</a>
                         </label>
                     </div>
                   </div>

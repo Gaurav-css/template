@@ -63,7 +63,7 @@ const Navbar = () => {
     {
       title: 'Explore Our App',
       links: [
-        { name: 'Join Us', href: '/#community', icon: Zap },
+        { name: 'Join Us', href: '/#join-us', icon: Zap },
         { name: 'Contact Us', href: '/Contact-Us', icon: Mail },
         { name: 'About Us', href: '/About', icon: Info },
       ]
@@ -71,8 +71,8 @@ const Navbar = () => {
     {
       title: 'Community Highlights',
       links: [
-        { name: 'Events', href: '', icon: Star },
-        { name: 'Partners', href: '', icon: BarChart },
+        { name: 'Events', href: '#', icon: Star },
+        { name: 'Partners', href: '#', icon: BarChart },
         { name: 'Careers', href: '/career', icon: Box },
       ]
     },
