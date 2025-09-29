@@ -79,7 +79,7 @@ const Navbar = () => {
     {
       title: 'Latest from Us',
       links: [
-        { name: 'Feedback', href: '#', icon: Mail },
+        { name: 'Feedback', href: '', icon: Mail },
         { name: 'Privacy Policy', href: '/privacypolicy', icon: Shield },
       ]
     }
