@@ -1,42 +1,6 @@
-// // app/layout.tsx
-// import "./globals.css"
-// import type { Metadata } from "next"
-// import { Urbanist } from "next/font/google"
-// import { ThemeProvider } from '@/components/ThemeProvider';
-// import Navbar from '@/components/Navbar';
-// import ScrollToTop from "@/components/ScrollToTop";
-// import Footer from "@/components/Footer";
 
-// const urbanist = Urbanist({ 
-//   subsets: ['latin'],
-//   display: 'swap',
-// });
+import { Analytics } from '@vercel/analytics/react';
 
-// export const metadata: Metadata = {
-//   title: "hooman-group-website",
-//   description: "",
-// }
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode
-// }) {
-//   return (
-//     <html lang="en" suppressHydrationWarning>
-//       <body className={urbanist.className}>
-//         <ThemeProvider>
-//           <Navbar />
-//           <main>{children}</main>
-//           {/* <main className="pt-20">{children}</main> */}
-//           <ScrollToTop />
-//           <Footer />   {/* ✅ Add Footer here */}
-//         </ThemeProvider>
-//       </body>
-//     </html>
-//   )
-// }
-// app/layout.tsx
 import "./globals.css"
 import type { Metadata } from "next"
 import { Urbanist } from "next/font/google"
@@ -44,7 +8,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 
 const urbanist = Urbanist({ 
   subsets: ['latin'],
@@ -101,6 +65,7 @@ export default function RootLayout({
           <ScrollToTop />
           <Footer />
         </ThemeProvider>
+         <Analytics />
       </body>
     </html>
   )
