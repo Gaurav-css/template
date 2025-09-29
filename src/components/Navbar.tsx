@@ -1,23 +1,15 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState,  useEffect } from 'react';
 import Link from "next/link";
-import Image from "next/image"; // FIXED: Import Next.js Image component
+import Image from "next/image"; 
 
-// FIXED: Removed unused icons to prevent build warnings
 import {
-  Sparkles, LucideIcon, ChevronDown, Menu, X, Box, BarChart, Zap, Mail,
-  Info, Star, Shield, Activity, Eye, Users, User, Sun, Moon
+    LucideIcon, Menu, X, Box, BarChart, Zap, Mail,
+  Info, Star, Shield,  Sun, Moon
 } from 'lucide-react';
 
 type Theme = 'light' | 'dark';
-
-type DropdownLink = {
-  name: string;
-  description: string;
-  icon: LucideIcon;
-  href: string;
-};
 
 type MobileMenuSection = {
   title: string;
@@ -58,11 +50,6 @@ const useTheme = () => {
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isFeaturesDropdownOpen, setIsFeaturesDropdownOpen] = useState(false);
-  const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
-
-  const featuresTimeout = useRef<NodeJS.Timeout | null>(null);
-
   const { theme, setTheme, mounted } = useTheme();
 
   const navLinks = [
@@ -72,69 +59,38 @@ const Navbar = () => {
     {name: 'Ezra AI', href: '/EzraAiPage' },
   ];
 
-  const featuresLinks: DropdownLink[] = [
-    // { name: 'Ezra AI', description: 'Advanced AI that can enhance pet care.', icon: Sparkles, href: '/EzraAiPage' },
-    // FIXED: Escaped the apostrophe in "pet's"
-    // { name: 'Care Tracking', description: 'Easily monitor your pet's health and routines.', icon: Activity, href: '/CareTrack' },
-    // { name: 'Vet Insights', description: 'Access professional advice at your fingertips.', icon: Eye, href: '/vet-insights' },
-    // { name: 'Community Support', description: 'Join fellow pet parents in our hub.', icon: Users, href: '/community-support' }
-  ];
-
   const mobileMenuSections: MobileMenuSection[] = [
     {
       title: 'Explore Our App',
       links: [
-        { name: 'Join Us', href: '#', icon: Zap },
-        { name: 'Contact Us', href: '#', icon: Mail },
-        { name: 'About Us', href: '#', icon: Info },
+        { name: 'Join Us', href: '/#community', icon: Zap },
+        { name: 'Contact Us', href: '/Contact-Us', icon: Mail },
+        { name: 'About Us', href: '/About', icon: Info },
       ]
     },
     {
       title: 'Community Highlights',
       links: [
-        { name: 'Events', href: '#', icon: Star },
-        { name: 'Partners', href: '#', icon: BarChart },
-        { name: 'Careers', href: '#', icon: Box },
+        { name: 'Events', href: '', icon: Star },
+        { name: 'Partners', href: '', icon: BarChart },
+        { name: 'Careers', href: '/career', icon: Box },
       ]
     },
     {
       title: 'Latest from Us',
       links: [
         { name: 'Feedback', href: '#', icon: Mail },
-        { name: 'Privacy Policy', href: '#', icon: Shield },
+        { name: 'Privacy Policy', href: '/privacypolicy', icon: Shield },
       ]
     }
   ];
 
-  const handleDropdownEnter = (setter: React.Dispatch<React.SetStateAction<boolean>>, timeoutRef: React.MutableRefObject<NodeJS.Timeout | null>) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setter(true);
-  };
-  const handleDropdownLeave = (setter: React.Dispatch<React.SetStateAction<boolean>>, timeoutRef: React.MutableRefObject<NodeJS.Timeout | null>) => {
-    timeoutRef.current = setTimeout(() => setter(false), 200);
-  };
   const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen);
-  const toggleMobileAccordion = (accordionName: string) => {
-    setOpenMobileAccordion(openMobileAccordion === accordionName ? null : accordionName);
-  };
-  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+  
+  // ✅ 1. CREATE A DEDICATED FUNCTION TO CLOSE THE MENU
+  const closeMenu = () => setIsMenuOpen(false);
 
-  const DropdownContent = ({ items }: { items: DropdownLink[] }) => (
-    <div className="p-4">
-      <div className="space-y-2">
-        {items.map((item) => (
-          // FIXED: Replaced <a> with <Link> for internal navigation
-          <Link key={item.name} href={item.href} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#1c1c1e] transition-colors duration-200 group">
-            <item.icon className="h-6 w-6 text-orange-600 mt-0.5 flex-shrink-0" />
-            <div>
-              <div className="text-sm font-medium text-gray-900 dark:text-gray-200 group-hover:text-orange-600 dark:group-hover:text-orange-500">{item.name}</div>
-              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{item.description}</div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <>
@@ -143,8 +99,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
               <Link href="/">
-                {/* FIXED: Replaced <img> with <Image> for performance */}
-                <Image src="/Logo.png" alt="Hooman Group Pets Logo" width={150} height={56} className="  h-12 lg:h-14 w-auto" />
+                <Image src="/Logo.png" alt="Hooman Group Pets Logo" width={150} height={56} className="h-12 lg:h-14 w-auto" />
               </Link>
             </div>
 
@@ -155,18 +110,6 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
                 </Link>
               ))}
-
-              {/* <div className="relative" onMouseEnter={() => handleDropdownEnter(setIsFeaturesDropdownOpen, featuresTimeout)} onMouseLeave={() => handleDropdownLeave(setIsFeaturesDropdownOpen, featuresTimeout)}>
-                <button className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium flex items-center group focus:outline-none transition-colors">
-                  <Link href="/EzraAiPage">
-                    <span className="cursor-pointer">Ezra AI</span>
-                  </Link> */}
-                  {/* <ChevronDown className={`ml-1 h-5 w-5 text-gray-400 group-hover:text-orange-600 dark:group-hover:text-white transition-all duration-300 ${isFeaturesDropdownOpen ? 'transform rotate-180' : ''}`} /> */}
-                {/* </button> */}
-                {/* <div className={`absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 w-screen max-w-sm rounded-xl shadow-2xl bg-white dark:bg-[#2B2B2B] ring-1 ring-black ring-opacity-5 dark:ring-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${isFeaturesDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                  <DropdownContent items={featuresLinks} />
-                </div> */}
-              {/* </div> */}
             </div>
 
             <div className="hidden lg:flex items-center space-x-4">
@@ -202,7 +145,8 @@ const Navbar = () => {
       <div className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white dark:bg-[#1A1A1A] z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-            <Link href="/">
+            {/* ✅ ATTACH THE closeMenu HANDLER HERE AS WELL */}
+            <Link href="/" onClick={closeMenu}>
               <Image src="/Logo.png" alt="Hooman Group Pets Logo" width={120} height={40} className="h-10 w-auto" />
             </Link>
             <button onClick={handleMenuToggle} className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B]">
@@ -213,19 +157,11 @@ const Navbar = () => {
           <div className="flex-1 overflow-y-auto p-4 pb-24">
             <div className="space-y-1">
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} className="block text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] px-4 py-2 rounded-md font-medium">{link.name}</Link>
+                // ✅ 2. ATTACH THE onClick HANDLER TO THE MAIN NAV LINKS
+                <Link key={link.name} href={link.href} onClick={closeMenu} className="block text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] px-4 py-2 rounded-md font-medium">{link.name}</Link>
               ))}
-
               <div>
-                <button onClick={() => toggleMobileAccordion('features')} className="w-full flex justify-between items-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2B2B2B] px-4 py-2 rounded-md font-medium group transition-all duration-200">
-                  <span>Features</span>
-                  <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${openMobileAccordion === 'features' ? 'rotate-180' : ''}`} />
-                </button>
-                <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openMobileAccordion === 'features' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="pt-2 pl-4">
-                    <DropdownContent items={featuresLinks} />
-                  </div>
-                </div>
+                {/* Commented out feature links */}
               </div>
             </div>
 
@@ -234,7 +170,8 @@ const Navbar = () => {
                 <h3 className="px-4 text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{section.title}</h3>
                 <div className="mt-2 space-y-1">
                   {section.links.map(link => (
-                    <Link key={link.name} href={link.href} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#1c1c1e] px-4 py-2.5 rounded-md font-medium group transition-all duration-200">
+                    // ✅ 3. ATTACH THE onClick HANDLER TO THE OTHER SECTION LINKS
+                    <Link key={link.name} href={link.href} onClick={closeMenu} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#1c1c1e] px-4 py-2.5 rounded-md font-medium group transition-all duration-200">
                       <link.icon className="h-5 w-5 text-gray-500 dark:text-gray-400 group-hover:text-orange-600 transition-colors" />
                       <span>{link.name}</span>
                     </Link>
@@ -253,7 +190,6 @@ const Navbar = () => {
                 <span className="text-sm font-semibold leading-tight">Download The App</span>
                 <span className="text-[10px] font-light leading-tight opacity-90">Coming Soon</span>
               </button>
-  
             </div>
           </div>
         </div>
