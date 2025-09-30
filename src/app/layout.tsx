@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hooman Group - Revolutionising Pet Care',
     description: 'AI-driven insights for the best pet care.',
-    images: ['https://your-domain.com/og-image.png'], // ❗️ MUST be an absolute URL
+    images: ['https://www.hoomanpets.com/'], // ❗️ MUST be an absolute URL
   },
   icons: {
     icon: '/favicon.ico',

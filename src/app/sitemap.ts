@@ -10,7 +10,7 @@ async function getAllBlogPosts() {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://your-domain.com'; // Replace with your domain
+    const baseUrl = 'https://www.hoomanpets.com/'; // Replace with your domain
 
     // Get all blog posts
     const posts = await getAllBlogPosts();
